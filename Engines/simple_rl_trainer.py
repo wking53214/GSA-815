@@ -23,15 +23,43 @@ class SimpleRLTrainer:
         rng = np.random.default_rng(seed)
         self.policy_weights = rng.standard_normal((self.action_dim, self.state_dim)) * 0.01
         self.value_weights = rng.standard_normal((1, self.state_dim)) * 0.01
+        # The same generator is retained for action sampling in
+        # choose_action(). Keeping one generator per trainer (rather
+        # than reaching for the global RNG) is what makes an explored
+        # action sequence reproducible from the seed alone: two
+        # trainers built with seed=42 pick the same actions, which a
+        # global RNG could not promise, since its state depends on
+        # whatever else imported or drew first.
+        self._rng = rng
         self.lr = lr
         self.trajectories: List[Trajectory] = []
         
-    def choose_action(self, state: np.ndarray):
-        '''Softmax policy: choose action from state'''
+    def choose_action(self, state: np.ndarray, explore: bool = True):
+        '''Softmax policy: choose action from state.
+
+        explore=True (default) SAMPLES from the softmax distribution.
+        explore=False takes the highest-probability action.
+
+        The previous version computed a softmax and then selected with
+        argmax, which is deterministic-greedy: the distribution was
+        discarded at the moment it mattered, so the policy never tried
+        a lower-probability action and never gathered evidence about
+        one. A policy-gradient method cannot improve on what it never
+        samples, so this was not a slow learner, it was a policy that
+        could only ever confirm its initial weights.
+
+        Greedy selection is still the right behavior when EVALUATING a
+        trained policy rather than training one, so it is kept and made
+        explicit. It is opt-in via explore=False rather than the silent
+        default, so a caller has to say which of the two it wants.
+        '''
         logits = self.policy_weights @ state
         logits = logits - np.max(logits)
         probs = np.exp(logits) / np.sum(np.exp(logits))
-        action = np.argmax(probs)
+        if explore:
+            action = int(self._rng.choice(self.action_dim, p=probs))
+        else:
+            action = int(np.argmax(probs))
         value = (self.value_weights @ state).item()
         return action, float(probs[action]), value
     
