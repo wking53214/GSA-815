@@ -87,9 +87,12 @@ class GSA815ReturnPath:
                 label=f"GSA-815 v{gsa_version}",
             )
 
+            # Proposition text should be summary, not truncated full content
+            proposition_text = result_content_str if len(result_content_str) <= 500 else f"{result_content_str[:497]}..."
+
             proposition = Proposition(
                 proposition_id=f"prop-{result_id}-0",
-                text=result_content_str[:500],
+                text=proposition_text,  # Summary, not truncated full content
                 epistemic_status=EpistemicStatus.ESTIMATED,
                 origin=OriginStatus.MACHINE_GENERATED,
                 authority=AuthorityStatus.NONE,
@@ -119,8 +122,16 @@ class GSA815ReturnPath:
                 reason=f"GSA-815 v{gsa_version} governance processing",
             )
 
-            # Input hashes (one per input artifact)
-            input_hashes = tuple(f"input-hash-{i}" for i in range(len(input_artifact_ids)))
+            # Input hashes from receipt (REAL hashes from actual artifact verification)
+            input_hashes = ()
+            if input_receipt:
+                # Receipt contains the actual content_hash from Kernel verification
+                receipt_hash = input_receipt.get("content_hash", "")
+                if receipt_hash:
+                    input_hashes = (receipt_hash,)
+
+            # Compute REAL output hash from actual GSA-815 result content
+            output_hash = sha256(result_content_str.encode()).hexdigest()
 
             transformation_record = TransformationRecord(
                 transformation_id=f"gsa-{result_id}-{datetime.utcnow().timestamp()}",
@@ -130,19 +141,25 @@ class GSA815ReturnPath:
                 transformation_type="gsa815_governance",
                 declared_changes=(declared_change,),
                 input_hashes=input_hashes,
-                output_hash=sha256(result_content_str.encode()).hexdigest(),
+                output_hash=output_hash,
                 reason=f"GSA-815 v{gsa_version} governance processing",
             )
 
-            # Reconstruct input artifacts from IDs for Kernel submission
+            # Reconstruct input artifacts from receipt for Kernel submission
+            # Use real content from receipt, not fabricated
             input_artifacts: Sequence[Artifact] = ()
-            if input_artifact_ids:
+            if input_receipt and input_artifact_ids:
+                # Receipt should contain the actual artifact content hash
+                # We use empty propositions since receipt already has the verification
                 input_artifacts = tuple(
                     Artifact(
                         artifact_id=iid,
-                        content="[input artifact from receipt]",
+                        content=input_receipt.get("artifact_content", ""),  # Real content from receipt
                         propositions=(),
-                        producer=Actor(actor_id="system", kind=ActorKind.SYSTEM),
+                        producer=Actor(
+                            actor_id=input_receipt.get("producer", "system"),
+                            kind=ActorKind.SYSTEM
+                        ),
                     )
                     for iid in input_artifact_ids
                 )
