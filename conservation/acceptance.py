@@ -1,6 +1,8 @@
 """GSA-815 entrance gate: validates Conservation Receipts before accepting artifacts."""
 
 from typing import Any, Dict, Optional, Tuple
+from hashlib import sha256
+import json
 
 
 class ConservationReceiptMissing(Exception):
@@ -20,6 +22,7 @@ class GSA815ConservationGate:
         self,
         artifact_id: str,
         receipt: Optional[Dict[str, Any]],
+        artifact_content: Optional[Any] = None,
     ) -> Tuple[bool, str]:
         """
         Validate that artifact has a valid conservation receipt.
@@ -27,6 +30,7 @@ class GSA815ConservationGate:
         Args:
             artifact_id: ID of incoming artifact
             receipt: ConservationReceipt dict (or None if missing)
+            artifact_content: Optional artifact content for hash verification
 
         Returns:
             (is_valid, reason) tuple
@@ -63,6 +67,17 @@ class GSA815ConservationGate:
         violations = receipt.get("violations", [])
         if violations:
             return False, f"Receipt contains violations: {violations}"
+
+        # Verify content hash if artifact content is provided
+        if artifact_content is not None and "content_hash" in receipt:
+            expected_hash = receipt.get("content_hash")
+            content_str = json.dumps(artifact_content) if isinstance(artifact_content, dict) else str(artifact_content)
+            actual_hash = sha256(content_str.encode()).hexdigest()
+            if actual_hash != expected_hash:
+                return False, (
+                    f"Content hash mismatch: expected {expected_hash}, got {actual_hash}. "
+                    f"Artifact may have been altered after conservation."
+                )
 
         return True, "Receipt is valid"
 

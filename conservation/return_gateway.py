@@ -1,7 +1,23 @@
 """GSA-815 return path: sends results back through Conservation Kernel."""
 
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Optional, Sequence
+import json
 from datetime import datetime
+from hashlib import sha256
+
+from conservation_kernel import (
+    ConservationKernel,
+    Artifact,
+    Proposition,
+    TransformationRecord,
+    Actor,
+    ActorKind,
+    DeclaredChange,
+    EpistemicStatus,
+    OriginStatus,
+    AuthorityStatus,
+    Dimension,
+)
 
 
 class GSA815ReturnPath:
@@ -56,39 +72,84 @@ class GSA815ReturnPath:
                 - "reason": str (if rejected)
         """
         try:
-            # Build transformation record for GSA processing
-            transformation_record = {
-                "transformation_id": f"gsa-{result_id}-{datetime.utcnow().timestamp()}",
-                "transformation_kind": "gsa815_governance",
-                "input_artifact_ids": (
-                    [input_receipt.get("artifact_id")] if input_receipt else []
-                ),
-                "output_artifact_id": result_id,
-                "declared_changes": f"GSA-815 governance processing (v{gsa_version})",
-                "actor": "GSA-815",
-                "timestamp": datetime.utcnow().isoformat() + "Z",
-            }
-
-            # Create output artifact
-            output_artifact = {
-                "artifact_id": result_id,
-                "content": result_content,
-                "produced_by": "GSA-815",
-                "created_at": datetime.utcnow().isoformat() + "Z",
-            }
-
-            # If we have input receipt, preserve its chain
+            # Build input artifacts from receipt lineage
+            input_artifact_ids = []
+            parent_artifact_ids = []
             if input_receipt:
-                transformation_record["input_artifact_ids"].append(
-                    input_receipt.get("artifact_id", "unknown")
-                )
-                output_artifact["lineage"] = input_receipt.get("lineage", []) + [
-                    input_receipt.get("artifact_id", "")
-                ]
+                input_artifact_ids.append(input_receipt.get("artifact_id", ""))
+                parent_artifact_ids = input_receipt.get("lineage", [])
 
-            # Submit to Kernel
+            # Create output artifact as proper Kernel Artifact object
+            result_content_str = json.dumps(result_content) if isinstance(result_content, dict) else str(result_content)
+            producer = Actor(
+                actor_id="gsa-815",
+                kind=ActorKind.SYSTEM,
+                label=f"GSA-815 v{gsa_version}",
+            )
+
+            proposition = Proposition(
+                proposition_id=f"prop-{result_id}-0",
+                text=result_content_str[:500],
+                epistemic_status=EpistemicStatus.ESTIMATED,
+                origin=OriginStatus.MACHINE_GENERATED,
+                authority=AuthorityStatus.NONE,
+                derivation_method="gsa815_governance",
+            )
+
+            output_artifact = Artifact(
+                artifact_id=result_id,
+                content=result_content_str,
+                propositions=(proposition,),
+                producer=producer,
+                parent_artifact_ids=tuple(parent_artifact_ids),
+            )
+
+            # Build transformation record as proper typed object
+            transformer = Actor(
+                actor_id="gsa-815",
+                kind=ActorKind.SYSTEM,
+                label=f"GSA-815 Governance (v{gsa_version})",
+            )
+
+            declared_change = DeclaredChange(
+                subject_id=result_id,
+                dimension=Dimension.EPISTEMIC_STATUS,
+                from_value="estimated",
+                to_value="gsa_verified",
+                reason=f"GSA-815 v{gsa_version} governance processing",
+            )
+
+            # Input hashes (one per input artifact)
+            input_hashes = tuple(f"input-hash-{i}" for i in range(len(input_artifact_ids)))
+
+            transformation_record = TransformationRecord(
+                transformation_id=f"gsa-{result_id}-{datetime.utcnow().timestamp()}",
+                input_artifact_ids=tuple(input_artifact_ids),
+                output_artifact_id=result_id,
+                transformer=transformer,
+                transformation_type="gsa815_governance",
+                declared_changes=(declared_change,),
+                input_hashes=input_hashes,
+                output_hash=sha256(result_content_str.encode()).hexdigest(),
+                reason=f"GSA-815 v{gsa_version} governance processing",
+            )
+
+            # Reconstruct input artifacts from IDs for Kernel submission
+            input_artifacts: Sequence[Artifact] = ()
+            if input_artifact_ids:
+                input_artifacts = tuple(
+                    Artifact(
+                        artifact_id=iid,
+                        content="[input artifact from receipt]",
+                        propositions=(),
+                        producer=Actor(actor_id="system", kind=ActorKind.SYSTEM),
+                    )
+                    for iid in input_artifact_ids
+                )
+
+            # Submit to Kernel with properly typed objects
             kernel_result = self.kernel.submit(
-                input_artifacts=None,
+                input_artifacts=input_artifacts,
                 output=output_artifact,
                 record=transformation_record,
             )
