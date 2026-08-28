@@ -16,6 +16,7 @@ from governance.friction_core import compute_friction
 from cassette_loader import CassetteLoader
 from cassette_schema import validate_cassette
 
+import hashlib
 import numpy as np
 import random
 
@@ -51,7 +52,12 @@ class IcebergCompleteSimulator:
         friction_events = []
         total_wait = 0.0
         
-        rng = random.Random(hash(caller_id) % 10000)
+        # Seed from a stable digest of the caller id, not the builtin
+        # hash(): str hashing is salted per process (PYTHONHASHSEED), so
+        # hash(caller_id) gave this simulator a different routing sequence
+        # on every run despite the "deterministic replay" contract.
+        seed = int.from_bytes(hashlib.sha256(caller_id.encode()).digest()[:8], "big")
+        rng = random.Random(seed)
         
         # Traverse graph
         while current_node != "exit" and len(journey) < 10:
