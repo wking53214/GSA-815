@@ -37,11 +37,60 @@ routing_topology capabilities; the metrics and dashboard modules export
 queue wait times and abandonment rates), so they leave the kernel with
 the rest of the IVR mission and belong to this repo.
 
-STILL OWED TO THIS REPO: copies of those three files. They are imported
-by code already here -- `production_harness.py` (metrics_prometheus,
-sentinel_core), `api_server.py` and `api_server_resilient.py`
-(grafana_dashboard), `Tests/test_bayes_learning_loop.py` (sentinel_core)
--- and none of the three has been copied across yet.
-
 Also dropped entirely, not carried forward: `gallm_coordinator.py` --
 zero importers anywhere in the original repo.
+
+## Owed files delivered (2026-08-27)
+
+The four IVR-shaped modules the wired code here imports but that were
+missing from this checkout have been copied in:
+
+| file | source it was copied from | state |
+|---|---|---|
+| `sentinel_core.py`        | `sentinel_os/sentinel_os/sentinel_core.py`         | byte-identical to source today (md5 `4dcd637f…`) |
+| `metrics_prometheus.py`   | `sentinel_os/sentinel_os/metrics_prometheus.py`   | byte-identical (md5 `0f8e5dae…`) |
+| `grafana_dashboard.py`    | `sentinel_os/sentinel_os/grafana_dashboard.py`    | byte-identical (md5 `2f8ed17e…`) |
+| `observe_perceive_core.py`| `observe/sentinel_os/observe_perceive_core.py` (identical in 5 locations) | byte-identical (md5 `32ab74f9…`) |
+
+`observe_perceive_core` was never named in the list above -- that
+omission is why its absence went unnoticed. It is imported by
+`production_harness.py` and `iceberg_complete_simulator.py`. It was
+deliberately removed from the kernel in sentinel_os commit `e50edc3`
+("moved to observe/imports/…"), so it is *not* coming back from the
+kernel; this repo now carries it. Its only non-stdlib import is
+`twilio_log_ingestion` (already here).
+
+Note -- two copies for now: the kernel still carries `sentinel_core`,
+`metrics_prometheus`, and `grafana_dashboard` (its own
+`production_harness.py` / `api_server_resilient.py` and ~9 kernel test
+files still import them). Removing the kernel's copies is a separate
+sentinel_os task with its own test burden; this repo does not depend on
+those kernel copies any more.
+
+## `governance/` package (2026-08-27)
+
+`governance/__init__.py` was removed. It made `governance/` a *regular*
+package that shadowed the kernel's `governance/` package on `sys.path`,
+so `from governance.ledger_postgres import …` (and `drift_core_v1`,
+`self_heal_v1`, `log_rotation_v1`) could not resolve -- the production
+spine and two test files did not import at all. With the `__init__.py`
+gone, `governance.*` resolves to the kernel package as intended.
+
+`governance/perceive_gate.py` is left in place but is **orphaned and was
+already broken**: it imports `governance_contracts` from a hard-coded
+`../../../observe-perceive` path that does not exist here, and nothing
+imports `perceive_gate`. Whoever owns the PERCEIVE integration should
+relocate it (e.g. to repo root as `perceive_gate.py`) or remove it.
+
+## Running it
+
+From a checkout with the `sentinel_os` kernel on `PYTHONPATH`:
+
+    PYTHONPATH=/path/to/sentinel_os/sentinel_os python3 -m pytest Tests/
+
+gives **60 passed, 3 errors**. The 3 errors are
+`Tests/test_production_harness_breakers.py::test_real_*` -- they need a
+live `iceberg` Postgres DB, a valid `ICEBERG_LEDGER_RUNTIME_USER`
+restricted role, and real outbound HTTPS to `api.anthropic.com` (they are
+explicitly "REAL infrastructure … no mock"). They are environment-gated,
+not code-blocked.
