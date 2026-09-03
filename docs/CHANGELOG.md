@@ -5,6 +5,27 @@ detail; this is the skim version.
 
 ## 2026-09-03
 
+- **Dead-weight sweep + governance-core consolidation.** Removed 14 files,
+  all zero-importer, none on the live path (`PYTHONPATH=<kernel> pytest
+  Tests/` stays at 127 passed / 0 errors):
+  - 3 further copies of the ~5,000-line "governance core" (`GSA.py`,
+    `GSA/GSA.py`, root `GSA_Governance_Operating_Core_Enterprise.py`);
+    `gsa-governance-core/` kept as the one canonical copy, with a README note
+    that nothing imports it.
+  - 4 flattened root artifacts from the same Gemini transcript
+    (`gsa-master-kernel-base-flattened.py`, three `*interlock-wrapper*.py`).
+  - `conservation/` (orphaned "return gateway"; also pulled an undeclared
+    `conservation_kernel` dep), `governance-control-plane/` + `INTEGRATION.md`
+    (dead "GOV4" skeleton), `governance/perceive_gate.py` (broken import,
+    orphaned). `governance/` is now empty and gone; `governance.*` still
+    resolves to the kernel package.
+  - The uncommitted 2026-09-02 `_canonicalize`/`compute_state_signature` edit
+    across the four cores was investigated and dropped (never ran; duplicated
+    `sage_k` hash-chaining; see `PROVENANCE.md`).
+  - `ruff` drops from 814 to 772 here; the remaining count is 763 in `GSA-2/`
+    (removed in the next PR) + 9 in `gsa-governance-core/` (fixed with the
+    CI gate).
+
 - **README + PROVENANCE reality-align.** The README opened with a
   general-purpose-architecture-framework framing that never stated what
   `DEPENDENCIES.md` says plainly: GSA-815 is the IVR/Iceberg application
