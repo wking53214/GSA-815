@@ -51,6 +51,13 @@ hash chain, DB-level immutability triggers, a witness ("twin"), and keyed
 HMAC attestation of the `authorized_by` field. GSA-815 depends on it directly
 (see `../DEPENDENCIES.md`); it is not reimplemented here.
 
+**Nothing in GSA-815 imports this module.** It is kept as a design reference
+and a runnable demo (`python GSA_Governance_Operating_Core_Enterprise.py`,
+`python test_harness.py`), not as a dependency of the live path. Three
+identical/near-identical copies elsewhere in the repo (`GSA.py`, `GSA/GSA.py`,
+a root copy) were removed 2026-09-03; this is the one kept copy. It descends
+from a Gemini design transcript — see `../PROVENANCE.md`.
+
 A `✓` in the table above means "a layer object exists and runs in the
 self-test," not "production-hardened." Specifically, in this file:
 

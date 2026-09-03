@@ -48,6 +48,34 @@ production governance path is the `sentinel_os` kernel ledger, not this file.
 full conversation, and 15 extracted code artifacts). It is being split out to
 its own archived repo in this pass; this file is updated when that lands.
 
+## Removed in the 2026-09-03 housekeeping pass
+
+All zero-importer; all recoverable from git history.
+
+- `GSA.py`, `GSA/GSA.py`, root `GSA_Governance_Operating_Core_Enterprise.py` —
+  three further copies of the governance core. `gsa-governance-core/` is kept
+  as the one canonical copy (the two variants differed by 7 trivial lines).
+- `gsa-master-kernel-base-flattened.py`, `gsa_universal_interlock_wrapper.py`,
+  `gsa-universal-interlock-wrapper-v7.py`, `gsa-cryptographic-interlock-wrapper.py`
+  — flattened single-file artifacts from the same transcript.
+- `conservation/` — an orphaned "return gateway" experiment (nothing imported
+  it; it also pulled an undeclared `conservation_kernel` dependency).
+- `governance-control-plane/` (`gov4_kernel`) + `INTEGRATION.md` — a small
+  incomplete "GOV4" skeleton and a doc describing it as co-located. Dead.
+- `governance/perceive_gate.py` — a broken PERCEIVE-integration stub (imported
+  `governance_contracts` from a path that does not exist; nothing imported it).
+  `governance/` then had no tracked files and is gone; `governance.*` still
+  resolves to the kernel package as intended (verified — the kernel's
+  `governance/` is a regular package and wins).
+
+An uncommitted local change dated 2026-09-02 (adding `_canonicalize` /
+`compute_state_signature` to the four core copies) was **investigated and
+dropped**: it never executed (a dataclass field-ordering error), it edited
+code with no importers, and it duplicated hash-chaining that already exists in
+`sentinel_os/sage_k/gsa_adapter.py`. It was the GSA-815 half of a cross-repo
+"state commitment" effort whose `observe-perceive` half (`cd61bc3`) is a
+separate, unresolved thread. The patch is preserved outside the repo.
+
 ## Known gaps
 
 - `docker-compose-prod.yml` and `k8s/` reference a `Dockerfile` that does not
