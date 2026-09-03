@@ -15,7 +15,7 @@ domain-specific consumer of it.
 | 2026-08-05 | `ee4bac7` "Extract IVR-side of sentinel_os into GSA-815" + `50bde52` `DEPENDENCIES.md`. This is the real starting point: the IVR mission (Twilio ingestion, the Claude governor client, the queue/staffing/Bayes/RL layer, the simulator, `production_harness.py`, `api_server_resilient.py`) moved out of the kernel tree. |
 | 2026-08 | A run of `Integrate <X> module into GSA-815` commits (`f0b70d6`, `47b14ac`, `2e7920c`, `e7f60f5`, `7b68b10`, `4b1075f`, `10deea8`) bulk-imported design material derived from an earlier Gemini transcript — see "Transcript-derived material" below. Most of it is not on the live path. |
 | 2026-08-28 → 09-03 | Prior sessions' PRs #1–#5: flagged the governance-core status, fixed the dependency blocker (dropped the shadowing `governance/__init__.py`, vendored the owed IVR modules), relocated the synthetic caller data, received the IVR island + `telemetry_pipeline` from the kernel's own IVR scrub, added a ghost-buster baseline. |
-| 2026-09-03 | This housekeeping pass: README/PROVENANCE reality-align (this PR), then a dead-weight sweep, `GSA-2/` split to its own archived repo, and kernel-as-submodule + CI (following PRs). See `docs/CHANGELOG.md`. |
+| 2026-09-03 | This housekeeping pass: README/PROVENANCE reality-align, dead-weight sweep, `GSA-2/` split to the archived [`GSA-Master-Kernel`](https://github.com/wking53214/GSA-Master-Kernel) repo, kernel-as-submodule + CI. See `docs/CHANGELOG.md`. |
 
 ## How it runs
 
@@ -35,18 +35,18 @@ shaped and left the kernel with the rest of the IVR mission:
 ## Transcript-derived material
 
 `gsa-governance-core/` (a self-contained "Unified Governance Operating Core"
-reference runtime, **not imported by any GSA-815 code**), the `GSA-2/`
-subdirectory, and several root `gsa-*.py` files descend from a Google Gemini
-design conversation.
+reference runtime, **not imported by any GSA-815 code**) and several now-removed
+root `gsa-*.py` files descend from a Google Gemini design conversation.
 
 The governance core is a deterministic reference/simulation runtime. Its
 ledger is an in-memory dict, its "attestation" records without checking, its
 "seal" does not sign — `gsa-governance-core/README.md` says so plainly. The
 production governance path is the `sentinel_os` kernel ledger, not this file.
 
-`GSA-2/` is the archived transcript itself (its own provenance record, the
-full conversation, and 15 extracted code artifacts). It is being split out to
-its own archived repo in this pass; this file is updated when that lands.
+That conversation — the full 178 KB transcript, its own provenance record, and
+15 extracted code artifacts — was the `GSA-2/` subdirectory here until
+2026-09-03. It now lives in its own archived repo:
+**[wking53214/GSA-Master-Kernel](https://github.com/wking53214/GSA-Master-Kernel)**.
 
 ## Removed in the 2026-09-03 housekeeping pass
 

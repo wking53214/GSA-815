@@ -56,7 +56,9 @@ and a runnable demo (`python GSA_Governance_Operating_Core_Enterprise.py`,
 `python test_harness.py`), not as a dependency of the live path. Three
 identical/near-identical copies elsewhere in the repo (`GSA.py`, `GSA/GSA.py`,
 a root copy) were removed 2026-09-03; this is the one kept copy. It descends
-from a Gemini design transcript — see `../PROVENANCE.md`.
+from a Gemini design transcript, now archived at
+[wking53214/GSA-Master-Kernel](https://github.com/wking53214/GSA-Master-Kernel)
+(see `../PROVENANCE.md`).
 
 A `✓` in the table above means "a layer object exists and runs in the
 self-test," not "production-hardened." Specifically, in this file:

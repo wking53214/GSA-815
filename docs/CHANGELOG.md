@@ -5,6 +5,15 @@ detail; this is the skim version.
 
 ## 2026-09-03
 
+- **`GSA-2/` split out to its own archived repo.** The `GSA-2/` subdirectory
+  was a full archived-transcript trio (178 KB `TRANSCRIPT.md`, a detailed
+  `PROVENANCE.md`, 15 extracted `artifact_*.py`) for a Gemini "GSA Master
+  Kernel" design conversation — no GSA-815 code imports it. Moved verbatim to
+  **[wking53214/GSA-Master-Kernel](https://github.com/wking53214/GSA-Master-Kernel)**
+  (public, born archived; a `README.md` + Apache-2.0 `LICENSE` added) and
+  removed from GSA-815. `gsa-governance-core/` and the deleted root `gsa-*.py`
+  artifacts descend from this transcript.
+
 - **Dead-weight sweep + governance-core consolidation.** Removed 14 files,
   all zero-importer, none on the live path (`PYTHONPATH=<kernel> pytest
   Tests/` stays at 127 passed / 0 errors):
