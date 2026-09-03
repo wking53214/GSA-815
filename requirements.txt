@@ -3,6 +3,14 @@
 # The kernel's own requirements are the source of truth for shared deps
 # (fastapi, uvicorn, psycopg2-binary, anthropic, numpy, redis, pytest, ...);
 # GSA-815 adds nothing of its own on top today.
+#
+# Run `pip install -r requirements.txt` from the REPO ROOT -- pip resolves the
+# `-r` path below relative to THIS file's directory, so it only works from here.
+#
+# The kernel's list pulls `conservation-kernel` from a git URL. GSA-815 does
+# not import it (the conservation/ integration was removed 2026-09-03); it
+# comes in transitively and is harmless -- not worth abandoning `-r` and
+# hand-maintaining a duplicate dependency list to drop one unused wheel.
 -r vendor/sentinel_os/sentinel_os/requirements.txt
 
 # anthropic 0.116.0 breaks on client construction with httpx>=0.28
