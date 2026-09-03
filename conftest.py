@@ -15,9 +15,27 @@ which needs a role it can surgically revoke INSERT from) set their own
 env vars for the duration of that test and are unaffected -- this
 fixture only fills in a default when the var is unset or empty, never
 overrides an explicit value.
+
+This file also puts the `sentinel_os` kernel on `sys.path`. The kernel is
+pinned as a git submodule at `vendor/sentinel_os` (see DEPENDENCIES.md); its
+package root is `vendor/sentinel_os/sentinel_os`. It is *appended*, not
+inserted at 0, on purpose: this repo carries its own IVR-shaped copies of
+`sentinel_core` / `metrics_prometheus` / `grafana_dashboard` /
+`observe_perceive_core` / `telemetry_pipeline` (per DEPENDENCIES.md), and the
+repo root must keep winning for those names -- only the genuinely owed kernel
+modules (`episode`, `event_v1`, `governance/`, ...) should resolve from the
+submodule.
 """
 import os
+import sys
+
 import pytest
+
+_KERNEL_ROOT = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "vendor", "sentinel_os", "sentinel_os"
+)
+if os.path.isdir(_KERNEL_ROOT) and _KERNEL_ROOT not in sys.path:
+    sys.path.append(_KERNEL_ROOT)
 
 _PG_OWNER = dict(host="localhost", port=5432, dbname="iceberg",
                   user="iceberg", password="iceberg")

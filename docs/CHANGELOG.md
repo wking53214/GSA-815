@@ -5,6 +5,21 @@ detail; this is the skim version.
 
 ## 2026-09-03
 
+- **Kernel as a git submodule + CI + ruff gate.** `sentinel_os` is now pinned
+  as a git submodule at `vendor/sentinel_os` (SHA `3cc0452`) instead of an
+  ambient `PYTHONPATH`. Root `conftest.py` appends
+  `vendor/sentinel_os/sentinel_os` to `sys.path` — *appended*, so this repo's
+  own IVR-shaped copies of `sentinel_core` / `metrics_prometheus` /
+  `grafana_dashboard` / `observe_perceive_core` / `telemetry_pipeline` still
+  win; only the owed kernel modules resolve from the submodule (verified).
+  New `requirements.txt` (`-r vendor/.../requirements.txt` + `httpx<0.28`).
+  New `.github/workflows/tests.yml` — GSA-815's **first CI**: native Postgres
+  + `redis-server` binary + submodule checkout + `pytest Tests/` (127 passed)
+  + a `ruff check . --exclude vendor` **hard gate**. Fixed the 9 ruff findings
+  that gate surfaced (all in `gsa-governance-core/`: 2 unused imports, 1
+  unused local, 6 compound-statement lines in `test_harness.py`).
+  `DEPENDENCIES.md` "Running it" rewritten for the submodule flow.
+
 - **`GSA-2/` split out to its own archived repo.** The `GSA-2/` subdirectory
   was a full archived-transcript trio (178 KB `TRANSCRIPT.md`, a detailed
   `PROVENANCE.md`, 15 extracted `artifact_*.py`) for a Gemini "GSA Master

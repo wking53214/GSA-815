@@ -1,0 +1,3 @@
+[submodule "vendor/sentinel_os"]
+	path = vendor/sentinel_os
+	url = https://github.com/wking53214/sentinel_os

@@ -1,0 +1,74 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # requirements.txt is `-r vendor/sentinel_os/sentinel_os/requirements.txt`
+          # plus httpx<0.28 -- the kernel submodule is the source of truth for
+          # the shared dependency set (fastapi, psycopg2-binary, anthropic, ...).
+          pip install -r requirements.txt
+          pip install "httpx<0.28"
+          # Pinned, same reasoning as the kernel repo: a new ruff release can
+          # broaden its default rule set and turn the gate red with no code
+          # change to blame. Bump deliberately.
+          pip install ruff==0.15.22
+
+      - name: Install redis-server binary
+        run: |
+          # Tests/test_grafts.py and Tests/test_bayes_learning_loop.py spawn
+          # their own redis-server subprocess on a custom port -- they need the
+          # binary on PATH, not a service container.
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq redis-server
+
+      - name: Install and start native Postgres
+        run: |
+          # The ledger (kernel governance/ledger_postgres.py) needs a real
+          # Postgres. conftest.py provisions the `ledger_reader` runtime role;
+          # Tests/test_production_harness_breakers.py provisions its own
+          # `ledger_write_test` role. Both need a superuser to connect as --
+          # the iceberg/iceberg identity every DSN in this repo assumes.
+          sudo apt-get install -y -qq postgresql
+          sudo service postgresql start
+          sudo -u postgres psql -c "CREATE ROLE iceberg WITH LOGIN SUPERUSER PASSWORD 'iceberg';"
+          sudo -u postgres psql -c "CREATE DATABASE iceberg OWNER iceberg;"
+          for i in $(seq 1 30); do
+            pg_isready -h localhost -p 5432 && break
+            sleep 1
+          done
+
+      - name: Run test suite
+        run: |
+          # No PYTHONPATH -- the root conftest.py puts
+          # vendor/sentinel_os/sentinel_os on sys.path (appended, so this
+          # repo's own IVR-shaped module copies still win). Runs as root so
+          # test_production_harness_breakers.py can create/revoke roles.
+          sudo -E env "PATH=$PATH" python -m pytest Tests/ -v --tb=short
+
+      - name: Lint (ruff)
+        if: always()
+        run: |
+          # Hard gate: `ruff check .` at zero findings, no `|| true`. `vendor/`
+          # (the kernel submodule) is excluded -- it has its own gate in its
+          # own repo and is pinned to a SHA here.
+          ruff check . --exclude vendor
