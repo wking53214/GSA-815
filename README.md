@@ -1,10 +1,37 @@
 # GSA-815
 
-A governed adaptive processing architecture for controlled decision-making, execution, simulation, learning, and system integration.
+A governed adaptive processing architecture for controlled decision-making, execution, simulation, learning, and system integration. The current implementation is an Interactive Voice Response (IVR) call-center system.
 
-GSA-815 is designed as a general-purpose architectural framework rather than as an implementation of a single application domain. Its current implementation uses an Interactive Voice Response (IVR) call-center environment as the primary demonstration scenario.
+## What this repo actually is
 
-The IVR is therefore the current application of the architecture, not the definition of the architecture itself.
+GSA-815 is the **IVR / "Iceberg" application** that was extracted out of the
+[`sentinel_os`](https://github.com/wking53214/sentinel_os) governance kernel.
+It is the domain-specific consumer; `sentinel_os` is the domain-blind
+governance substrate (append-only hash-chained ledger, episode/event schema,
+conservation boundary, twin witness).
+
+- **It does not run standalone.** GSA-815's code imports ~16 modules from the
+  `sentinel_os` kernel (`episode`, `event_v1`, `governance/`, `cassette_*`,
+  `circuit_breaker`, …) which are **deliberately not copied in here** — one
+  copy of the kernel, not two that can drift. See [`DEPENDENCIES.md`](DEPENDENCIES.md).
+- **The live path** is `production_harness.py` (`IcebergProductionHarness`) and
+  `api_server_resilient.py`. A call record goes friction-gate → Claude governor
+  → kernel `judge_episode` (shadow) → atomic ledger append.
+- **Provenance:** see [`PROVENANCE.md`](PROVENANCE.md). Several root-level
+  `gsa-*.py` files and `gsa-governance-core/` descend from an earlier Gemini
+  design transcript and are **not on the live path**.
+
+### Running it
+
+You need the `sentinel_os` kernel importable and a local Postgres reachable as
+`iceberg`/`iceberg`. [`DEPENDENCIES.md`](DEPENDENCIES.md) has the exact setup
+and the current test result (127 passed). Then:
+
+```bash
+python3 -m pytest Tests/
+```
+
+Everything below describes the architecture the IVR application demonstrates.
 
 ## Architectural Purpose
 

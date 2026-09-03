@@ -7,9 +7,11 @@ one copy of the kernel, not two that can quietly drift apart:
 
 - episode
 - event_v1
+- canonical_fields  (imported by `twilio_log_ingestion.py`, `sentinel_core.py`)
 - cassette_interface, cassette_loader, cassette_schema, cassette_capabilities, cassette_forensics
 - governance/ (ledger_postgres, etc.)
 - governance_decider  (base class of this repo's ClaudeGovernanceDecider)
+- governance_loop_guard  (`PipelineStateEngine`, imported by `production_harness.py`)
 - governor_injection_defense
 - ai_cost_tracking
 - queue_schema
@@ -102,13 +104,18 @@ in the same pass, so there is one copy, not two.
 
 ## Running it
 
-From a checkout with the `sentinel_os` kernel on `PYTHONPATH`:
+From a checkout with the `sentinel_os` kernel on `PYTHONPATH` and a local
+Postgres reachable as `iceberg`/`iceberg`:
 
     PYTHONPATH=/path/to/sentinel_os/sentinel_os python3 -m pytest Tests/
 
-gives **60 passed, 3 errors**. The 3 errors are
-`Tests/test_production_harness_breakers.py::test_real_*` -- they need a
-live `iceberg` Postgres DB, a valid `ICEBERG_LEDGER_RUNTIME_USER`
-restricted role, and real outbound HTTPS to `api.anthropic.com` (they are
-explicitly "REAL infrastructure … no mock"). They are environment-gated,
-not code-blocked.
+gives **127 passed, 0 errors** (2026-09-03; was "60 passed / 3 errors" on
+2026-08-27, before the IVR island and `telemetry_pipeline` arrived and before
+a local Postgres was assumed). `conftest.py` provisions the `ledger_reader`
+runtime role against that Postgres.
+
+`Tests/test_production_harness_breakers.py::test_real_*` exercise real
+infrastructure with no mocks -- a real (failing) anthropic call with a bad
+key, and a real restricted-role Postgres INSERT denial. They pass wherever
+that Postgres and outbound HTTPS exist; they are environment-gated, not
+code-blocked.
