@@ -23,8 +23,9 @@ GSA-815 imports ~16 modules from the `sentinel_os` kernel (`episode`,
 `event_v1`, `canonical_fields`, `governance_loop_guard`, `governance/`,
 `cassette_*`, `circuit_breaker`, `operational_resilience`, `tracing`,
 `array_ops`, `governor_injection_defense`, `ai_cost_tracking`, `api_key_auth`,
-`queue_schema`). These are **not vendored** — one copy of the kernel. See
-[`DEPENDENCIES.md`](DEPENDENCIES.md) for the current mechanism and test result.
+`queue_schema`). The kernel is pinned as a **git submodule** at
+`vendor/sentinel_os` — one copy, pinned to a SHA, not copied file-by-file.
+See [`DEPENDENCIES.md`](DEPENDENCIES.md) for the mechanism and test result.
 
 Five modules **are** carried here, on purpose, because they are IVR/telephony-
 shaped and left the kernel with the rest of the IVR mission:

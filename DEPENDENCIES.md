@@ -18,10 +18,9 @@ one copy of the kernel, not two that can quietly drift apart:
 - circuit_breaker, operational_resilience, api_key_auth, tracing
 - array_ops
 
-Until the kernel repo is packaged as something this repo can install
-(pip package, git submodule, or similar), the practical path is running
-this repo's code from inside a checkout that also has those files on
-PYTHONPATH -- same as it worked inside sentinel_os today.
+The kernel is pinned as a **git submodule** at `vendor/sentinel_os` (2026-09-03).
+`conftest.py` appends `vendor/sentinel_os/sentinel_os` to `sys.path`, so
+`pytest` needs no `PYTHONPATH`. See "Running it" below.
 
 ## Corrections (2026-08-05)
 
@@ -104,18 +103,28 @@ in the same pass, so there is one copy, not two.
 
 ## Running it
 
-From a checkout with the `sentinel_os` kernel on `PYTHONPATH` and a local
-Postgres reachable as `iceberg`/`iceberg`:
-
-    PYTHONPATH=/path/to/sentinel_os/sentinel_os python3 -m pytest Tests/
+```
+git submodule update --init          # fetches vendor/sentinel_os at the pinned SHA
+pip install -r requirements.txt       # = the kernel's requirements.txt + httpx<0.28
+pip install "httpx<0.28"
+# a local Postgres reachable as iceberg/iceberg (superuser)
+python3 -m pytest Tests/
+```
 
 gives **127 passed, 0 errors** (2026-09-03; was "60 passed / 3 errors" on
 2026-08-27, before the IVR island and `telemetry_pipeline` arrived and before
-a local Postgres was assumed). `conftest.py` provisions the `ledger_reader`
-runtime role against that Postgres.
+a local Postgres was assumed). `conftest.py` appends the kernel to `sys.path`
+and provisions the `ledger_reader` runtime role against that Postgres.
+
+CI (`.github/workflows/tests.yml`) does exactly this on every push/PR, plus a
+`ruff check . --exclude vendor` hard gate.
 
 `Tests/test_production_harness_breakers.py::test_real_*` exercise real
 infrastructure with no mocks -- a real (failing) anthropic call with a bad
 key, and a real restricted-role Postgres INSERT denial. They pass wherever
 that Postgres and outbound HTTPS exist; they are environment-gated, not
 code-blocked.
+
+To bump the kernel: `cd vendor/sentinel_os && git fetch && git checkout <sha>
+&& cd ../.. && git add vendor/sentinel_os`, then re-run the suite -- the
+transport/enum coupling the kernel repo warns about applies here too.

@@ -1,6 +1,7 @@
 
 #!/usr/bin/env python3
-import asyncio, sys
+import asyncio
+import sys
 from GSA_Governance_Operating_Core_Enterprise import (
     AuthorizationError, AuthorizationState, CitadelDiamondEngine,
     DataSanitizationEngine, GovernanceLedger, GovernanceStatus,
@@ -63,7 +64,8 @@ async def main():
     escaped = 0
     for t in ["api_key=sk-x", "password is x", "Bearer eyJ", "SECRET_TOKEN=x"]:
         try:
-            gate.inspect(t); escaped += 1
+            gate.inspect(t)
+            escaped += 1
         except PolicyViolation:
             pass
     if escaped:
@@ -77,10 +79,14 @@ async def main():
         "nested": {"api_key": "x", "apiKey": "y"},
         "token_value": "z", "credentials": {"pass": "h"}})
     survivors = []
-    if c.get("user_password") != "[REDACTED]": survivors.append("user_password")
-    if c["nested"].get("apiKey") != "[REDACTED]": survivors.append("apiKey")
-    if c.get("token_value") != "[REDACTED]": survivors.append("token_value")
-    if c.get("credentials",{}).get("pass") != "[REDACTED]": survivors.append("credentials.pass")
+    if c.get("user_password") != "[REDACTED]":
+        survivors.append("user_password")
+    if c["nested"].get("apiKey") != "[REDACTED]":
+        survivors.append("apiKey")
+    if c.get("token_value") != "[REDACTED]":
+        survivors.append("token_value")
+    if c.get("credentials", {}).get("pass") != "[REDACTED]":
+        survivors.append("credentials.pass")
     if survivors:
         fails += fail("sanitizer", f"Survived: {survivors}")
     else:

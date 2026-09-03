@@ -1,0 +1,11 @@
+# GSA-815 is the IVR/Iceberg application; the sentinel_os kernel it runs on is
+# a git submodule at vendor/sentinel_os (run `git submodule update --init`).
+# The kernel's own requirements are the source of truth for shared deps
+# (fastapi, uvicorn, psycopg2-binary, anthropic, numpy, redis, pytest, ...);
+# GSA-815 adds nothing of its own on top today.
+-r vendor/sentinel_os/sentinel_os/requirements.txt
+
+# anthropic 0.116.0 breaks on client construction with httpx>=0.28
+# ("unexpected keyword argument 'proxies'"). Kept here too in case the
+# kernel's pin drifts.
+httpx<0.28
