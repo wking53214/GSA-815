@@ -82,6 +82,24 @@ already broken**: it imports `governance_contracts` from a hard-coded
 imports `perceive_gate`. Whoever owns the PERCEIVE integration should
 relocate it (e.g. to repo root as `perceive_gate.py`) or remove it.
 
+## Received from the kernel (2026-09-03)
+
+`telemetry_pipeline.py` and `Tests/test_telemetry_pipeline.py` came over from
+`sentinel_os` in the kernel's IVR-scrub housekeeping pass (kernel PR #32
+follow-up). It is an in-memory call-telemetry collector + drift/abandonment/
+frustration reactor + an end-to-end simulation helper -- `CallMetric` carries
+`caller_id` / `queue` / `wait_time` / `emotional_frustration`, and the reactor
+emits queue abandonment rates. That is Iceberg/telephony-shaped by exactly the
+test the DEPENDENCIES corrections above apply to `sentinel_core` /
+`metrics_prometheus` / `grafana_dashboard`, so it belongs here, not in the
+domain-blind kernel. It had one orphaned test in the kernel and no live
+importer there.
+
+Stdlib-only (no kernel imports); `python3 -m pytest Tests/test_telemetry_pipeline.py`
+→ 4 passed with no `PYTHONPATH` set. Byte-identical to the kernel copy at
+transfer (md5 `2dc9bf7cc030a7090b250cbd4c6d57c2`); the kernel copy is removed
+in the same pass, so there is one copy, not two.
+
 ## Running it
 
 From a checkout with the `sentinel_os` kernel on `PYTHONPATH`:
