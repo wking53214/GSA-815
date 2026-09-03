@@ -153,9 +153,9 @@ Immutable Ledger Commit
 
 ```
 gsa-governance-core/
-├── GSA_Governance_Operating_Core_Enterprise.py   # Full runtime
-├── README.md
-└── .gitignore
+├── GSA_Governance_Operating_Core_Enterprise.py   # the full reference runtime
+├── test_harness.py                               # standalone adversarial harness (not a pytest file)
+└── README.md
 ```
 
 ---
