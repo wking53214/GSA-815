@@ -14,7 +14,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.013960+00:00",
-    "id": "ghost-d32caddf0686",
+    "id": "ghost-2da9239b5e65",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -35,7 +35,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014089+00:00",
-    "id": "ghost-6c0aa56a3099",
+    "id": "ghost-4f74f1fa09fb",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -56,7 +56,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014101+00:00",
-    "id": "ghost-3e5f1807ab25",
+    "id": "ghost-4278c50dc306",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -77,7 +77,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014118+00:00",
-    "id": "ghost-2e0990ef884a",
+    "id": "ghost-8c9ffe9c8293",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -98,7 +98,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014125+00:00",
-    "id": "ghost-865bf9c5706b",
+    "id": "ghost-a4fd95fcd034",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -119,7 +119,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014132+00:00",
-    "id": "ghost-7cb101912184",
+    "id": "ghost-bc55dfead8d9",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -140,7 +140,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014138+00:00",
-    "id": "ghost-1d816fa1c3ca",
+    "id": "ghost-103ee2d8847e",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -161,7 +161,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014148+00:00",
-    "id": "ghost-4b86919ee8d7",
+    "id": "ghost-4fb8a153beb1",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -182,7 +182,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014158+00:00",
-    "id": "ghost-8de12d085328",
+    "id": "ghost-bb3cd3343eb6",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -203,7 +203,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014174+00:00",
-    "id": "ghost-75bcb56fac33",
+    "id": "ghost-ba4c78be10c8",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -224,7 +224,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014181+00:00",
-    "id": "ghost-c36a9291ca2c",
+    "id": "ghost-703e941a1e5f",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -245,7 +245,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014187+00:00",
-    "id": "ghost-56ff57a7b458",
+    "id": "ghost-db1ca2d1fde2",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -266,7 +266,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014193+00:00",
-    "id": "ghost-de03d1cbd39a",
+    "id": "ghost-b98442bd6f72",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -287,7 +287,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014198+00:00",
-    "id": "ghost-418e970bc8fa",
+    "id": "ghost-18af13fb9098",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -308,7 +308,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014207+00:00",
-    "id": "ghost-b2087bcdde22",
+    "id": "ghost-9e291a43f05a",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -329,7 +329,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014215+00:00",
-    "id": "ghost-0fe683a8c96f",
+    "id": "ghost-5622f7a00e7e",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -350,7 +350,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014220+00:00",
-    "id": "ghost-e692d1ab3397",
+    "id": "ghost-49bd9a1d5640",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -371,7 +371,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014233+00:00",
-    "id": "ghost-a1d17f67a928",
+    "id": "ghost-12df38f4edd0",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -392,7 +392,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014238+00:00",
-    "id": "ghost-f11dc5700a76",
+    "id": "ghost-13d0d38ad005",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -413,7 +413,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014248+00:00",
-    "id": "ghost-94365529e5c1",
+    "id": "ghost-a7ab5ac90879",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -434,7 +434,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014253+00:00",
-    "id": "ghost-944e96df8487",
+    "id": "ghost-d447897cb8e8",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -455,7 +455,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014258+00:00",
-    "id": "ghost-ec344598041c",
+    "id": "ghost-5f429cca1f3b",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -476,7 +476,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014263+00:00",
-    "id": "ghost-7ff01fe4ac4e",
+    "id": "ghost-ece168a544e3",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -497,7 +497,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014270+00:00",
-    "id": "ghost-2b72c811a10f",
+    "id": "ghost-a90ec00b4b2b",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -518,7 +518,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014286+00:00",
-    "id": "ghost-d91d3c747ba2",
+    "id": "ghost-c9140001fc70",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -539,7 +539,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014292+00:00",
-    "id": "ghost-fad42ff36fba",
+    "id": "ghost-1cbecb5e7ede",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -560,7 +560,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014297+00:00",
-    "id": "ghost-f25339262c53",
+    "id": "ghost-febda2a55960",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -581,7 +581,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014302+00:00",
-    "id": "ghost-308b70837d06",
+    "id": "ghost-e9deadc56d8c",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -602,7 +602,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014307+00:00",
-    "id": "ghost-537dce356c06",
+    "id": "ghost-e8fd599f4bbf",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -623,7 +623,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014312+00:00",
-    "id": "ghost-bc85e4b7a43a",
+    "id": "ghost-fa150e14afcf",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -644,7 +644,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014317+00:00",
-    "id": "ghost-aa6806d7ca53",
+    "id": "ghost-4b3d738d7376",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -665,7 +665,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014325+00:00",
-    "id": "ghost-f58806d45a6a",
+    "id": "ghost-48acb2695c84",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -686,7 +686,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014331+00:00",
-    "id": "ghost-fd4fa2f4435b",
+    "id": "ghost-0e92f6caa3e0",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -707,7 +707,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014337+00:00",
-    "id": "ghost-ede1b5646199",
+    "id": "ghost-e2fc4a0420ef",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -728,7 +728,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014342+00:00",
-    "id": "ghost-1a8e0ed9cfa1",
+    "id": "ghost-a899a9f3e073",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -749,7 +749,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014347+00:00",
-    "id": "ghost-7d402dd0ed26",
+    "id": "ghost-6eb57d7b8f96",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -770,7 +770,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014352+00:00",
-    "id": "ghost-0232459b7929",
+    "id": "ghost-e65f0612da73",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -791,7 +791,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014358+00:00",
-    "id": "ghost-68af375eb415",
+    "id": "ghost-b1682fca2e55",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -812,7 +812,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014369+00:00",
-    "id": "ghost-58f191a4a795",
+    "id": "ghost-771e38530585",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -833,7 +833,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014375+00:00",
-    "id": "ghost-bcbfa4ed3b9e",
+    "id": "ghost-ef38af9b758c",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -854,7 +854,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014381+00:00",
-    "id": "ghost-c355c6718556",
+    "id": "ghost-6dfb9d16a681",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -875,7 +875,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014392+00:00",
-    "id": "ghost-da7c5e4c98eb",
+    "id": "ghost-d2941b80320f",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -896,7 +896,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014398+00:00",
-    "id": "ghost-456bc20906e6",
+    "id": "ghost-ee41f93f4b4e",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -917,7 +917,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014403+00:00",
-    "id": "ghost-823cdb0fe40a",
+    "id": "ghost-00f9e9f4b14a",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -938,7 +938,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014448+00:00",
-    "id": "ghost-13969998d3a8",
+    "id": "ghost-2b0a85c12d3d",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -959,7 +959,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014455+00:00",
-    "id": "ghost-962b75883c58",
+    "id": "ghost-fe5c791b146d",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -980,7 +980,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014464+00:00",
-    "id": "ghost-60f9740ce4fb",
+    "id": "ghost-5b34c3fa62e7",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1001,7 +1001,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014470+00:00",
-    "id": "ghost-f57d54c1e316",
+    "id": "ghost-a76ee38749ca",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1022,7 +1022,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014475+00:00",
-    "id": "ghost-780cfe183d26",
+    "id": "ghost-630646a1b484",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1043,7 +1043,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014482+00:00",
-    "id": "ghost-69bf7b804a8d",
+    "id": "ghost-ec104ec2f6b5",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1064,7 +1064,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014488+00:00",
-    "id": "ghost-def4c0b65b0e",
+    "id": "ghost-9c7593e13cb2",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1085,7 +1085,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014493+00:00",
-    "id": "ghost-b26971159f27",
+    "id": "ghost-1f44787898ab",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1106,7 +1106,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014498+00:00",
-    "id": "ghost-4c303196445e",
+    "id": "ghost-0368f6ffc27b",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1127,7 +1127,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014504+00:00",
-    "id": "ghost-c6641f0c96f0",
+    "id": "ghost-350b533852c4",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1148,7 +1148,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014524+00:00",
-    "id": "ghost-ddc66565757b",
+    "id": "ghost-ac2f810facc2",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1169,7 +1169,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014531+00:00",
-    "id": "ghost-c6e48602b021",
+    "id": "ghost-5e2c033893e1",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1190,7 +1190,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014536+00:00",
-    "id": "ghost-744b47dd9379",
+    "id": "ghost-39bbd0b1d2d7",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1211,7 +1211,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014542+00:00",
-    "id": "ghost-29d13d2ff5d7",
+    "id": "ghost-e2517cdd37dd",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1232,7 +1232,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014547+00:00",
-    "id": "ghost-4232656bd30a",
+    "id": "ghost-499697f2e48f",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1253,7 +1253,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014552+00:00",
-    "id": "ghost-be932d2c9800",
+    "id": "ghost-44feff9698fe",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1274,7 +1274,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014566+00:00",
-    "id": "ghost-49cf6daf147e",
+    "id": "ghost-27ebb76ff455",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1295,7 +1295,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014577+00:00",
-    "id": "ghost-726ea303bf0f",
+    "id": "ghost-e2db8f0fbb4c",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1316,7 +1316,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014587+00:00",
-    "id": "ghost-cd501b5fa893",
+    "id": "ghost-4b22ae081e29",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1337,7 +1337,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014594+00:00",
-    "id": "ghost-b4c664abdfd9",
+    "id": "ghost-97cfc482f239",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1358,7 +1358,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.014601+00:00",
-    "id": "ghost-81bccecf8509",
+    "id": "ghost-f3f986016058",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1379,7 +1379,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.034112+00:00",
-    "id": "ghost-76d59b166525",
+    "id": "ghost-dc4c5528eaf3",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1400,7 +1400,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.034294+00:00",
-    "id": "ghost-04d65681e56a",
+    "id": "ghost-701e9acb10ae",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1421,7 +1421,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.034310+00:00",
-    "id": "ghost-67e920e7a12f",
+    "id": "ghost-eb26d48d3fe8",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1442,7 +1442,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.034375+00:00",
-    "id": "ghost-24f33519921c",
+    "id": "ghost-fcdcb1c9cf75",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1463,7 +1463,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.034401+00:00",
-    "id": "ghost-59b0719f6a44",
+    "id": "ghost-fff5357bee2b",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1484,7 +1484,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.034660+00:00",
-    "id": "ghost-f4080ae75f20",
+    "id": "ghost-be77531782ed",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1505,7 +1505,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.034673+00:00",
-    "id": "ghost-1323f69e761a",
+    "id": "ghost-27ed09c58e32",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -1526,7 +1526,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.034689+00:00",
-    "id": "ghost-2fbc195aedde",
+    "id": "ghost-8b9f4480e6cf",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1547,7 +1547,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.034704+00:00",
-    "id": "ghost-31dce8c1a1bc",
+    "id": "ghost-0ffc045acf4b",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1568,7 +1568,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.034719+00:00",
-    "id": "ghost-b5ab215326ea",
+    "id": "ghost-6b6b35287c2a",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1589,7 +1589,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.058608+00:00",
-    "id": "ghost-06fa263b56c3",
+    "id": "ghost-25f02c53440e",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1610,7 +1610,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.075709+00:00",
-    "id": "ghost-b67bad11cea1",
+    "id": "ghost-435a954bba3e",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1631,7 +1631,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.075891+00:00",
-    "id": "ghost-b9a5b18d7d03",
+    "id": "ghost-a45743100c8c",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1652,7 +1652,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.075906+00:00",
-    "id": "ghost-cb441e5985a3",
+    "id": "ghost-1774759078c1",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1673,7 +1673,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.075977+00:00",
-    "id": "ghost-2b4152a423e7",
+    "id": "ghost-9385eef197e8",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1694,7 +1694,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.076021+00:00",
-    "id": "ghost-af6d0a37411a",
+    "id": "ghost-0da7950f5518",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1715,7 +1715,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.076357+00:00",
-    "id": "ghost-079b25c64557",
+    "id": "ghost-f10838801013",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1736,7 +1736,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.076374+00:00",
-    "id": "ghost-990d3c7dfe0e",
+    "id": "ghost-ef4d4d5904d9",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -1757,7 +1757,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.076391+00:00",
-    "id": "ghost-15c3b3f64393",
+    "id": "ghost-e28a6de4b828",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1778,7 +1778,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.076406+00:00",
-    "id": "ghost-7d178298328e",
+    "id": "ghost-dc2a6f48d344",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1799,7 +1799,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.076428+00:00",
-    "id": "ghost-58174236f818",
+    "id": "ghost-504835758cd6",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1820,7 +1820,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.088769+00:00",
-    "id": "ghost-63edf7fe49f7",
+    "id": "ghost-042b95b1994d",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1841,7 +1841,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.088969+00:00",
-    "id": "ghost-f61ced313dc2",
+    "id": "ghost-4ddf586cc8ec",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1862,7 +1862,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.088985+00:00",
-    "id": "ghost-feedb2bcc3af",
+    "id": "ghost-394e089e605a",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1883,7 +1883,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.089092+00:00",
-    "id": "ghost-fd419613575d",
+    "id": "ghost-8a77e2ad8742",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1904,7 +1904,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.089120+00:00",
-    "id": "ghost-63a4d272c142",
+    "id": "ghost-27199e040fc6",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1925,7 +1925,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.089341+00:00",
-    "id": "ghost-e01166cbee95",
+    "id": "ghost-681a341f4c12",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1946,7 +1946,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.089353+00:00",
-    "id": "ghost-54bfb9da7411",
+    "id": "ghost-41d450c49a06",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -1967,7 +1967,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.089367+00:00",
-    "id": "ghost-a35ba890e085",
+    "id": "ghost-cfe853db91fa",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -1988,7 +1988,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.089383+00:00",
-    "id": "ghost-fcca17fc2c34",
+    "id": "ghost-3259e69b54a8",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2009,7 +2009,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.089398+00:00",
-    "id": "ghost-8db847962a16",
+    "id": "ghost-5efd5327a100",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2030,7 +2030,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.117061+00:00",
-    "id": "ghost-7b4335ef52c3",
+    "id": "ghost-d48629a62d48",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2051,7 +2051,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.132960+00:00",
-    "id": "ghost-072fa373ed1b",
+    "id": "ghost-1f1e75f8fdee",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2072,7 +2072,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.133003+00:00",
-    "id": "ghost-3a74f3775cbc",
+    "id": "ghost-0c7eb8870c44",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2093,7 +2093,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.133013+00:00",
-    "id": "ghost-72a1ab6c417f",
+    "id": "ghost-c71aab55ab94",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2114,7 +2114,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.133030+00:00",
-    "id": "ghost-356b0a4738e6",
+    "id": "ghost-79415db49458",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2135,7 +2135,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.136482+00:00",
-    "id": "ghost-799387006286",
+    "id": "ghost-dccc71e9ea04",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2156,7 +2156,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.148508+00:00",
-    "id": "ghost-8324bef35b82",
+    "id": "ghost-005a835a1edd",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2177,7 +2177,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.148797+00:00",
-    "id": "ghost-b7b76d8fc824",
+    "id": "ghost-da811c9edfac",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2198,7 +2198,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.148816+00:00",
-    "id": "ghost-7de3c02a19d0",
+    "id": "ghost-7ad569e8ca3e",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2219,7 +2219,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.148883+00:00",
-    "id": "ghost-214428ce3c17",
+    "id": "ghost-239d634a4a37",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2240,7 +2240,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.148909+00:00",
-    "id": "ghost-d7ffdf6ae609",
+    "id": "ghost-e61b8649b911",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2261,7 +2261,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.149167+00:00",
-    "id": "ghost-1eec65223b93",
+    "id": "ghost-9b8814de4009",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2282,7 +2282,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.149180+00:00",
-    "id": "ghost-813798bf6037",
+    "id": "ghost-e051e2563395",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -2303,7 +2303,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.149196+00:00",
-    "id": "ghost-fc5088d53ca9",
+    "id": "ghost-4677964ef7a4",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2324,7 +2324,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.149211+00:00",
-    "id": "ghost-e838848c5171",
+    "id": "ghost-ffb357894c5c",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2345,7 +2345,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.149227+00:00",
-    "id": "ghost-33cb298c29c8",
+    "id": "ghost-08d844e04d4c",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2366,7 +2366,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.154519+00:00",
-    "id": "ghost-dd68fef361b5",
+    "id": "ghost-f335a01006c6",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2387,7 +2387,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.156171+00:00",
-    "id": "ghost-4a1e73c9a523",
+    "id": "ghost-ca59c03c4b85",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2408,7 +2408,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.157975+00:00",
-    "id": "ghost-b90fff8a8253",
+    "id": "ghost-543873a4cf65",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2429,7 +2429,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.171564+00:00",
-    "id": "ghost-a543dddfec49",
+    "id": "ghost-b17deb485826",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2450,7 +2450,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.171611+00:00",
-    "id": "ghost-72fdf5caca56",
+    "id": "ghost-1558679dfde3",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2471,7 +2471,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.171623+00:00",
-    "id": "ghost-c6538bfb4826",
+    "id": "ghost-e58219489ed3",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -2494,7 +2494,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.444985+00:00",
-    "id": "ghost-c504eead8a5d",
+    "id": "ghost-32f38fe37af1",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2517,7 +2517,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445025+00:00",
-    "id": "ghost-4c83be129656",
+    "id": "ghost-5d15f75d5bac",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2540,7 +2540,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445039+00:00",
-    "id": "ghost-345ae189e832",
+    "id": "ghost-c2f23c8774b0",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2563,7 +2563,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445049+00:00",
-    "id": "ghost-aa9d659bf2fa",
+    "id": "ghost-26911e2d0682",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2586,7 +2586,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445059+00:00",
-    "id": "ghost-e3953d9e2e80",
+    "id": "ghost-4f971d1fe264",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -2611,7 +2611,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445077+00:00",
-    "id": "ghost-dffe5da1ac1c",
+    "id": "ghost-3269a4358e5f",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -2636,7 +2636,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445091+00:00",
-    "id": "ghost-2e87fde43baa",
+    "id": "ghost-76db8eaa5409",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -2661,7 +2661,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445104+00:00",
-    "id": "ghost-a86d15d0e797",
+    "id": "ghost-37c5044127f0",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -2686,7 +2686,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445116+00:00",
-    "id": "ghost-86464c89a18a",
+    "id": "ghost-d1eefaa7eaf2",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -2711,7 +2711,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445129+00:00",
-    "id": "ghost-97db5e2c35be",
+    "id": "ghost-84f2caf3cdfd",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -2736,7 +2736,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445141+00:00",
-    "id": "ghost-116dfcfad778",
+    "id": "ghost-1f215d8720d1",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -2761,7 +2761,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445158+00:00",
-    "id": "ghost-4d6cd9ed1b74",
+    "id": "ghost-1062bb3b9427",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -2786,7 +2786,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445171+00:00",
-    "id": "ghost-49613bf0065b",
+    "id": "ghost-85dc29da6dc7",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -2823,7 +2823,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445199+00:00",
-    "id": "ghost-94bdbf253697",
+    "id": "ghost-1d167da49823",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -2848,7 +2848,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445213+00:00",
-    "id": "ghost-ea37ccfd24b4",
+    "id": "ghost-40bd767e6a23",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -2873,7 +2873,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445225+00:00",
-    "id": "ghost-a242f5acd52c",
+    "id": "ghost-15c5531ca167",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -2898,7 +2898,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445237+00:00",
-    "id": "ghost-3a8cc8b6a615",
+    "id": "ghost-5047fecef2ba",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -2923,7 +2923,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445248+00:00",
-    "id": "ghost-7a22768194e5",
+    "id": "ghost-b764ea029eed",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -2948,7 +2948,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445261+00:00",
-    "id": "ghost-4089301e2fb6",
+    "id": "ghost-1c229d3fc0a8",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -2973,7 +2973,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445272+00:00",
-    "id": "ghost-f2b9d35a9937",
+    "id": "ghost-c28c6eb18b8c",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3002,7 +3002,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445290+00:00",
-    "id": "ghost-0c0fb68fc78c",
+    "id": "ghost-2ce4bb5f9fdd",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3031,7 +3031,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445306+00:00",
-    "id": "ghost-610c7288df46",
+    "id": "ghost-40984245d8c6",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3056,7 +3056,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445317+00:00",
-    "id": "ghost-d522f848672f",
+    "id": "ghost-d0c29f48322a",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3081,7 +3081,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445328+00:00",
-    "id": "ghost-d8e86da22c7e",
+    "id": "ghost-2f6c58abc27b",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3106,7 +3106,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445339+00:00",
-    "id": "ghost-0da5100feaa8",
+    "id": "ghost-0d5f9d51a1dc",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3131,7 +3131,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445351+00:00",
-    "id": "ghost-8cce1937138e",
+    "id": "ghost-edf36db53ae1",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3156,7 +3156,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445363+00:00",
-    "id": "ghost-8fd911d1d934",
+    "id": "ghost-add71c7ae19b",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3181,7 +3181,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445375+00:00",
-    "id": "ghost-d1367d92b307",
+    "id": "ghost-0fc55ecab2b5",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3206,7 +3206,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445386+00:00",
-    "id": "ghost-660881a8c567",
+    "id": "ghost-11b917355435",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3231,7 +3231,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445402+00:00",
-    "id": "ghost-c0f0ed4c6555",
+    "id": "ghost-7a6e073a2d2a",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3256,7 +3256,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445414+00:00",
-    "id": "ghost-f6aa22008a14",
+    "id": "ghost-2daaebf7c916",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3281,7 +3281,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445425+00:00",
-    "id": "ghost-a36fc705c6f9",
+    "id": "ghost-e67abbc1c45c",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3306,7 +3306,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445437+00:00",
-    "id": "ghost-77ac660ee3a1",
+    "id": "ghost-7b97392951d2",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3331,7 +3331,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445450+00:00",
-    "id": "ghost-56374377cee3",
+    "id": "ghost-1e5c0cf88e9c",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3356,7 +3356,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445462+00:00",
-    "id": "ghost-13609df9c6e7",
+    "id": "ghost-d93aefabf29a",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3381,7 +3381,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445473+00:00",
-    "id": "ghost-4d4ff6da0f7f",
+    "id": "ghost-53e90bbe9f56",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3406,7 +3406,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445483+00:00",
-    "id": "ghost-07239779c8de",
+    "id": "ghost-2a4a2902070a",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3431,7 +3431,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445495+00:00",
-    "id": "ghost-6fd58ecf3f3d",
+    "id": "ghost-b41fdb043bb7",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3456,7 +3456,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445505+00:00",
-    "id": "ghost-03cfb7424a12",
+    "id": "ghost-1297720759d6",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3493,7 +3493,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445538+00:00",
-    "id": "ghost-831383ed7d60",
+    "id": "ghost-ee5a9dbf2f14",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3518,7 +3518,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445552+00:00",
-    "id": "ghost-88c56902ce3d",
+    "id": "ghost-da429164bf70",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3543,7 +3543,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445565+00:00",
-    "id": "ghost-d038ce755340",
+    "id": "ghost-f8a0e4f9c9d0",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3568,7 +3568,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445578+00:00",
-    "id": "ghost-324b075f75e2",
+    "id": "ghost-a813a0259d72",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3593,7 +3593,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445589+00:00",
-    "id": "ghost-b8133778e852",
+    "id": "ghost-f59c4dd4cfb7",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3618,7 +3618,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445601+00:00",
-    "id": "ghost-d5e5dbe4a2f2",
+    "id": "ghost-92b98a52e54d",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3643,7 +3643,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445612+00:00",
-    "id": "ghost-3894111e396c",
+    "id": "ghost-7ffdd1b9af3f",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3668,7 +3668,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445625+00:00",
-    "id": "ghost-f0fdfd32c77e",
+    "id": "ghost-b222960fbd64",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3693,7 +3693,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445636+00:00",
-    "id": "ghost-1f8f35e611db",
+    "id": "ghost-366fe07597ad",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3718,7 +3718,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445647+00:00",
-    "id": "ghost-b0d43d6e94da",
+    "id": "ghost-c1a8e7b0a410",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3743,7 +3743,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.445658+00:00",
-    "id": "ghost-9b4385a1fd64",
+    "id": "ghost-1181f09de42f",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3768,7 +3768,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446407+00:00",
-    "id": "ghost-f0a712e80509",
+    "id": "ghost-5c91e0c2d1f1",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3793,7 +3793,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446427+00:00",
-    "id": "ghost-d4cb48663512",
+    "id": "ghost-d07d46380638",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3818,7 +3818,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446439+00:00",
-    "id": "ghost-c2e62f7a09fc",
+    "id": "ghost-d42338058e9f",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3843,7 +3843,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446458+00:00",
-    "id": "ghost-69c37a290a04",
+    "id": "ghost-b985a52e473b",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3868,7 +3868,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446469+00:00",
-    "id": "ghost-bb6844e3f219",
+    "id": "ghost-e49bea92fc1e",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3893,7 +3893,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446480+00:00",
-    "id": "ghost-4d0abb011a0a",
+    "id": "ghost-7d3059b274bf",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3918,7 +3918,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446491+00:00",
-    "id": "ghost-2882ec2f3f81",
+    "id": "ghost-938855f00b77",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3943,7 +3943,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446503+00:00",
-    "id": "ghost-b4ff637d1995",
+    "id": "ghost-86a15ba61dac",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3968,7 +3968,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446522+00:00",
-    "id": "ghost-026ba9d86438",
+    "id": "ghost-f154fde60ced",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -3993,7 +3993,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446538+00:00",
-    "id": "ghost-75c238d3c268",
+    "id": "ghost-a80e0545c274",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -4018,7 +4018,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446549+00:00",
-    "id": "ghost-f551adf99af6",
+    "id": "ghost-1bdc4f6670c0",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -4043,7 +4043,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446560+00:00",
-    "id": "ghost-c90d88834492",
+    "id": "ghost-f853aebf2e38",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -4068,7 +4068,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446570+00:00",
-    "id": "ghost-07b45e5fbc3e",
+    "id": "ghost-4a617b0b0bd7",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -4093,7 +4093,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446583+00:00",
-    "id": "ghost-e6464daca454",
+    "id": "ghost-29a534d8ef5d",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -4118,7 +4118,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446594+00:00",
-    "id": "ghost-68e351b969f8",
+    "id": "ghost-1d8b5b16b765",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -4143,7 +4143,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446605+00:00",
-    "id": "ghost-509e27e907c6",
+    "id": "ghost-a345958092ed",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -4168,7 +4168,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446617+00:00",
-    "id": "ghost-66c919c33731",
+    "id": "ghost-1616442e3ef2",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -4193,7 +4193,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446629+00:00",
-    "id": "ghost-0ad084e781e3",
+    "id": "ghost-076ff69cfbaa",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -4218,7 +4218,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446641+00:00",
-    "id": "ghost-0d4fcb547adb",
+    "id": "ghost-a7a45b625fcf",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -4243,7 +4243,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446652+00:00",
-    "id": "ghost-749bc17e8dd2",
+    "id": "ghost-a627adb31abb",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -4268,7 +4268,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446663+00:00",
-    "id": "ghost-d04f3938ea5d",
+    "id": "ghost-73ea2dc645ff",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -4293,7 +4293,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446674+00:00",
-    "id": "ghost-38b7b691d9b5",
+    "id": "ghost-2a121c289be9",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -4318,7 +4318,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446687+00:00",
-    "id": "ghost-32a54d3a88ff",
+    "id": "ghost-2916a7403ffe",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -4343,7 +4343,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446697+00:00",
-    "id": "ghost-e10134760375",
+    "id": "ghost-dde32a704ed8",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -4366,7 +4366,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446710+00:00",
-    "id": "ghost-f5bfdbe07bb0",
+    "id": "ghost-1b2bccab29bb",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -4389,7 +4389,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446720+00:00",
-    "id": "ghost-31a0a5b37a34",
+    "id": "ghost-fbc2c8461f4a",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -4412,7 +4412,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446730+00:00",
-    "id": "ghost-1c582e76ff48",
+    "id": "ghost-88ec4c8efc60",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -4435,7 +4435,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446740+00:00",
-    "id": "ghost-0d8420855f19",
+    "id": "ghost-842920466f52",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -4461,7 +4461,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446755+00:00",
-    "id": "ghost-85cd00f891d5",
+    "id": "ghost-57ea1b57ec87",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -4485,7 +4485,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446766+00:00",
-    "id": "ghost-2d9a7f852d27",
+    "id": "ghost-ccc8cb0a2808",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -4509,7 +4509,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446777+00:00",
-    "id": "ghost-73f925609ae5",
+    "id": "ghost-35479d92ab32",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -4532,7 +4532,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446790+00:00",
-    "id": "ghost-c058d1fe5bec",
+    "id": "ghost-8fb2ed473ee7",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -4555,7 +4555,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446800+00:00",
-    "id": "ghost-683f51d0132d",
+    "id": "ghost-3fa15160d655",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -4578,7 +4578,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446810+00:00",
-    "id": "ghost-a0ccdadcd715",
+    "id": "ghost-75d23f245798",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -4601,7 +4601,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446825+00:00",
-    "id": "ghost-de02c0515b8e",
+    "id": "ghost-213eb55d0004",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -4624,7 +4624,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446838+00:00",
-    "id": "ghost-044e026f1557",
+    "id": "ghost-f05053a4ea49",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -4649,7 +4649,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.446855+00:00",
-    "id": "ghost-ddcf350b66ab",
+    "id": "ghost-ea5e330a220a",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -4673,7 +4673,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.472861+00:00",
-    "id": "ghost-d26a1bbb385e",
+    "id": "ghost-6d2eda47bfc7",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -4696,7 +4696,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.478235+00:00",
-    "id": "ghost-25f1d22e11f0",
+    "id": "ghost-d3cf2686c240",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -4725,7 +4725,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.482189+00:00",
-    "id": "ghost-91a88b13bf9b",
+    "id": "ghost-d89c975fe774",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -4748,7 +4748,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.496913+00:00",
-    "id": "ghost-5ca30a142f82",
+    "id": "ghost-2aef6891c338",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -4771,7 +4771,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.514486+00:00",
-    "id": "ghost-3fa6656acb85",
+    "id": "ghost-f9da5c7dd210",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -4794,7 +4794,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.525208+00:00",
-    "id": "ghost-05c7c16a1859",
+    "id": "ghost-172914484a54",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -4817,7 +4817,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.543062+00:00",
-    "id": "ghost-de4191965fbc",
+    "id": "ghost-44cb2b10854b",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -4840,7 +4840,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.543652+00:00",
-    "id": "ghost-bfe2aa75b8ad",
+    "id": "ghost-04e61d572df1",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -4863,7 +4863,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.551976+00:00",
-    "id": "ghost-59c9a5d88b9a",
+    "id": "ghost-2b6f9c6610de",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -4886,7 +4886,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.557184+00:00",
-    "id": "ghost-989bda166f73",
+    "id": "ghost-913bb816f7e4",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -4909,7 +4909,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.559235+00:00",
-    "id": "ghost-8b9a06b4a7b3",
+    "id": "ghost-745430a00423",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -4932,7 +4932,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.566506+00:00",
-    "id": "ghost-9d5c040f6f1b",
+    "id": "ghost-2685e6ea2ee0",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -4956,7 +4956,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.584670+00:00",
-    "id": "ghost-4ac833237826",
+    "id": "ghost-fa4b94caef2b",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -4979,7 +4979,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.588230+00:00",
-    "id": "ghost-6935f75439ff",
+    "id": "ghost-496ea6062b0f",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5008,7 +5008,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.591137+00:00",
-    "id": "ghost-aee20dbe303e",
+    "id": "ghost-855857e6cf52",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -5032,7 +5032,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.612384+00:00",
-    "id": "ghost-dec032432ec6",
+    "id": "ghost-06ad2b35e5f8",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -5055,7 +5055,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.616574+00:00",
-    "id": "ghost-9f815b95f347",
+    "id": "ghost-cc123c9db9bd",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5084,7 +5084,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.619177+00:00",
-    "id": "ghost-a4c1dc0c60f6",
+    "id": "ghost-99c6c961d5f6",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -5107,7 +5107,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.626226+00:00",
-    "id": "ghost-32c6f025fcf6",
+    "id": "ghost-8499174b1d70",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5130,7 +5130,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.632465+00:00",
-    "id": "ghost-7348f503f28d",
+    "id": "ghost-67a97af4dd04",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5153,7 +5153,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.643319+00:00",
-    "id": "ghost-238d3363667e",
+    "id": "ghost-65b4e6f9ac3d",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5176,7 +5176,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.652525+00:00",
-    "id": "ghost-26cac5ec037c",
+    "id": "ghost-641656abdac3",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5199,7 +5199,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.655732+00:00",
-    "id": "ghost-4bd0444be32c",
+    "id": "ghost-fb56823cbdd4",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5222,7 +5222,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.675927+00:00",
-    "id": "ghost-bfe59e685267",
+    "id": "ghost-094866439eba",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5245,7 +5245,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.676447+00:00",
-    "id": "ghost-77c7964c1b88",
+    "id": "ghost-7acf500b3aae",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5268,7 +5268,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.676839+00:00",
-    "id": "ghost-9d4dac2d1b84",
+    "id": "ghost-cc7b0759b894",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5291,7 +5291,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.682598+00:00",
-    "id": "ghost-1d9120770b9a",
+    "id": "ghost-b762385d988b",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5314,7 +5314,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.686324+00:00",
-    "id": "ghost-77e92d33fb63",
+    "id": "ghost-c83ea021a734",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5337,7 +5337,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.686504+00:00",
-    "id": "ghost-1c3bfd097824",
+    "id": "ghost-6e91e821d124",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5360,7 +5360,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.690453+00:00",
-    "id": "ghost-f69a2548ea22",
+    "id": "ghost-bb7fb4b0abc4",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5383,7 +5383,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.690471+00:00",
-    "id": "ghost-cc9f0bf23255",
+    "id": "ghost-63cc3532299f",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5406,7 +5406,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.693664+00:00",
-    "id": "ghost-316bab313577",
+    "id": "ghost-df45b6fa224a",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5429,7 +5429,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.698968+00:00",
-    "id": "ghost-e48541846b36",
+    "id": "ghost-8317c3c40467",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5452,7 +5452,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.706571+00:00",
-    "id": "ghost-985094aa3a54",
+    "id": "ghost-1f6d960fa75c",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5475,7 +5475,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.706612+00:00",
-    "id": "ghost-e74b4c661a78",
+    "id": "ghost-4da65faa4eef",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5498,7 +5498,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.711963+00:00",
-    "id": "ghost-dd4685910d06",
+    "id": "ghost-3ab6b0d7c6e9",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5521,7 +5521,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.712687+00:00",
-    "id": "ghost-2a9836320e26",
+    "id": "ghost-b3b2a951fd5c",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5544,7 +5544,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.716659+00:00",
-    "id": "ghost-d477fe7baf57",
+    "id": "ghost-dbc295ceb5ba",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5567,7 +5567,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.716676+00:00",
-    "id": "ghost-58d7142fd080",
+    "id": "ghost-966ed69b48da",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5590,7 +5590,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.717481+00:00",
-    "id": "ghost-57426b218f33",
+    "id": "ghost-b3cf98f12cc9",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5613,7 +5613,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.721875+00:00",
-    "id": "ghost-ae9434757931",
+    "id": "ghost-a953faa9f0f9",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5637,7 +5637,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.739931+00:00",
-    "id": "ghost-d6642457abbf",
+    "id": "ghost-20bc09b69ae0",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -5660,7 +5660,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.741427+00:00",
-    "id": "ghost-55b4582b1667",
+    "id": "ghost-c4963b1bb32d",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5683,7 +5683,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.743391+00:00",
-    "id": "ghost-3c13d35cd553",
+    "id": "ghost-048b68089c2a",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5707,7 +5707,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.754723+00:00",
-    "id": "ghost-06dcb8aff86b",
+    "id": "ghost-9ecc2ecfa68e",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -5730,7 +5730,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.757907+00:00",
-    "id": "ghost-f4832014596e",
+    "id": "ghost-4c5812dc5235",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5759,7 +5759,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.760365+00:00",
-    "id": "ghost-7d2b4f24908d",
+    "id": "ghost-b20103193c86",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -5782,7 +5782,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.768596+00:00",
-    "id": "ghost-6a6ecbf054c3",
+    "id": "ghost-832fcc9e1d4e",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5805,7 +5805,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.770708+00:00",
-    "id": "ghost-86c429d6ba42",
+    "id": "ghost-bc70a0629787",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5828,7 +5828,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.774818+00:00",
-    "id": "ghost-e9a1bf605312",
+    "id": "ghost-e32f61ac5f62",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5851,7 +5851,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.776973+00:00",
-    "id": "ghost-9778b92f792e",
+    "id": "ghost-4e24c6d927ac",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5874,7 +5874,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.780780+00:00",
-    "id": "ghost-c5c9672f399b",
+    "id": "ghost-92483d6be7e1",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5897,7 +5897,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.780801+00:00",
-    "id": "ghost-facbc81dc56d",
+    "id": "ghost-d34ecb52affa",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5921,7 +5921,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.786467+00:00",
-    "id": "ghost-5d9ae9517918",
+    "id": "ghost-373d35401352",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -5944,7 +5944,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.786487+00:00",
-    "id": "ghost-c2386b104b4b",
+    "id": "ghost-de4ffec12da0",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5967,7 +5967,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.786496+00:00",
-    "id": "ghost-db758302128a",
+    "id": "ghost-101898238db9",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -5992,7 +5992,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.789418+00:00",
-    "id": "ghost-faee9dc49f9e",
+    "id": "ghost-91f67a466559",
     "layer": "mechanical",
     "severity": "major",
     "status": "suppressed",
@@ -6015,7 +6015,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.789440+00:00",
-    "id": "ghost-f201b97f4fe8",
+    "id": "ghost-0a59d28c2325",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -6038,7 +6038,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.791022+00:00",
-    "id": "ghost-02e6818a1ecd",
+    "id": "ghost-c314b5dab738",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -6061,7 +6061,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.795379+00:00",
-    "id": "ghost-b4d80cf3d875",
+    "id": "ghost-78fc0658fa8b",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -6084,7 +6084,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.795396+00:00",
-    "id": "ghost-a3c9c999e6a2",
+    "id": "ghost-0f54b11d4fc8",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -6107,7 +6107,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.798907+00:00",
-    "id": "ghost-8e63cd0dc54d",
+    "id": "ghost-3b0f7e0985d3",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -6130,7 +6130,7 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.798926+00:00",
-    "id": "ghost-f15506579083",
+    "id": "ghost-2304ed05b3f6",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
@@ -6153,10 +6153,294 @@
       "snippet": null
     },
     "first_seen": "2026-09-03T03:41:18.843694+00:00",
-    "id": "ghost-b2f425fc9494",
+    "id": "ghost-ca012a32efb3",
     "layer": "mechanical",
     "severity": "minor",
     "status": "suppressed",
     "summary": "'_extract_wait_times' repeats the same single statement 2 times (lines 372-372, 376-376): same shape, names/literals differ"
+  },
+  {
+    "category": "dead_code",
+    "confidence": null,
+    "detail": "No ast.Name, ast.Attribute, or string-subscript-key node anywhere in the scanned files resolves to this identifier. Scope limit: getattr-by-string and decorator-based registration are still not traced, so this can false-positive on names only reached that way -- confirm before deleting.",
+    "detector": "dead_code",
+    "disposition": null,
+    "disposition_note": "",
+    "evidence": {
+      "file": "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py",
+      "line_end": null,
+      "line_start": null,
+      "related_files": [],
+      "snippet": null
+    },
+    "first_seen": "2026-09-08T03:43:45.068063+00:00",
+    "id": "ghost-3a978b3e0d8e",
+    "layer": "mechanical",
+    "severity": "minor",
+    "status": "suppressed",
+    "summary": "'GovernanceDecision' is defined but never referenced anywhere in the scanned set"
+  },
+  {
+    "category": "complexity",
+    "confidence": null,
+    "detail": "Line-count proxy for the 'Long Method' smell, not true cyclomatic complexity -- a long function that's mostly a flat sequence of simple statements is a weaker signal than a short function with deep branching. Treat as a prompt to look, not a verdict.",
+    "detector": "long_function",
+    "disposition": null,
+    "disposition_note": "",
+    "evidence": {
+      "file": "/home/wking53214/GSA-815/gsa-governance-core/test_harness.py",
+      "line_end": 135,
+      "line_start": 22,
+      "related_files": [],
+      "snippet": null
+    },
+    "first_seen": "2026-09-08T03:43:45.151481+00:00",
+    "id": "ghost-f1bcff953d69",
+    "layer": "mechanical",
+    "severity": "minor",
+    "status": "suppressed",
+    "summary": "'main' spans 113 lines (threshold 80)"
+  },
+  {
+    "category": "duplication",
+    "confidence": null,
+    "detail": "Structural fingerprint match, not textual diff -- this is the 'copy-pasted then renamed' shape specifically. Confirm these are actually solving the same problem before merging; some structural matches are coincidental (e.g. two unrelated simple validators).",
+    "detector": "near_duplicate_function",
+    "disposition": null,
+    "disposition_note": "",
+    "evidence": {
+      "file": "/home/wking53214/GSA-815/Tests/conftest.py",
+      "line_end": 94,
+      "line_start": 87,
+      "related_files": [
+        "/home/wking53214/GSA-815/conftest.py"
+      ],
+      "snippet": null
+    },
+    "first_seen": "2026-09-08T03:43:45.316200+00:00",
+    "id": "ghost-4a5a826e63f2",
+    "layer": "mechanical",
+    "severity": "minor",
+    "status": "suppressed",
+    "summary": "2 functions share identical AST structure (names/literals differ, control flow and shape don't): conftest.py:87:_pg_available, conftest.py:45:_pg_available"
+  },
+  {
+    "category": "duplication",
+    "confidence": null,
+    "detail": "Structural fingerprint match, not textual diff -- this is the 'copy-pasted then renamed' shape specifically. Confirm these are actually solving the same problem before merging; some structural matches are coincidental (e.g. two unrelated simple validators).",
+    "detector": "near_duplicate_function",
+    "disposition": null,
+    "disposition_note": "",
+    "evidence": {
+      "file": "/home/wking53214/GSA-815/Tests/test_production_integration.py",
+      "line_end": 164,
+      "line_start": 135,
+      "related_files": [
+        "/home/wking53214/GSA-815/Tests/test_queue_staffing_bayes.py",
+        "/home/wking53214/GSA-815/Tests/test_telemetry_pipeline.py"
+      ],
+      "snippet": null
+    },
+    "first_seen": "2026-09-08T03:43:45.316435+00:00",
+    "id": "ghost-69a66b5a3a2d",
+    "layer": "mechanical",
+    "severity": "major",
+    "status": "suppressed",
+    "summary": "3 functions share identical AST structure (names/literals differ, control flow and shape don't): test_production_integration.py:135:main, test_queue_staffing_bayes.py:106:main, test_telemetry_pipeline.py:108:main"
+  },
+  {
+    "category": "duplication",
+    "confidence": null,
+    "detail": "Structural fingerprint match, not textual diff -- this is the 'copy-pasted then renamed' shape specifically. Confirm these are actually solving the same problem before merging; some structural matches are coincidental (e.g. two unrelated simple validators).",
+    "detector": "near_duplicate_function",
+    "disposition": null,
+    "disposition_note": "",
+    "evidence": {
+      "file": "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py",
+      "line_end": 727,
+      "line_start": 708,
+      "related_files": [
+        "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py",
+        "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py",
+        "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py"
+      ],
+      "snippet": null
+    },
+    "first_seen": "2026-09-08T03:43:45.316588+00:00",
+    "id": "ghost-f1e6bbac2d0b",
+    "layer": "mechanical",
+    "severity": "major",
+    "status": "suppressed",
+    "summary": "4 functions share identical AST structure (names/literals differ, control flow and shape don't): GSA_Governance_Operating_Core_Enterprise.py:708:metadata, GSA_Governance_Operating_Core_Enterprise.py:951:metadata, GSA_Governance_Operating_Core_Enterprise.py:1155:metadata, GSA_Governance_Operating_Core_Enterprise.py:1281:metadata"
+  },
+  {
+    "category": "duplication",
+    "confidence": null,
+    "detail": "Structural fingerprint match, not textual diff -- this is the 'copy-pasted then renamed' shape specifically. Confirm these are actually solving the same problem before merging; some structural matches are coincidental (e.g. two unrelated simple validators).",
+    "detector": "near_duplicate_function",
+    "disposition": null,
+    "disposition_note": "",
+    "evidence": {
+      "file": "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py",
+      "line_end": 1107,
+      "line_start": 1097,
+      "related_files": [
+        "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py"
+      ],
+      "snippet": null
+    },
+    "first_seen": "2026-09-08T03:43:45.316648+00:00",
+    "id": "ghost-509c244f0a8e",
+    "layer": "mechanical",
+    "severity": "minor",
+    "status": "suppressed",
+    "summary": "2 functions share identical AST structure (names/literals differ, control flow and shape don't): GSA_Governance_Operating_Core_Enterprise.py:1097:register, GSA_Governance_Operating_Core_Enterprise.py:2330:register"
+  },
+  {
+    "category": "duplication",
+    "confidence": null,
+    "detail": "Structural fingerprint match, not textual diff -- this is the 'copy-pasted then renamed' shape specifically. Confirm these are actually solving the same problem before merging; some structural matches are coincidental (e.g. two unrelated simple validators).",
+    "detector": "near_duplicate_function",
+    "disposition": null,
+    "disposition_note": "",
+    "evidence": {
+      "file": "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py",
+      "line_end": 1127,
+      "line_start": 1111,
+      "related_files": [
+        "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py"
+      ],
+      "snippet": null
+    },
+    "first_seen": "2026-09-08T03:43:45.316707+00:00",
+    "id": "ghost-05bc3c5d3127",
+    "layer": "mechanical",
+    "severity": "minor",
+    "status": "suppressed",
+    "summary": "2 functions share identical AST structure (names/literals differ, control flow and shape don't): GSA_Governance_Operating_Core_Enterprise.py:1111:get, GSA_Governance_Operating_Core_Enterprise.py:2344:resolve"
+  },
+  {
+    "category": "duplication",
+    "confidence": null,
+    "detail": "Structural fingerprint match, not textual diff -- this is the 'copy-pasted then renamed' shape specifically. Confirm these are actually solving the same problem before merging; some structural matches are coincidental (e.g. two unrelated simple validators).",
+    "detector": "near_duplicate_function",
+    "disposition": null,
+    "disposition_note": "",
+    "evidence": {
+      "file": "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py",
+      "line_end": 2391,
+      "line_start": 2385,
+      "related_files": [
+        "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py",
+        "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py",
+        "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py"
+      ],
+      "snippet": null
+    },
+    "first_seen": "2026-09-08T03:43:45.316766+00:00",
+    "id": "ghost-e7712b74a5fb",
+    "layer": "mechanical",
+    "severity": "major",
+    "status": "suppressed",
+    "summary": "4 functions share identical AST structure (names/literals differ, control flow and shape don't): GSA_Governance_Operating_Core_Enterprise.py:2385:__init__, GSA_Governance_Operating_Core_Enterprise.py:4307:__init__, GSA_Governance_Operating_Core_Enterprise.py:4433:__init__, GSA_Governance_Operating_Core_Enterprise.py:4557:__init__"
+  },
+  {
+    "category": "duplication",
+    "confidence": null,
+    "detail": "Structural fingerprint match within one function, not a whole-function match (near_duplicate_function's detection is blind to this shape). Typical real cause: several branches each hand-build the same kind of object or perform the same sequence of calls -- worth a single shared helper if the branches really are doing the same thing, not just a coincidental resemblance.",
+    "detector": "intra_function_duplicate_block",
+    "disposition": null,
+    "disposition_note": "",
+    "evidence": {
+      "file": "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py",
+      "line_end": 1599,
+      "line_start": 1599,
+      "related_files": [
+        "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py:1528-1528",
+        "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py:1579-1579"
+      ],
+      "snippet": null
+    },
+    "first_seen": "2026-09-08T03:43:45.456593+00:00",
+    "id": "ghost-cc774f142385",
+    "layer": "mechanical",
+    "severity": "major",
+    "status": "suppressed",
+    "summary": "'evaluate' repeats the same single statement 3 times (lines 1599-1599, 1528-1528, 1579-1579): same shape, names/literals differ"
+  },
+  {
+    "category": "duplication",
+    "confidence": null,
+    "detail": "Structural fingerprint match within one function, not a whole-function match (near_duplicate_function's detection is blind to this shape). Typical real cause: several branches each hand-build the same kind of object or perform the same sequence of calls -- worth a single shared helper if the branches really are doing the same thing, not just a coincidental resemblance.",
+    "detector": "intra_function_duplicate_block",
+    "disposition": null,
+    "disposition_note": "",
+    "evidence": {
+      "file": "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py",
+      "line_end": 3242,
+      "line_start": 3242,
+      "related_files": [
+        "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py:3220-3220"
+      ],
+      "snippet": null
+    },
+    "first_seen": "2026-09-08T03:43:45.460504+00:00",
+    "id": "ghost-a30cb8344b33",
+    "layer": "mechanical",
+    "severity": "minor",
+    "status": "suppressed",
+    "summary": "'evaluate' repeats the same single statement 2 times (lines 3242-3242, 3220-3220): same shape, names/literals differ"
+  },
+  {
+    "category": "duplication",
+    "confidence": null,
+    "detail": "Structural fingerprint match within one function, not a whole-function match (near_duplicate_function's detection is blind to this shape). Typical real cause: several branches each hand-build the same kind of object or perform the same sequence of calls -- worth a single shared helper if the branches really are doing the same thing, not just a coincidental resemblance.",
+    "detector": "intra_function_duplicate_block",
+    "disposition": null,
+    "disposition_note": "",
+    "evidence": {
+      "file": "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py",
+      "line_end": 3923,
+      "line_start": 3923,
+      "related_files": [
+        "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py:3956-3956",
+        "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py:4006-4006",
+        "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py:4050-4050",
+        "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py:4106-4106",
+        "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py:4160-4160",
+        "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py:4198-4198",
+        "/home/wking53214/GSA-815/gsa-governance-core/GSA_Governance_Operating_Core_Enterprise.py:4239-4239"
+      ],
+      "snippet": null
+    },
+    "first_seen": "2026-09-08T03:43:45.463434+00:00",
+    "id": "ghost-97b1b4d193a2",
+    "layer": "mechanical",
+    "severity": "major",
+    "status": "suppressed",
+    "summary": "'execute' repeats the same single statement 8 times (lines 3923-3923, 3956-3956, 4006-4006, 4050-4050, 4106-4106, 4160-4160, 4198-4198, 4239-4239): same shape, names/literals differ"
+  },
+  {
+    "category": "duplication",
+    "confidence": null,
+    "detail": "Structural fingerprint match within one function, not a whole-function match (near_duplicate_function's detection is blind to this shape). Typical real cause: several branches each hand-build the same kind of object or perform the same sequence of calls -- worth a single shared helper if the branches really are doing the same thing, not just a coincidental resemblance.",
+    "detector": "intra_function_duplicate_block",
+    "disposition": null,
+    "disposition_note": "",
+    "evidence": {
+      "file": "/home/wking53214/GSA-815/gsa-governance-core/test_harness.py",
+      "line_end": 82,
+      "line_start": 82,
+      "related_files": [
+        "/home/wking53214/GSA-815/gsa-governance-core/test_harness.py:86-86"
+      ],
+      "snippet": null
+    },
+    "first_seen": "2026-09-08T03:43:45.473168+00:00",
+    "id": "ghost-c4482428a01b",
+    "layer": "mechanical",
+    "severity": "minor",
+    "status": "suppressed",
+    "summary": "'main' repeats the same single statement 2 times (lines 82-82, 86-86): same shape, names/literals differ"
   }
 ]
