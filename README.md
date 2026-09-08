@@ -1,5 +1,23 @@
 # GSA-815
 
+> **Frozen since 2026-09-08.** GSA-815 is the execution side of the custody
+> ledger stage and sells only together with
+> [sentinel_os](https://github.com/wking53214/sentinel_os), which it
+> vendors as a git submodule at `vendor/sentinel_os`. Without
+> `git submodule update --init` 17 test files do not collect; with the
+> submodule and Postgres and Redis available, 121 tests pass. Running
+> `pytest` from the repo root crashes the collector
+> (`gsa-governance-core/test_harness.py` raises SystemExit); CI runs
+> `pytest Tests/` and so should you. The governed action gate in
+> observe-perceive never imports this repo: "GSA-815" in the chain diagram
+> is a callable the caller supplies.
+>
+> The only work allowed here for the 90 days starting 2026-09-08 is a
+> dependency manifest and replacing the submodule with a dependency on a
+> published sentinel_os. No feature work. It unfreezes with sentinel_os.
+> See `docs/audit/COMMERCIAL_RED_TEAM_2026-09-08.md` in observe-perceive,
+> Parts 18, 19 and 27.
+
 A governed adaptive processing architecture for controlled decision-making, execution, simulation, learning, and system integration. The current implementation is an Interactive Voice Response (IVR) call-center system.
 
 ## What this repo actually is
