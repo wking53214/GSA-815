@@ -1,6 +1,6 @@
 # GSA-815
 
-> **Frozen since 2026-09-08.** GSA-815 is the execution side of the custody
+> **Unfrozen 2026-09-11.** GSA-815 is the execution side of the custody
 > ledger stage and sells only together with
 > [sentinel_os](https://github.com/wking53214/sentinel_os), which it
 > vendors as a git submodule at `vendor/sentinel_os`. Without
@@ -12,14 +12,27 @@
 > observe-perceive never imports this repo: "GSA-815" in the chain diagram
 > is a callable the caller supplies.
 >
-> The only work allowed here for the 90 days starting 2026-09-08 is a
-> dependency manifest, replacing the submodule with a dependency on a
-> published sentinel_os, and (amended 2026-09-11) importing the contracts
-> this repo shares with the library from the private `CNS` package in
-> place of the copies carried here, on the live path only, with the test
-> suite as the check. No feature work. It unfreezes with sentinel_os.
-> See `docs/audit/COMMERCIAL_RED_TEAM_2026-09-08.md` in observe-perceive,
-> Parts 18, 19 and 27.
+> The 90-day freeze set on 2026-09-08 is lifted early, by the owner's
+> decision. It was set on the evidence available that day, which
+> predates two things that change the picture: the private `CNS`
+> package, one measured schema that the library's repositories join
+> on rather than re-typing, and `ghost_tools`' kernel scan, which
+> measures duplication and drift against it. Neither existed when the
+> freeze was written.
+>
+> The commercial reading above is **not** superseded. Everything the
+> audit established about this repo still holds, including anything it
+> says is missing; lifting the freeze removes a restriction on effort,
+> not a finding. See
+> `docs/audit/COMMERCIAL_RED_TEAM_2026-09-08.md` in observe-perceive, Parts 18, 19 and 27,
+> for what the freeze was based on.
+>
+> One change landed on 2026-09-11 under the earlier freeze's
+> live-path-only amendment but outside it: `gsa-governance-core/`,
+> which is not on the live path, moved its fourteen governance
+> contracts to `cns.governance` imports. CI stayed green and no shape
+> changed. With the freeze lifted the exception is moot, and it is
+> recorded here rather than left for a reader to discover.
 
 A governed adaptive processing architecture for controlled decision-making, execution, simulation, learning, and system integration. The current implementation is an Interactive Voice Response (IVR) call-center system.
 
