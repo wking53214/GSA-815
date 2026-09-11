@@ -5,43 +5,16 @@ OBSERVE: Detects state transitions, friction events, emotional dynamics
 PERCEIVE: Infers outcomes, predicts next states, tracks world dynamics
 """
 
-from dataclasses import dataclass
 from typing import Dict, List, Optional
-from enum import Enum
 
 from twilio_log_ingestion import NODE_ROLE_AGENT, NODE_ROLE_ESCALATION
 
-class CallOutcome(Enum):
-    RESOLVED = "resolved"
-    ABANDONED = "abandoned"
-    ESCALATED = "escalated"
-    IN_PROGRESS = "in_progress"
-
-@dataclass
-class FrictionEvent:
-    node: str
-    type: str  # "repeat", "long_wait", "denial", "transfer"
-    severity: float  # 0-1
-    timestamp: float
-
-@dataclass
-class EmotionalState:
-    frustration: float  # 0-1
-    patience: float  # 0-1, decreases as wait increases
-    trust: float  # 0-1, decreases on denials/repeats
-    
-    def deteriorating(self) -> bool:
-        return self.frustration > 0.7 or self.patience < 0.2
-
-@dataclass
-class CallPercept:
-    caller_id: str
-    journey: List[str]  # Sequence of nodes visited
-    friction_events: List[FrictionEvent]
-    emotional_state: EmotionalState
-    outcome: CallOutcome
-    abandonment_risk: float  # 0-1 probability
-    next_action_distribution: Dict[str, float]  # node -> probability
+# The four perception rows are contracts this repo shares with the library
+# and live in the private CNS package (cns.perception). The copy carried
+# here until 2026-09-11 was byte-identical to the one extracted, so nothing
+# about the rows changed; they are re-exported so existing imports from this
+# module keep working. The engines below are this repo's own.
+from cns.perception import CallOutcome, FrictionEvent, EmotionalState, CallPercept  # noqa: F401
 
 class ObserveCore:
     """Detects friction and emotional dynamics during call"""

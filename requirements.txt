@@ -17,3 +17,7 @@
 # ("unexpected keyword argument 'proxies'"). Kept here too in case the
 # kernel's pin drifts.
 httpx<0.28
+
+# Contracts this repo shares with the library (cns.perception, cns.caller).
+# Private; pinned to a commit like the kernel's conservation-kernel pin.
+cns @ git+https://github.com/wking53214/CNS.git@4ffcaaacb48c12eaaf822949ce1c08a1ef6e91e0
