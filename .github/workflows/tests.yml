@@ -11,6 +11,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Require the library read token
+        # Checked before checkout: with the secret unset, actions/checkout
+        # fails with "Input required and not supplied: token", which names
+        # nothing. Fail here, by name, instead.
+        env:
+          LIBRARY_READ_TOKEN: ${{ secrets.LIBRARY_READ_TOKEN }}
+        run: |
+          if [ -z "$LIBRARY_READ_TOKEN" ]; then
+            echo "::error::LIBRARY_READ_TOKEN secret is not set; vendor/sentinel_os and the library's private dependencies cannot be fetched"
+            exit 1
+          fi
+
       - uses: actions/checkout@v4
         with:
           submodules: recursive
