@@ -86,6 +86,31 @@ from typing import (
     Tuple,
 )
 
+# The fourteen governance contracts that used to be defined here are shared
+# with the library and live in the private CNS package (cns.governance). The
+# copies carried here until 2026-09-11 were byte-identical to the ones
+# extracted -- verified by structural hash with docstrings stripped -- so no
+# shape changes in this commit. They are re-exported so existing imports keep
+# working, as test_harness.py's do. The engines, fabrics, gates and ledgers
+# below are this repo's own and stay here: the CNS carries shapes, never
+# behaviour.
+from cns.governance import (  # noqa: F401
+    AuthorizationError,
+    ExecutionDomain,
+    GovernanceError,
+    IdentityContext,
+    IntegrityError,
+    IntentCategory,
+    KernelComponent,
+    KernelMetadata,
+    PolicyViolation,
+    QueueType,
+    RoutingDecision,
+    RoutingError,
+    TrustLevel,
+    ValidationError,
+)
+
 
 
 # ===============================================================================
@@ -155,18 +180,6 @@ class LifecycleState(
 
 
 
-class ExecutionDomain(
-    str,
-    Enum,
-):
-
-    AI="ai"
-
-    DATA="data"
-
-    ROUTING="routing"
-
-    OPERATIONAL="operational"
 
 
 
@@ -208,18 +221,6 @@ class ExecutionStatus(
 
 
 
-class TrustLevel(
-    str,
-    Enum,
-):
-
-    UNKNOWN="unknown"
-
-    LOW="low"
-
-    VERIFIED="verified"
-
-    PRIVILEGED="privileged"
 
 
 
@@ -240,46 +241,25 @@ class AuthorizationState(
 # EXCEPTIONS
 # ===============================================================================
 
-
-class GovernanceError(
-    Exception
-):
-    pass
+# The GovernanceError family now comes from cns.governance; see the import
+# near the top of this file. Nothing else belongs in this section.
 
 
 
-class IntegrityError(
-    GovernanceError
-):
-    pass
 
 
 
-class ValidationError(
-    GovernanceError
-):
-    pass
 
 
 
-class AuthorizationError(
-    GovernanceError
-):
-    pass
 
 
 
-class RoutingError(
-    GovernanceError
-):
-    pass
 
 
 
-class PolicyViolation(
-    GovernanceError
-):
-    pass
+
+
 
 
 
@@ -287,33 +267,13 @@ class PolicyViolation(
 # KERNEL CONTRACTS
 # ===============================================================================
 
-
-@dataclass(
-    frozen=True,
-    slots=True,
-)
-class KernelMetadata:
-
-
-    name:str
-
-    version:str
-
-    description:str
-
-    domain:ExecutionDomain
+# KernelMetadata and KernelComponent now come from cns.governance; see the
+# import near the top of this file. Nothing else belongs in this section.
 
 
 
-class KernelComponent:
 
 
-    @property
-    def metadata(
-        self,
-    )->KernelMetadata:
-
-        raise NotImplementedError
 
 
 # ===============================================================================
@@ -1394,26 +1354,6 @@ class CitadelRouterEngine(
 # ===============================================================================
 
 
-@dataclass(
-    frozen=True,
-    slots=True,
-)
-class IdentityContext:
-
-
-    tenant_id:str
-
-    subject_id:str
-
-    roles:Tuple[str,...]
-
-    trust_level:TrustLevel
-
-    authentication_method:str
-
-    verified:bool
-
-    signature:str
 
 
 
@@ -2019,33 +1959,9 @@ class GovernanceLedger:
 # ===============================================================================
 
 
-class IntentCategory(
-    str,
-    Enum,
-):
-
-    STATUS="status"
-
-    PAYMENT="payment"
-
-    DOCUMENTS="documents"
-
-    ESCALATION="escalation"
-
-    HARDSHIP="hardship"
 
 
 
-class QueueType(
-    str,
-    Enum,
-):
-
-    FAST_PATH="fast_path"
-
-    UNCERTAINTY="uncertainty"
-
-    SPECIALIST="specialist"
 
 
 
@@ -2066,16 +1982,6 @@ class InteractionState:
 
 
 
-@dataclass(
-    frozen=True,
-    slots=True,
-)
-class RoutingDecision:
-
-
-    queue:QueueType
-
-    reason:str
 
 
 
