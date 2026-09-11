@@ -128,3 +128,20 @@ code-blocked.
 To bump the kernel: `cd vendor/sentinel_os && git fetch && git checkout <sha>
 && cd ../.. && git add vendor/sentinel_os`, then re-run the suite -- the
 transport/enum coupling the kernel repo warns about applies here too.
+
+## `cns` (2026-09-11)
+
+The rows this repo shares with the rest of the library now come from the
+private `CNS` package instead of copies carried here:
+
+- `observe_perceive_core.py`: `CallOutcome`, `FrictionEvent`, `EmotionalState`,
+  `CallPercept` from `cns.perception`. The engines (`ObserveCore`,
+  `PerceiveCore`) stay here.
+- `Domain/CallerState.py`: `DynamicState`, `CallerState` from `cns.caller`.
+
+Both modules re-export the names, so every existing import in this repo
+is unchanged. The copies removed were byte-identical to what was extracted
+(the extraction was verified by syntax-tree hash). `gsa-governance-core/`
+also carries classes that now live in `cns.governance`, but it is not on
+the live path and is left alone under the freeze.
+

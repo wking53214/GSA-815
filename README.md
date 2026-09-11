@@ -13,8 +13,11 @@
 > is a callable the caller supplies.
 >
 > The only work allowed here for the 90 days starting 2026-09-08 is a
-> dependency manifest and replacing the submodule with a dependency on a
-> published sentinel_os. No feature work. It unfreezes with sentinel_os.
+> dependency manifest, replacing the submodule with a dependency on a
+> published sentinel_os, and (amended 2026-09-11) importing the contracts
+> this repo shares with the library from the private `CNS` package in
+> place of the copies carried here, on the live path only, with the test
+> suite as the check. No feature work. It unfreezes with sentinel_os.
 > See `docs/audit/COMMERCIAL_RED_TEAM_2026-09-08.md` in observe-perceive,
 > Parts 18, 19 and 27.
 
