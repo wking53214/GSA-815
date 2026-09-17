@@ -33,6 +33,15 @@
 > contracts to `cns.governance` imports. CI stayed green and no shape
 > changed. With the freeze lifted the exception is moot, and it is
 > recorded here rather than left for a reader to discover.
+>
+> The change the amendment was written to allow landed the same day, as
+> `#11`: the contracts on the **live path** moved to `cns.governance`
+> too. `Domain/CallerState.py` imports `CallerState` and `DynamicState`
+> from `cns.caller`; `observe_perceive_core.py` imports `CallOutcome`,
+> `FrictionEvent`, `EmotionalState` and `CallPercept` from
+> `cns.perception`. Both carried copies before. Noted here because the
+> paragraph above records the exception to the amendment without
+> recording what the amendment itself permitted.
 
 A governed adaptive processing architecture for controlled decision-making, execution, simulation, learning, and system integration. The current implementation is an Interactive Voice Response (IVR) call-center system.
 
