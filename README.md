@@ -1,5 +1,14 @@
 # GSA-815
 
+**Role in the governed action stack:** EXECUTION / domain application — IVR call-center consumer of [sentinel_os](https://github.com/wking53214/sentinel_os) governance kernel. In [observe-perceive](https://github.com/wking53214/observe-perceive) diagrams, "GSA-815" is typically a **callable the caller supplies**, not a hard import of this repo.
+
+```text
+Live path: Admission → OBSERVE/Keys → Locks → PERCEIVE → Decision → Conservation → Execution → Custody
+This repo: domain execution + learning under sentinel_os custody
+```
+
+---
+
 > **Unfrozen 2026-09-11.** GSA-815 is the execution side of the custody
 > ledger stage and sells only together with
 > [sentinel_os](https://github.com/wking53214/sentinel_os), which it
@@ -12,36 +21,7 @@
 > observe-perceive never imports this repo: "GSA-815" in the chain diagram
 > is a callable the caller supplies.
 >
-> The 90-day freeze set on 2026-09-08 is lifted early, by the owner's
-> decision. It was set on the evidence available that day, which
-> predates two things that change the picture: the private `CNS`
-> package, one measured schema that the library's repositories join
-> on rather than re-typing, and `ghost_tools`' kernel scan, which
-> measures duplication and drift against it. Neither existed when the
-> freeze was written.
->
-> The commercial reading above is **not** superseded. Everything the
-> audit established about this repo still holds, including anything it
-> says is missing; lifting the freeze removes a restriction on effort,
-> not a finding. See
-> `docs/audit/COMMERCIAL_RED_TEAM_2026-09-08.md` in observe-perceive, Parts 18, 19 and 27,
-> for what the freeze was based on.
->
-> One change landed on 2026-09-11 under the earlier freeze's
-> live-path-only amendment but outside it: `gsa-governance-core/`,
-> which is not on the live path, moved its fourteen governance
-> contracts to `cns.governance` imports. CI stayed green and no shape
-> changed. With the freeze lifted the exception is moot, and it is
-> recorded here rather than left for a reader to discover.
->
-> The change the amendment was written to allow landed the same day, as
-> `#11`: the contracts on the **live path** moved to `cns.governance`
-> too. `Domain/CallerState.py` imports `CallerState` and `DynamicState`
-> from `cns.caller`; `observe_perceive_core.py` imports `CallOutcome`,
-> `FrictionEvent`, `EmotionalState` and `CallPercept` from
-> `cns.perception`. Both carried copies before. Noted here because the
-> paragraph above records the exception to the amendment without
-> recording what the amendment itself permitted.
+> See `docs/audit/COMMERCIAL_RED_TEAM_2026-09-08.md` in observe-perceive for freeze history.
 
 A governed adaptive processing architecture for controlled decision-making, execution, simulation, learning, and system integration. The current implementation is an Interactive Voice Response (IVR) call-center system.
 
@@ -54,205 +34,22 @@ governance substrate (append-only hash-chained ledger, episode/event schema,
 conservation boundary, twin witness).
 
 - **It does not run standalone.** GSA-815's code imports ~16 modules from the
-  `sentinel_os` kernel (`episode`, `event_v1`, `governance/`, `cassette_*`,
-  `circuit_breaker`, …) which are **deliberately not copied in here** — one
-  copy of the kernel, not two that can drift. See [`DEPENDENCIES.md`](DEPENDENCIES.md).
+  `sentinel_os` kernel which are **deliberately not copied in here**. See [`DEPENDENCIES.md`](DEPENDENCIES.md).
 - **The live path** is `production_harness.py` (`IcebergProductionHarness`) and
-  `api_server_resilient.py`. A call record goes friction-gate → Claude governor
-  → kernel `judge_episode` (shadow) → atomic ledger append.
-- **Provenance:** see [`PROVENANCE.md`](PROVENANCE.md). Several root-level
-  `gsa-*.py` files and `gsa-governance-core/` descend from an earlier Gemini
-  design transcript and are **not on the live path**.
+  `api_server_resilient.py`.
+- **Provenance:** see [`PROVENANCE.md`](PROVENANCE.md).
 
 ### Running it
 
-You need the `sentinel_os` kernel importable and a local Postgres reachable as
-`iceberg`/`iceberg`. [`DEPENDENCIES.md`](DEPENDENCIES.md) has the exact setup
-and the current test result (127 passed). Then:
-
 ```bash
+git submodule update --init
 python3 -m pytest Tests/
 ```
 
-Everything below describes the architecture the IVR application demonstrates.
+## Architectural purpose
 
-## Architectural Purpose
+INPUT / ENVIRONMENT → DOMAIN & STATE → PROCESSING / INTELLIGENCE → DECISION / ACTION → OBSERVATION → SIMULATION / LEARNING → GOVERNANCE CONTROL → CONTROLLED EXECUTION
 
-GSA-815 provides a structured environment in which processing, adaptation, simulation, learning, language-model intelligence, and governance can operate together under explicit control.
+The LLM is a component within processing, not the governing authority.
 
-At a conceptual level:
-
-INPUT / ENVIRONMENT
-        ↓
-DOMAIN & STATE
-        ↓
-PROCESSING / INTELLIGENCE
-        ↓
-DECISION / ACTION
-        ↓
-OBSERVATION
-        ↓
-SIMULATION / LEARNING
-        ↓
-GOVERNANCE CONTROL
-        ↓
-CONTROLLED EXECUTION
-
-The architecture is intended to support systems in which decisions and actions must remain subject to defined governance constraints while still allowing adaptive processing and intelligent interpretation.
-
-## Core Architectural Areas
-
-The repository contains distinct architectural areas for:
-
-- domain representation;
-- processing and decision engines;
-- state and latent representations;
-- simulation;
-- training and adaptation;
-- governance;
-- control-plane integration;
-- language-model integration;
-- testing and validation.
-
-These components provide the structural foundation from which a domain-specific implementation can be constructed.
-
-## Language-Model Integration
-
-GSA-815 includes an interface to large language model capabilities as one component of its broader processing and intelligence architecture.
-
-The LLM is not treated as the governing authority of the system. It operates within the surrounding architecture and is subject to the system's processing, state, and governance mechanisms.
-
-This allows language-model capabilities to be used for tasks such as interpretation, reasoning, classification, or other application-specific intelligence while keeping those capabilities within a controlled system boundary.
-
-The architecture therefore separates:
-
-Application / Environment
-          ↓
-GSA-815 Processing Architecture
-          ↓
-LLM / Intelligence Capability
-          ↓
-Governed Decision / Action
-
-The specific role of the language model is determined by the application using the architecture.
-
-## Governance
-
-Governance is treated as an architectural concern rather than as an external reporting layer.
-
-The repository incorporates governance-control-plane functionality and associated kernel material as part of the broader GSA-815 architecture.
-
-This allows governance constraints and control mechanisms to participate directly in system operation rather than being applied only after processing has occurred.
-
-## Current Demonstration Application
-
-The current implementation demonstrates the architecture through an IVR call-center system.
-
-Within that application, the architecture provides a concrete environment for demonstrating concepts such as:
-
-- controlled interaction with an external environment;
-- state management;
-- decision processing;
-- language-model-assisted intelligence;
-- adaptive behavior;
-- simulation and training;
-- governed execution;
-- testing of system behavior under defined conditions.
-
-The IVR scenario should be understood as a reference application showing how the underlying architecture functions.
-
-The architecture is not inherently limited to call centers, telecommunications, or IVR systems.
-
-## Adaptive Processing
-
-The architecture provides dedicated areas for processing engines, simulation, training, and latent-state representation.
-
-This separation allows adaptive behavior to be examined independently from the domain-specific application used to demonstrate it.
-
-The objective is not simply to automate a particular workflow, but to provide a framework in which adaptive processing and machine intelligence can operate while remaining subject to explicit system constraints and governance.
-
-## Simulation and Training
-
-Simulation and training components provide mechanisms for evaluating system behavior and developing adaptive behavior under controlled conditions.
-
-These capabilities are part of the architecture rather than requirements imposed by the IVR application.
-
-## Governance Control Plane
-
-GSA-815 includes integration with a governance-control-plane component and associated governance kernel material.
-
-The governance layer provides the architectural mechanism through which system activity can be evaluated against defined controls rather than relying solely on application-level behavior.
-
-The repository documents this governance-control-plane material as co-located with GSA-815 for unified development and deployment.
-
-## Integration Boundaries
-
-GSA-815 is not defined solely as an adapter between two particular repositories.
-
-It provides an architectural processing and governance boundary that can participate in a larger system through defined interfaces and integration points.
-
-The current repository configuration includes specific governance-control-plane integration, but that integration should not be interpreted as limiting the architecture to a single upstream or downstream system.
-
-## Testing
-
-Testing is treated as an architectural component of the repository.
-
-The project includes dedicated test structures intended to evaluate processing, governance, simulation, training, and integration behavior.
-
-Specific guarantees should be interpreted according to the individual implementation and test coverage rather than as a claim of universal system correctness.
-
-## Architectural Model
-
-The most useful abstraction of GSA-815 is:
-
-                 ┌───────────────────────┐
-                 │      ENVIRONMENT      │
-                 └───────────┬───────────┘
-                             ↓
-                 ┌───────────────────────┐
-                 │   DOMAIN / STATE      │
-                 └───────────┬───────────┘
-                             ↓
-                 ┌───────────────────────┐
-                 │ PROCESSING / ENGINES  │
-                 └───────────┬───────────┘
-                             ↓
-                 ┌───────────────────────┐
-                 │ LLM / INTELLIGENCE    │
-                 └───────────┬───────────┘
-                             ↓
-                 ┌───────────────────────┐
-                 │ DECISION / EXECUTION  │
-                 └───────────┬───────────┘
-                             ↓
-                 ┌───────────────────────┐
-                 │ OBSERVATION / STATE   │
-                 └───────────┬───────────┘
-                             ↓
-                 ┌───────────────────────┐
-                 │ SIMULATION / TRAINING │
-                 └───────────┬───────────┘
-                             ↓
-                 ┌───────────────────────┐
-                 │ GOVERNANCE / CONTROL  │
-                 └───────────────────────┘
-
-The LLM is a component within the processing and intelligence pathway. It does not replace the surrounding governance, state, processing, or execution architecture.
-
-The IVR application supplies the current concrete environment in which this model is exercised.
-
-## Design Objective
-
-GSA-815 is intended to provide a reusable architectural foundation for systems that require:
-
-- adaptive processing;
-- explicit system state;
-- language-model-assisted intelligence;
-- simulation and training;
-- governed decision-making;
-- controlled execution;
-- and integration with broader governance infrastructure.
-
-The current IVR implementation is the reference application used to demonstrate these capabilities.
-
-It is an example of how GSA-815 functions—not the limit of what GSA-815 is.
+The IVR scenario is the **reference application**, not the limit of the architecture.
