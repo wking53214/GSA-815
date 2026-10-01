@@ -78,4 +78,4 @@ GSA-815 production_harness
 ICEBERG / ICEBURG = lineage predecessors, not runtime deps
 ```
 
-Apache-2.0.
+Proprietary. Copyright (c) 2026 William King. All rights reserved. See LICENSE.

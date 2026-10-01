@@ -162,4 +162,4 @@ gsa-governance-core/
 
 ## License
 
-Proprietary / Internal use unless otherwise specified by the architecture owner.
+Proprietary. All rights reserved. See the `LICENSE` file at the repository root.

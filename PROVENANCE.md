@@ -85,4 +85,4 @@ separate, unresolved thread. The patch is preserved outside the repo.
 
 ## License
 
-Apache-2.0 (`LICENSE`).
+Proprietary, all rights reserved (`LICENSE`).
