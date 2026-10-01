@@ -219,10 +219,12 @@ class TwilioLogParser:
     }
     
     def __init__(self, cassette=None):
-        """Initialize Twilio parser with optional cassette for config.
-        
-        If cassette is provided, _count_friction will read thresholds
-        from it; otherwise falls back to hardcoded defaults.
+        """Initialize Twilio parser with an optional cassette for config.
+
+        The constructor accepts cassette=None, but parsing needs one:
+        _count_friction reads its thresholds from the cassette and raises
+        ValueError when it is None or lacks the Twilio thresholds. There
+        are no hardcoded defaults to fall back to.
         """
         self.cassette = cassette
 

@@ -19,5 +19,7 @@
 httpx<0.28
 
 # Contracts this repo shares with the library (cns.perception, cns.caller).
-# Private; pinned to a commit like the kernel's conservation-kernel pin.
-cns @ git+https://github.com/wking53214/CNS.git@4ffcaaacb48c12eaaf822949ce1c08a1ef6e91e0
+# Private; pinned to a commit like the kernel's conservation-kernel pin (tag
+# v1.4.0). Keep this equal to the cns pin in the vendored sentinel_os
+# requirements: two different cns commits in one install is a pip conflict.
+cns @ git+https://github.com/wking53214/CNS.git@3b465dbcc1a6a4ab6f1040f93d44483196abd737
