@@ -832,6 +832,17 @@ class IcebergProductionHarness:
         if self.ledger:
             self.ledger.close()
 
+
+def _require_env(name: str) -> str:
+    """Read a required secret from the environment. There is no default: a
+    well-known fallback password would let a misconfigured deployment
+    connect with a guessable credential."""
+    value = os.getenv(name)
+    if not value:
+        raise RuntimeError(f"{name} is not set")
+    return value
+
+
 def main():
     """Run production harness"""
     
@@ -845,7 +856,7 @@ def main():
         "postgres_port": int(os.getenv("POSTGRES_PORT", 5432)),
         "postgres_db": os.getenv("POSTGRES_DB", "iceberg"),
         "postgres_user": os.getenv("POSTGRES_USER", "iceberg"),
-        "postgres_password": os.getenv("POSTGRES_PASSWORD", "iceberg"),
+        "postgres_password": _require_env("POSTGRES_PASSWORD"),
         "claude_api_key": os.getenv("CLAUDE_API_KEY"),
         "twilio_account_sid": os.getenv("TWILIO_ACCOUNT_SID"),
         "twilio_api_key": os.getenv("TWILIO_API_KEY"),
