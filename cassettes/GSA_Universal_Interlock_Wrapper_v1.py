@@ -111,7 +111,11 @@ class CryptographicAuditFramework:
         record = {"event": event_type, "metrics": metrics, "ts": time.time()}
         data_bytes = json.dumps(record, sort_keys=True).encode()
         record["signature"] = hmac.new(self.secret, data_bytes, hashlib.sha256).hexdigest()
-        with open(self.path, "a") as log_file:
+        # Created owner-only, and refuses a symlink at the path, so the audit
+        # trail cannot be read by other local users or redirected elsewhere.
+        flags = os.O_WRONLY | os.O_CREAT | os.O_APPEND | getattr(os, "O_NOFOLLOW", 0)
+        fd = os.open(self.path, flags, 0o600)
+        with os.fdopen(fd, "a", encoding="utf-8") as log_file:
             log_file.write(json.dumps(record) + "\n")
 
 
