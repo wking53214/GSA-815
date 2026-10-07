@@ -162,4 +162,4 @@ gsa-governance-core/
 
 ## License
 
-Proprietary / Internal use unless otherwise specified by the architecture owner.
+Apache License 2.0. See [LICENSE](../LICENSE) and [NOTICE](../NOTICE). Copyright 2026 William N. King.
