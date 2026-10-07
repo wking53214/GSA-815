@@ -95,19 +95,24 @@ def compute_state_signature(
 class CryptographicAuditFramework:
     """Keeps a permanent, unchangeable record of everything the system does."""
     def __init__(self) -> None:
-        self.secret = os.getenv("VANGUARD_SECRET_KEY", "default-secure-key").encode()
+        # No fallback key: a public default would let anyone forge valid entries.
+        secret = os.getenv("VANGUARD_SECRET_KEY")
+        if not secret:
+            raise RuntimeError("VANGUARD_SECRET_KEY must be set; there is no default signing key.")
+        self.secret = secret.encode()
         self.path = os.getenv("VANGUARD_AUDIT_LOG_PATH", "vanguard_audit.log")
 
     def write_tamper_evident_entry(self, event_type: str, metrics: Dict[str, Any]) -> None:
-        """Writes a locked file entry that proves exactly what happened."""
+        """Writes a locked file entry that proves exactly what happened.
+
+        A failed write raises instead of being dropped, so a missing audit
+        record is never silent.
+        """
         record = {"event": event_type, "metrics": metrics, "ts": time.time()}
         data_bytes = json.dumps(record, sort_keys=True).encode()
         record["signature"] = hmac.new(self.secret, data_bytes, hashlib.sha256).hexdigest()
-        try:
-            with open(self.path, "a") as log_file:
-                log_file.write(json.dumps(record) + "\n")
-        except IOError:
-            pass
+        with open(self.path, "a") as log_file:
+            log_file.write(json.dumps(record) + "\n")
 
 
 # ============================================================
