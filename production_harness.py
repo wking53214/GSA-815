@@ -150,7 +150,13 @@ class IcebergProductionHarness:
         # not an API/transport error (claude_breaker would never see
         # this), a plausible signal of a stuck or degenerate response
         # instead. See governance_loop_guard.py for provenance.
+        #
+        # Observe-only: a repeated text is recorded (loop_repeats_seen, a
+        # trace attribute, a log line) and never changes the decision. A
+        # healthy governor repeats short verdicts across different calls and
+        # on retries, so denying on a repeat refused healthy calls.
         self.claude_loop_guard = PipelineStateEngine()
+        self.loop_repeats_seen = 0
 
         self._init_optional_components()
     
@@ -612,18 +618,15 @@ class IcebergProductionHarness:
                                 claude_decision.get("reasoning", "")
                             )
                             if loop_state == "BLOCKED_LOOP":
-                                gov_span.set_attribute("decision.loop_blocked", True)
-                                claude_decision = {
-                                    "safe": False,
-                                    "governed": False,
-                                    "parse_failed": False,
-                                    "reasoning": (
-                                        "Governor returned reasoning identical to a "
-                                        "prior call -- possible stuck/degenerate "
-                                        "response, blocked by the loop guard"
-                                    ),
-                                    "confidence": 0.0,
-                                }
+                                # A signal, not proof: record it and leave the
+                                # decision alone.
+                                self.loop_repeats_seen += 1
+                                gov_span.set_attribute("decision.loop_repeat", True)
+                                logger.warning(
+                                    "governor reasoning repeats an earlier call's "
+                                    "text verbatim; decision unchanged "
+                                    f"(repeat #{self.loop_repeats_seen})"
+                                )
 
                         gov_span.set_attribute("decision.approved", bool(claude_decision.get("safe")))
                     except Exception as e:

@@ -3,6 +3,17 @@
 Dated, human-readable summary of notable changes. Git history has the full
 detail; this is the skim version.
 
+## 2026-10-09
+
+- **Loop guard is observe-only.** `production_harness.py` used to replace the
+  governor's decision with a refusal when its reasoning text matched one of the
+  last 1000 it had seen. A healthy governor repeats short verdicts across
+  different calls and on retries, so the second call with the same wording was
+  refused, and so was every later one. The repeat is now counted
+  (`loop_repeats_seen`), set as the `decision.loop_repeat` trace attribute and
+  logged, and the decision is left alone. The `decision.loop_blocked` trace
+  attribute is no longer set. New `Tests/test_loop_guard_observe_only.py`.
+
 ## 2026-09-03
 
 - **Kernel as a git submodule + CI + ruff gate.** `sentinel_os` is now pinned
