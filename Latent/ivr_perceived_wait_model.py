@@ -2,6 +2,13 @@
 IVR PERCEIVED-WAIT MODEL  (candidate, not wired in)
 ==================================================
 
+SUPERSEDED (2026-10-10): the update rule in this file is replaced by
+`Latent/ivr_friction_engine.py::IvrFrictionEngine`, ported from the buried
+ICEBURG repo with the defects of this version fixed (friction and relief no
+longer mutually exclusive, relief bounded, wait normalized, peak tracked).
+This file stays only because `IvrPerceivedWaitDynamics` is still the shape
+the new engine reads and returns. Do not extend the model below.
+
 Origin
 ------
 Relocated verbatim from CODE/content-pipeline-modularized.py, the
