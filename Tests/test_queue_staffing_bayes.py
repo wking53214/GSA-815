@@ -1,150 +1,103 @@
+import math
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 from queue_staffing_bayes_integration import (
-    QueueState, StaffingCoordinator, BayesianIntentEngine, integrate_all_three
+    BayesianIntentEngine, IVRCapacity, integrate_all_three
 )
 
-def test_queue_dynamics():
-    print("\n[TEST 1] Queue dynamics: Erlang C and staffing")
-    coord = StaffingCoordinator()
-    
-    # Light traffic
-    wait1 = coord.queue_dynamics.predict_wait_time(agents=5, traffic_intensity=3.0, avg_handle_time=5.0)
-    assert wait1 < 20.0, f"Light traffic should have short wait, got {wait1}"
-    
-    # Heavy traffic
-    wait2 = coord.queue_dynamics.predict_wait_time(agents=5, traffic_intensity=4.5, avg_handle_time=5.0)
-    assert wait2 > wait1, "Heavy traffic should have longer wait"
-    
-    # Recommend agents for target
-    agents_needed = coord.queue_dynamics.recommended_agents(traffic_intensity=4.5, target_wait=30.0, avg_handle_time=5.0)
-    assert agents_needed >= 5, f"Should recommend more agents, got {agents_needed}"
-    
-    print(f"  ✓ PASSED - Light wait: {wait1:.1f}s, Heavy wait: {wait2:.1f}s, Agents needed: {agents_needed}")
-    return True
 
-def test_staffing_adjustment():
-    print("\n[TEST 2] Staffing adjustment from governance")
-    coord = StaffingCoordinator()
-    
-    queue = QueueState(
-        queue_name="billing_queue",
-        waiting_count=20,
-        current_wait_p90=45.0,
-        staffed_agents=5,
-        abandonment_rate=0.15
-    )
-    
-    # Governance signal: heal wait to 20s
-    gov_signal = {"healed_expected_wait": 20.0}
-    
-    adjustment = coord.propose_adjustment(queue, gov_signal)
-    
-    assert adjustment is not None, "Should propose adjustment"
-    assert adjustment.recommended_agents > queue.staffed_agents, "Should recommend more staff"
-    assert adjustment.expected_wait_reduction > 0, "Should reduce wait"
-    
-    print(f"  ✓ PASSED - Recommend: {adjustment.current_agents} → {adjustment.recommended_agents} agents")
-    print(f"             Expected wait reduction: {adjustment.expected_wait_reduction:.1f}s")
-    return True
+def _erlang_b_closed_form(lines: int, traffic: float) -> float:
+    """Independent check: the textbook formula, not the recurrence under test."""
+    num = traffic ** lines / math.factorial(lines)
+    den = sum(traffic ** k / math.factorial(k) for k in range(lines + 1))
+    return num / den
+
+
+def test_erlang_b_known_value():
+    # 10 lines carrying 8 erlangs: about 12.2% of calls find every line busy.
+    b = IVRCapacity.erlang_b(10, 8.0)
+    assert abs(b - 0.121661) < 1e-4, f"expected Erlang B ~0.1217, got {b:.6f}"
+    assert abs(b - _erlang_b_closed_form(10, 8.0)) < 1e-9
+
+
+def test_erlang_b_edges():
+    assert IVRCapacity.erlang_b(10, 0.0) == 0.0  # no load, nothing blocked
+    assert IVRCapacity.erlang_b(0, 8.0) == 1.0   # no lines, everything blocked
+
+
+def test_lines_needed_meets_target_exactly():
+    # 8 erlangs at 1% blocking needs 15 lines. 14 lines is just over the target.
+    n = IVRCapacity.lines_needed(8.0, 0.01)
+    assert n == 15, f"expected 15 lines, got {n}"
+    assert _erlang_b_closed_form(n, 8.0) <= 0.01
+    assert _erlang_b_closed_form(n - 1, 8.0) > 0.01
+
+
+def test_lines_needed_zero_traffic():
+    assert IVRCapacity.lines_needed(0.0, 0.01) == 0
+
+
+def test_lines_needed_rejects_bad_target():
+    for bad in (0.0, 1.0, -0.1, 1.5):
+        try:
+            IVRCapacity.lines_needed(8.0, bad)
+        except ValueError:
+            continue
+        raise AssertionError(f"max_blocking={bad} should be rejected")
+
 
 def test_bayes_intent():
-    print("\n[TEST 3] Bayesian intent learning")
     # Unreachable URL -> forces in-memory-only, so this stays deterministic
     # regardless of whether a real Redis happens to be available (CI now
     # runs one; see Tests/test_bayes_learning_loop.py for the Redis-backed
     # persistence coverage).
     bayes = BayesianIntentEngine(redis_url="redis://localhost:1/0")
-    
+
     # Simulate 20 billing calls: 15 resolved, 5 not
     for i in range(15):
         bayes.observe_outcome("billing", True, 4.0)
     for i in range(5):
         bayes.observe_outcome("billing", False, 6.0)
-    
+
     posterior = bayes.get_posterior("billing")
-    
+
     assert posterior.success_rate == 0.75, f"Should be 75% success, got {posterior.success_rate}"
     assert posterior.confidence > 0.15, "Should have some confidence"
     assert posterior.avg_handling_time < 5.0, "Avg should decrease with more successes"
-    
-    print(f"  ✓ PASSED - Billing success: {posterior.success_rate*100:.1f}%, Confidence: {posterior.confidence:.2f}")
-    return True
+
 
 def test_full_integration():
-    print("\n[TEST 4] Full Queue + Staffing + Bayes integration")
-    
-    queue_states = [
-        QueueState("billing_queue", 15, 40.0, 4, 0.12),
-        QueueState("tech_queue", 25, 65.0, 3, 0.18),
-    ]
-    
-    gov_signals = {
-        "billing_queue": {"healed_expected_wait": 20.0},
-        "tech_queue": {"healed_expected_wait": 30.0},
-    }
-    
     call_outcomes = [
         {"intent": "billing", "resolved": True, "handle_time": 4.0},
         {"intent": "billing", "resolved": True, "handle_time": 5.0},
         {"intent": "technical", "resolved": False, "handle_time": 10.0},
         {"intent": "technical", "resolved": True, "handle_time": 8.0},
     ]
-    
-    result = integrate_all_three(queue_states, gov_signals, call_outcomes)
-    
-    assert len(result["staffing_adjustments"]) > 0, "Should recommend staffing changes"
-    assert len(result["bayesian_posteriors"]) > 0, "Should have posterior beliefs"
-    assert result["queue_count"] == 2
-    
-    print(f"  ✓ PASSED - Staffing changes: {len(result['staffing_adjustments'])}")
-    print(f"             Intents tracked: {len(result['bayesian_posteriors'])}")
-    return True
 
-def main():
-    print("\n" + "="*70)
-    print("QUEUE/STAFFING/BAYES INTEGRATION TESTS")
-    print("="*70)
-    
-    tests = [
-        ("Queue dynamics", test_queue_dynamics),
-        ("Staffing adjustment", test_staffing_adjustment),
-        ("Bayes intent learning", test_bayes_intent),
-        ("Full integration", test_full_integration),
-    ]
-    
-    results = []
-    for name, test_fn in tests:
-        try:
-            results.append(test_fn())
-        except Exception as e:
-            print(f"  ✗ FAILED: {e}")
-            import traceback
-            traceback.print_exc()
-            results.append(False)
-    
-    passed = sum(results)
-    total = len(results)
-    
-    print("\n" + "="*70)
-    print(f"QUEUE/STAFFING/BAYES RESULTS: {passed}/{total} tests passed")
-    print("="*70 + "\n")
-    
-    return all(results)
+    result = integrate_all_three(call_outcomes)
+
+    assert "staffing_adjustments" not in result, "Agent staffing was removed"
+    assert {"billing", "technical"} <= set(result["bayesian_posteriors"])
+
 
 if __name__ == "__main__":
-    success = main()
-    sys.exit(0 if success else 1)
-
-
-def test_erlang_c_is_erlang_c_not_erlang_b():
-    # Regression: the function used to return Erlang B (0.122 at 10 agents,
-    # 8 erlangs). The true Erlang C value is 0.409, which means callers wait
-    # about 3x more often than the old code said.
-    coord = StaffingCoordinator()
-    pw = coord.queue_dynamics.erlang_c(10, 8.0)
-    assert abs(pw - 0.4092) < 0.001, f"expected Erlang C ~0.409, got {pw:.4f}"
-    # A queue with more agents than traffic should always have a wait probability below 1.
-    assert 0.0 < coord.queue_dynamics.erlang_c(20, 15.0) < 1.0
+    tests = [
+        test_erlang_b_known_value,
+        test_erlang_b_edges,
+        test_lines_needed_meets_target_exactly,
+        test_lines_needed_zero_traffic,
+        test_lines_needed_rejects_bad_target,
+        test_bayes_intent,
+        test_full_integration,
+    ]
+    failed = []
+    for fn in tests:
+        try:
+            fn()
+            print(f"PASSED {fn.__name__}")
+        except Exception as exc:
+            print(f"FAILED {fn.__name__}: {exc}")
+            failed.append(fn.__name__)
+    sys.exit(1 if failed else 0)
