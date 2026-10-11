@@ -62,14 +62,15 @@ class QueueDynamics:
         
         if agents <= traffic_intensity:
             return 1.0
-        
-        numerator = (traffic_intensity ** agents) / math.factorial(agents)
-        denominator = numerator
-        
-        for i in range(agents):
-            denominator += (traffic_intensity ** i) / math.factorial(i)
-        
-        pw = numerator / denominator if denominator > 0 else 1.0
+
+        # Erlang B (blocking probability) by the stable recurrence, then convert
+        # to Erlang C (probability a caller waits). Erlang C = N*B / (N - A*(1 - B)).
+        # The earlier version returned Erlang B itself, which understated the
+        # wait probability (e.g. N=10, A=8: 0.12 instead of 0.41).
+        b = 1.0
+        for k in range(1, agents + 1):
+            b = traffic_intensity * b / (k + traffic_intensity * b)
+        pw = agents * b / (agents - traffic_intensity * (1.0 - b))
         self.erlang_c_cache[key] = pw
         return pw
     
@@ -81,11 +82,12 @@ class QueueDynamics:
         if pw == 0:
             return 0.0
         
-        # Average wait in queue
-        aw = (pw * traffic_intensity) / (agents - traffic_intensity) if agents > traffic_intensity else float('inf')
+        # Average wait in queue, in the same time units as avg_handle_time.
+        # Standard Erlang C mean queue wait: P(wait) / (N - A) handle-times.
+        aw = (pw / (agents - traffic_intensity)) * avg_handle_time if agents > traffic_intensity else float('inf')
         
         # P90 wait (roughly 2.3x average for exponential)
-        p90_wait = aw * avg_handle_time * 2.3
+        p90_wait = aw * 2.3
         
         return min(p90_wait, 999.0)
     
