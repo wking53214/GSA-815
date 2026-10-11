@@ -30,7 +30,7 @@ from event_v1 import (EventIntegrityError, PROVENANCE_ESTIMATED,
                       estimated_fields, make_event)
 from cassette_capabilities import CAPABILITY_OUTCOME_OBLIGATION
 from queue_staffing_bayes_integration import (
-    StaffingCoordinator, BayesianIntentEngine
+    BayesianIntentEngine
 )
 from operational_resilience import setup_logging
 from circuit_breaker import CircuitBreaker
@@ -129,7 +129,6 @@ class IcebergProductionHarness:
         self.claude_decider = None  # Will init if API key provided
         
         # Operations
-        self.staffing = StaffingCoordinator()
         self.bayes = BayesianIntentEngine()
 
         # Roadster phase-1 (F-A): per-resource breakers. Two separate
