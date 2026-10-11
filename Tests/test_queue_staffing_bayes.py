@@ -137,3 +137,14 @@ def main():
 if __name__ == "__main__":
     success = main()
     sys.exit(0 if success else 1)
+
+
+def test_erlang_c_is_erlang_c_not_erlang_b():
+    # Regression: the function used to return Erlang B (0.122 at 10 agents,
+    # 8 erlangs). The true Erlang C value is 0.409, which means callers wait
+    # about 3x more often than the old code said.
+    coord = StaffingCoordinator()
+    pw = coord.queue_dynamics.erlang_c(10, 8.0)
+    assert abs(pw - 0.4092) < 0.001, f"expected Erlang C ~0.409, got {pw:.4f}"
+    # A queue with more agents than traffic should always have a wait probability below 1.
+    assert 0.0 < coord.queue_dynamics.erlang_c(20, 15.0) < 1.0
