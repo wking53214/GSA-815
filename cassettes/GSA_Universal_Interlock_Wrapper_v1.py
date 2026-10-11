@@ -100,6 +100,8 @@ class CryptographicAuditFramework:
         if not secret:
             raise RuntimeError("VANGUARD_SECRET_KEY must be set; there is no default signing key.")
         self.secret = secret.encode()
+        # Public identifier for the key: a short hash of it, never the key itself.
+        self.key_id = "key-" + hashlib.sha256(b"vanguard-key-id|" + self.secret).hexdigest()[:12]
         self.path = os.getenv("VANGUARD_AUDIT_LOG_PATH", "vanguard_audit.log")
 
     def write_tamper_evident_entry(self, event_type: str, metrics: Dict[str, Any]) -> None:
@@ -108,7 +110,14 @@ class CryptographicAuditFramework:
         A failed write raises instead of being dropped, so a missing audit
         record is never silent.
         """
-        record = {"event": event_type, "metrics": metrics, "ts": time.time()}
+        record = {
+            "event": event_type,
+            "metrics": metrics,
+            "ts": time.time(),
+            # Algorithm and key ID are signed along with the event, so they are tamper-evident.
+            "signature_algorithm": "hmac-sha256",
+            "key_id": self.key_id,
+        }
         data_bytes = json.dumps(record, sort_keys=True).encode()
         record["signature"] = hmac.new(self.secret, data_bytes, hashlib.sha256).hexdigest()
         # Created owner-only, and refuses a symlink at the path, so the audit
