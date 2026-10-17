@@ -18,7 +18,6 @@ purpose so existing dashboards keep working; renaming them is a later cleanup.
 from typing import Dict
 
 from governance.ledger_postgres import PostgreSQLLedger, GovernanceDecisionRecord
-from claude_governance_api import ClaudeGovernanceDecider
 from cassette_loader import CassetteLoader
 from cassette_schema import validate_cassette
 from tracing import tracer, mark_error
@@ -214,8 +213,8 @@ class GovernedPipeline:
         # Claude API
         if self.config.get("claude_api_key"):
             try:
-                self.claude_decider = ClaudeGovernanceDecider(
-                    api_key=self.config.get("claude_api_key"),
+                self.claude_decider = self.pack.build_governor(
+                    self.config.get("claude_api_key"),
                 )
                 print("✓ Claude governance API connected")
             except Exception as e:

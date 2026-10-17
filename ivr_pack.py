@@ -15,6 +15,7 @@ import time
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional, Tuple
 
+from claude_governance_api import ClaudeGovernanceDecider
 from domain_pack import Assessment, DomainPack, KernelAnnotation, Rejection
 from twilio_log_ingestion import (
     FALLBACK_ROUTE_METHOD, FALLBACK_WAIT_METHOD, NODE_ROLE_QUEUE,
@@ -68,6 +69,10 @@ class IvrPack(DomainPack):
         # and clamps healing inside expected_wait_bounds (self_healing).
         return (CAPABILITY_TELEPHONY_INGEST, CAPABILITY_ROUTING_TOPOLOGY,
                 CAPABILITY_SELF_HEALING)
+
+    def build_governor(self, api_key: Optional[str]):
+        # The kernel's governor plus the three IVR deciders.
+        return ClaudeGovernanceDecider(api_key=api_key)
 
     def record_id(self, record: Dict[str, Any]) -> Optional[str]:
         return record.get("sid")
