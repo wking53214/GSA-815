@@ -142,7 +142,7 @@ def _scenarios():
     names = list(_journeys(long_wait))
     out = []
     for name in names:
-        combos = [(g, l) for g in GOVERNORS for l in LEDGERS] if name == FULL_CROSS_JOURNEY else OTHER_COMBOS
+        combos = [(g, ledger_kind) for g in GOVERNORS for ledger_kind in LEDGERS] if name == FULL_CROSS_JOURNEY else OTHER_COMBOS
         for gov, led in combos:
             out.append((name, gov, led))
     return out
