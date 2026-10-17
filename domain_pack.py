@@ -15,6 +15,9 @@ WHAT A DOMAIN PACK IS
 
 WHAT THE PACK ANSWERS
     required_capabilities  What the pack needs from the kernel's cassette.
+    build_governor         (optional) Which AI governor to build. The default is
+                           the kernel's domain-blind one; a pack that needs
+                           extra domain decisions returns a subclass of it.
     record_id              A unique id for an incoming record (duplicates are
                            rejected by the core using this).
     assess                 Read one raw record and describe the case: where it
@@ -38,6 +41,8 @@ WHAT THE CORE KEEPS FOR ITSELF
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from typing import Any, Dict, Optional, Tuple, Union
+
+from governance_decider import GovernanceDecider
 
 
 @dataclass
@@ -108,6 +113,17 @@ class DomainPack(ABC):
     @abstractmethod
     def required_capabilities(self) -> Tuple[str, ...]:
         """Capabilities the kernel cassette must enable for this pack."""
+
+    def build_governor(self, api_key: Optional[str]) -> GovernanceDecider:
+        """Build the AI governor the core asks for sign-off.
+
+        The default is the kernel's domain-blind governor. Its fail-closed
+        safety check is the only thing the core calls, so a pack that adds
+        domain decisions should subclass it and must not re-implement the
+        safety check. With no key the governor has no client and refuses
+        everything.
+        """
+        return GovernanceDecider(api_key=api_key)
 
     @abstractmethod
     def record_id(self, record: Dict[str, Any]) -> Optional[str]:

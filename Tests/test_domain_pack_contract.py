@@ -234,7 +234,7 @@ def test_ivr_pack_satisfies_the_contract():
 _FORBIDDEN_MODULES = {
     "twilio_log_ingestion", "observe_perceive_core", "sentinel_core",
     "metrics_prometheus", "queue_staffing_bayes_integration", "ivr_pack",
-    "production_harness", "governance.friction_core",
+    "production_harness", "governance.friction_core", "claude_governance_api",
 }
 _FORBIDDEN_WORDS = ("twilio", "friction", "emotion", "bayes", "metrics",
                     "queue", "journey", "ivr")
