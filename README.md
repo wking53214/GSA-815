@@ -44,7 +44,7 @@ Kernel modules **deliberately not copied** (see `DEPENDENCIES.md`): `episode`, `
 | Collector crash | `pytest` from repo root hits `gsa-governance-core/test_harness.py` `SystemExit`. **CI runs `pytest Tests/`.** So should you. |
 | Missing submodule | Without vendor: 17 test files do not collect. |
 | Infra | Needs local Postgres (`iceberg/iceberg` superuser) and Redis as the kernel does. Anthropic for live decider tests (failing-key tests exist). |
-| Private `CNS` | `cns @ git+https://github.com/wking53214/CNS.git@da9ab8c8…` — **private**. Public clone cannot pip-install the shared contracts. |
+| Private `CNS` | `cns @ git+https://github.com/wking53214/CNS.git@v1.9.0` — **private**. Public clone cannot pip-install the shared contracts. |
 | `httpx<0.28` | anthropic 0.116.0 breaks on `proxies` with httpx≥0.28. |
 | Removed `governance/perceive_gate.py` | Was an orphaned, already-broken stub; deleted (see `docs/CHANGELOG.md`, `PROVENANCE.md`). Nothing to fix. |
 | Dual copies | Kernel historically still carried `sentinel_core` / metrics / grafana; this repo now owns the IVR-shaped copies. Drift risk if kernel copies remain. |
