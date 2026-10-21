@@ -1,0 +1,1251 @@
+{
+  "high_friction_unresolved|gov=None|ledger=None": {
+    "governor_calls": null,
+    "ledger_rows": null,
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": false,
+      "emotion_frustration": 0.30000000000000004,
+      "friction_count": 3,
+      "governance_approved": false,
+      "governance_blocked": true,
+      "governance_required": true,
+      "governance_trigger": 2,
+      "governed": true,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "failed",
+      "resolved": false
+    }
+  },
+  "high_friction_unresolved|gov=approve|ledger=ok": {
+    "governor_calls": [
+      {
+        "action": "heal_queue",
+        "details": {
+          "friction_count": 3,
+          "queue": "billing_queue",
+          "wait_time": 400.0
+        }
+      }
+    ],
+    "ledger_rows": [
+      {
+        "action_type": "governance_decision",
+        "authorized_by": "harness:production",
+        "cassette_version": "ivr:standard-ivr:2.0.2",
+        "input_data": {
+          "call_sid": "CAGOLD",
+          "caller_id": "twilio_GOLD",
+          "friction_count": 3,
+          "governance_trigger": 2,
+          "intent_classification": "BILLING",
+          "intent_confidence": 0.85,
+          "intent_reasoning": "Caller routed to billing_queue",
+          "kernel": {
+            "agrees_with_legacy_scoring": true,
+            "estimated_fields": [
+              "emotion_frustration",
+              "route",
+              "wait_agent_a",
+              "wait_billing_queue",
+              "wait_intent_menu"
+            ],
+            "field_provenance": {
+              "duration": "verified",
+              "emotion_frustration": "estimated",
+              "resolved": "verified",
+              "route": "estimated",
+              "wait_agent_a": "estimated",
+              "wait_billing_queue": "estimated",
+              "wait_intent_menu": "estimated"
+            },
+            "judged": true,
+            "score": 0.0,
+            "source_events": [
+              "CAGOLD:route",
+              "CAGOLD:wait:agent_a",
+              "CAGOLD:wait:billing_queue",
+              "CAGOLD:wait:intent_menu",
+              "CAGOLD:emotion",
+              "CAGOLD:ended"
+            ],
+            "tier": "failed"
+          },
+          "quality_tier": "failed",
+          "wait_time": 400.0
+        },
+        "node": "billing_queue",
+        "output": {
+          "approved": true,
+          "confidence": 0.9,
+          "risk_level": "low"
+        },
+        "parameter_changed": false,
+        "reasoning": "stub approve"
+      }
+    ],
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": true,
+      "emotion_frustration": 0.30000000000000004,
+      "friction_count": 3,
+      "governance_approved": true,
+      "governance_blocked": false,
+      "governance_required": true,
+      "governance_trigger": 2,
+      "governed": true,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "failed",
+      "resolved": false
+    }
+  },
+  "no_friction|gov=None|ledger=None": {
+    "governor_calls": null,
+    "ledger_rows": null,
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": null,
+      "emotion_frustration": 0.0,
+      "friction_count": 0,
+      "governance_approved": false,
+      "governance_blocked": false,
+      "governance_required": false,
+      "governance_trigger": 2,
+      "governed": false,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "good",
+      "resolved": true
+    }
+  },
+  "no_friction|gov=approve|ledger=ok": {
+    "governor_calls": [],
+    "ledger_rows": [],
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": null,
+      "emotion_frustration": 0.0,
+      "friction_count": 0,
+      "governance_approved": false,
+      "governance_blocked": false,
+      "governance_required": false,
+      "governance_trigger": 2,
+      "governed": false,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "good",
+      "resolved": true
+    }
+  },
+  "no_measured_waits_fallback_high|gov=None|ledger=None": {
+    "governor_calls": null,
+    "ledger_rows": null,
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": false,
+      "emotion_frustration": 0.0,
+      "friction_count": 5,
+      "governance_approved": false,
+      "governance_blocked": true,
+      "governance_required": true,
+      "governance_trigger": 2,
+      "governed": true,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "poor",
+      "resolved": true
+    }
+  },
+  "no_measured_waits_fallback_high|gov=approve|ledger=ok": {
+    "governor_calls": [
+      {
+        "action": "heal_queue",
+        "details": {
+          "friction_count": 5,
+          "queue": "billing_queue",
+          "wait_time": 120.0
+        }
+      }
+    ],
+    "ledger_rows": [
+      {
+        "action_type": "governance_decision",
+        "authorized_by": "harness:production",
+        "cassette_version": "ivr:standard-ivr:2.0.2",
+        "input_data": {
+          "call_sid": "CAGOLD",
+          "caller_id": "twilio_GOLD",
+          "friction_count": 5,
+          "governance_trigger": 2,
+          "intent_classification": "BILLING",
+          "intent_confidence": 0.85,
+          "intent_reasoning": "Caller routed to billing_queue",
+          "kernel": {
+            "agrees_with_legacy_scoring": true,
+            "estimated_fields": [
+              "emotion_frustration",
+              "route"
+            ],
+            "field_provenance": {
+              "duration": "verified",
+              "emotion_frustration": "estimated",
+              "resolved": "verified",
+              "route": "estimated"
+            },
+            "judged": true,
+            "score": 0.5,
+            "source_events": [
+              "CAGOLD:route",
+              "CAGOLD:emotion",
+              "CAGOLD:ended"
+            ],
+            "tier": "poor"
+          },
+          "quality_tier": "poor",
+          "wait_time": 120.0
+        },
+        "node": "billing_queue",
+        "output": {
+          "approved": true,
+          "confidence": 0.9,
+          "risk_level": "low"
+        },
+        "parameter_changed": false,
+        "reasoning": "stub approve"
+      }
+    ],
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": true,
+      "emotion_frustration": 0.0,
+      "friction_count": 5,
+      "governance_approved": true,
+      "governance_blocked": false,
+      "governance_required": true,
+      "governance_trigger": 2,
+      "governed": true,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "poor",
+      "resolved": true
+    }
+  },
+  "no_measured_waits_fallback_low|gov=None|ledger=None": {
+    "governor_calls": null,
+    "ledger_rows": null,
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": null,
+      "emotion_frustration": 0.0,
+      "friction_count": 0,
+      "governance_approved": false,
+      "governance_blocked": false,
+      "governance_required": false,
+      "governance_trigger": 2,
+      "governed": false,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "good",
+      "resolved": true
+    }
+  },
+  "no_measured_waits_fallback_low|gov=approve|ledger=ok": {
+    "governor_calls": [],
+    "ledger_rows": [],
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": null,
+      "emotion_frustration": 0.0,
+      "friction_count": 0,
+      "governance_approved": false,
+      "governance_blocked": false,
+      "governance_required": false,
+      "governance_trigger": 2,
+      "governed": false,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "good",
+      "resolved": true
+    }
+  },
+  "one_friction_below_trigger|gov=None|ledger=None": {
+    "governor_calls": null,
+    "ledger_rows": null,
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": null,
+      "emotion_frustration": 0.1,
+      "friction_count": 1,
+      "governance_approved": false,
+      "governance_blocked": false,
+      "governance_required": false,
+      "governance_trigger": 2,
+      "governed": false,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "poor",
+      "resolved": true
+    }
+  },
+  "one_friction_below_trigger|gov=approve|ledger=ok": {
+    "governor_calls": [],
+    "ledger_rows": [],
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": null,
+      "emotion_frustration": 0.1,
+      "friction_count": 1,
+      "governance_approved": false,
+      "governance_blocked": false,
+      "governance_required": false,
+      "governance_trigger": 2,
+      "governed": false,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "poor",
+      "resolved": true
+    }
+  },
+  "three_friction|gov=None|ledger=None": {
+    "governor_calls": null,
+    "ledger_rows": null,
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": false,
+      "emotion_frustration": 0.30000000000000004,
+      "friction_count": 3,
+      "governance_approved": false,
+      "governance_blocked": true,
+      "governance_required": true,
+      "governance_trigger": 2,
+      "governed": true,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "failed",
+      "resolved": true
+    }
+  },
+  "three_friction|gov=None|ledger=duplicate": {
+    "governor_calls": null,
+    "ledger_rows": [],
+    "result": {
+      "detail": "Call CAGOLD has already been processed",
+      "error": "duplicate_sid",
+      "sid": "CAGOLD"
+    }
+  },
+  "three_friction|gov=None|ledger=ok": {
+    "governor_calls": null,
+    "ledger_rows": [
+      {
+        "action_type": "governance_decision",
+        "authorized_by": "harness:production",
+        "cassette_version": "ivr:standard-ivr:2.0.2",
+        "input_data": {
+          "call_sid": "CAGOLD",
+          "caller_id": "twilio_GOLD",
+          "friction_count": 3,
+          "governance_trigger": 2,
+          "intent_classification": "BILLING",
+          "intent_confidence": 0.85,
+          "intent_reasoning": "Caller routed to billing_queue",
+          "kernel": {
+            "agrees_with_legacy_scoring": true,
+            "estimated_fields": [
+              "emotion_frustration",
+              "route",
+              "wait_agent_a",
+              "wait_billing_queue",
+              "wait_intent_menu"
+            ],
+            "field_provenance": {
+              "duration": "verified",
+              "emotion_frustration": "estimated",
+              "resolved": "verified",
+              "route": "estimated",
+              "wait_agent_a": "estimated",
+              "wait_billing_queue": "estimated",
+              "wait_intent_menu": "estimated"
+            },
+            "judged": true,
+            "score": 0.34,
+            "source_events": [
+              "CAGOLD:route",
+              "CAGOLD:wait:agent_a",
+              "CAGOLD:wait:billing_queue",
+              "CAGOLD:wait:intent_menu",
+              "CAGOLD:emotion",
+              "CAGOLD:ended"
+            ],
+            "tier": "failed"
+          },
+          "quality_tier": "failed",
+          "wait_time": 350.0
+        },
+        "node": "billing_queue",
+        "output": {
+          "approved": false,
+          "confidence": 0.0,
+          "risk_level": null
+        },
+        "parameter_changed": false,
+        "reasoning": "Governance required but no governor configured"
+      }
+    ],
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": false,
+      "emotion_frustration": 0.30000000000000004,
+      "friction_count": 3,
+      "governance_approved": false,
+      "governance_blocked": true,
+      "governance_required": true,
+      "governance_trigger": 2,
+      "governed": true,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "failed",
+      "resolved": true
+    }
+  },
+  "three_friction|gov=None|ledger=write_fails": {
+    "governor_calls": null,
+    "ledger_rows": [],
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": false,
+      "emotion_frustration": 0.30000000000000004,
+      "friction_count": 3,
+      "governance_approved": false,
+      "governance_blocked": true,
+      "governance_required": true,
+      "governance_trigger": 2,
+      "governed": true,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": true,
+      "metrics_recorded": true,
+      "quality": "failed",
+      "resolved": true
+    }
+  },
+  "three_friction|gov=approve|ledger=None": {
+    "governor_calls": [
+      {
+        "action": "heal_queue",
+        "details": {
+          "friction_count": 3,
+          "queue": "billing_queue",
+          "wait_time": 350.0
+        }
+      }
+    ],
+    "ledger_rows": null,
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": true,
+      "emotion_frustration": 0.30000000000000004,
+      "friction_count": 3,
+      "governance_approved": true,
+      "governance_blocked": false,
+      "governance_required": true,
+      "governance_trigger": 2,
+      "governed": true,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "failed",
+      "resolved": true
+    }
+  },
+  "three_friction|gov=approve|ledger=duplicate": {
+    "governor_calls": [],
+    "ledger_rows": [],
+    "result": {
+      "detail": "Call CAGOLD has already been processed",
+      "error": "duplicate_sid",
+      "sid": "CAGOLD"
+    }
+  },
+  "three_friction|gov=approve|ledger=ok": {
+    "governor_calls": [
+      {
+        "action": "heal_queue",
+        "details": {
+          "friction_count": 3,
+          "queue": "billing_queue",
+          "wait_time": 350.0
+        }
+      }
+    ],
+    "ledger_rows": [
+      {
+        "action_type": "governance_decision",
+        "authorized_by": "harness:production",
+        "cassette_version": "ivr:standard-ivr:2.0.2",
+        "input_data": {
+          "call_sid": "CAGOLD",
+          "caller_id": "twilio_GOLD",
+          "friction_count": 3,
+          "governance_trigger": 2,
+          "intent_classification": "BILLING",
+          "intent_confidence": 0.85,
+          "intent_reasoning": "Caller routed to billing_queue",
+          "kernel": {
+            "agrees_with_legacy_scoring": true,
+            "estimated_fields": [
+              "emotion_frustration",
+              "route",
+              "wait_agent_a",
+              "wait_billing_queue",
+              "wait_intent_menu"
+            ],
+            "field_provenance": {
+              "duration": "verified",
+              "emotion_frustration": "estimated",
+              "resolved": "verified",
+              "route": "estimated",
+              "wait_agent_a": "estimated",
+              "wait_billing_queue": "estimated",
+              "wait_intent_menu": "estimated"
+            },
+            "judged": true,
+            "score": 0.34,
+            "source_events": [
+              "CAGOLD:route",
+              "CAGOLD:wait:agent_a",
+              "CAGOLD:wait:billing_queue",
+              "CAGOLD:wait:intent_menu",
+              "CAGOLD:emotion",
+              "CAGOLD:ended"
+            ],
+            "tier": "failed"
+          },
+          "quality_tier": "failed",
+          "wait_time": 350.0
+        },
+        "node": "billing_queue",
+        "output": {
+          "approved": true,
+          "confidence": 0.9,
+          "risk_level": "low"
+        },
+        "parameter_changed": false,
+        "reasoning": "stub approve"
+      }
+    ],
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": true,
+      "emotion_frustration": 0.30000000000000004,
+      "friction_count": 3,
+      "governance_approved": true,
+      "governance_blocked": false,
+      "governance_required": true,
+      "governance_trigger": 2,
+      "governed": true,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "failed",
+      "resolved": true
+    }
+  },
+  "three_friction|gov=approve|ledger=write_fails": {
+    "governor_calls": [
+      {
+        "action": "heal_queue",
+        "details": {
+          "friction_count": 3,
+          "queue": "billing_queue",
+          "wait_time": 350.0
+        }
+      }
+    ],
+    "ledger_rows": [],
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": true,
+      "emotion_frustration": 0.30000000000000004,
+      "friction_count": 3,
+      "governance_approved": false,
+      "governance_blocked": true,
+      "governance_required": true,
+      "governance_trigger": 2,
+      "governed": true,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": true,
+      "metrics_recorded": true,
+      "quality": "failed",
+      "resolved": true
+    }
+  },
+  "three_friction|gov=failed_closed|ledger=None": {
+    "governor_calls": [
+      {
+        "action": "heal_queue",
+        "details": {
+          "friction_count": 3,
+          "queue": "billing_queue",
+          "wait_time": 350.0
+        }
+      }
+    ],
+    "ledger_rows": null,
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": false,
+      "emotion_frustration": 0.30000000000000004,
+      "friction_count": 3,
+      "governance_approved": false,
+      "governance_blocked": true,
+      "governance_required": true,
+      "governance_trigger": 2,
+      "governed": true,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "failed",
+      "resolved": true
+    }
+  },
+  "three_friction|gov=failed_closed|ledger=duplicate": {
+    "governor_calls": [],
+    "ledger_rows": [],
+    "result": {
+      "detail": "Call CAGOLD has already been processed",
+      "error": "duplicate_sid",
+      "sid": "CAGOLD"
+    }
+  },
+  "three_friction|gov=failed_closed|ledger=ok": {
+    "governor_calls": [
+      {
+        "action": "heal_queue",
+        "details": {
+          "friction_count": 3,
+          "queue": "billing_queue",
+          "wait_time": 350.0
+        }
+      }
+    ],
+    "ledger_rows": [
+      {
+        "action_type": "governance_decision",
+        "authorized_by": "harness:production",
+        "cassette_version": "ivr:standard-ivr:2.0.2",
+        "input_data": {
+          "call_sid": "CAGOLD",
+          "caller_id": "twilio_GOLD",
+          "friction_count": 3,
+          "governance_trigger": 2,
+          "intent_classification": "BILLING",
+          "intent_confidence": 0.85,
+          "intent_reasoning": "Caller routed to billing_queue",
+          "kernel": {
+            "agrees_with_legacy_scoring": true,
+            "estimated_fields": [
+              "emotion_frustration",
+              "route",
+              "wait_agent_a",
+              "wait_billing_queue",
+              "wait_intent_menu"
+            ],
+            "field_provenance": {
+              "duration": "verified",
+              "emotion_frustration": "estimated",
+              "resolved": "verified",
+              "route": "estimated",
+              "wait_agent_a": "estimated",
+              "wait_billing_queue": "estimated",
+              "wait_intent_menu": "estimated"
+            },
+            "judged": true,
+            "score": 0.34,
+            "source_events": [
+              "CAGOLD:route",
+              "CAGOLD:wait:agent_a",
+              "CAGOLD:wait:billing_queue",
+              "CAGOLD:wait:intent_menu",
+              "CAGOLD:emotion",
+              "CAGOLD:ended"
+            ],
+            "tier": "failed"
+          },
+          "quality_tier": "failed",
+          "wait_time": 350.0
+        },
+        "node": "billing_queue",
+        "output": {
+          "approved": false,
+          "confidence": 0.0,
+          "risk_level": null
+        },
+        "parameter_changed": false,
+        "reasoning": "stub unintelligible"
+      }
+    ],
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": false,
+      "emotion_frustration": 0.30000000000000004,
+      "friction_count": 3,
+      "governance_approved": false,
+      "governance_blocked": true,
+      "governance_required": true,
+      "governance_trigger": 2,
+      "governed": true,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "failed",
+      "resolved": true
+    }
+  },
+  "three_friction|gov=failed_closed|ledger=write_fails": {
+    "governor_calls": [
+      {
+        "action": "heal_queue",
+        "details": {
+          "friction_count": 3,
+          "queue": "billing_queue",
+          "wait_time": 350.0
+        }
+      }
+    ],
+    "ledger_rows": [],
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": false,
+      "emotion_frustration": 0.30000000000000004,
+      "friction_count": 3,
+      "governance_approved": false,
+      "governance_blocked": true,
+      "governance_required": true,
+      "governance_trigger": 2,
+      "governed": true,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": true,
+      "metrics_recorded": true,
+      "quality": "failed",
+      "resolved": true
+    }
+  },
+  "three_friction|gov=raises|ledger=None": {
+    "governor_calls": [
+      {
+        "action": "heal_queue",
+        "details": {
+          "friction_count": 3,
+          "queue": "billing_queue",
+          "wait_time": 350.0
+        }
+      }
+    ],
+    "ledger_rows": null,
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": false,
+      "emotion_frustration": 0.30000000000000004,
+      "friction_count": 3,
+      "governance_approved": false,
+      "governance_blocked": true,
+      "governance_required": true,
+      "governance_trigger": 2,
+      "governed": true,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "failed",
+      "resolved": true
+    }
+  },
+  "three_friction|gov=raises|ledger=duplicate": {
+    "governor_calls": [],
+    "ledger_rows": [],
+    "result": {
+      "detail": "Call CAGOLD has already been processed",
+      "error": "duplicate_sid",
+      "sid": "CAGOLD"
+    }
+  },
+  "three_friction|gov=raises|ledger=ok": {
+    "governor_calls": [
+      {
+        "action": "heal_queue",
+        "details": {
+          "friction_count": 3,
+          "queue": "billing_queue",
+          "wait_time": 350.0
+        }
+      }
+    ],
+    "ledger_rows": [
+      {
+        "action_type": "governance_decision",
+        "authorized_by": "harness:production",
+        "cassette_version": "ivr:standard-ivr:2.0.2",
+        "input_data": {
+          "call_sid": "CAGOLD",
+          "caller_id": "twilio_GOLD",
+          "friction_count": 3,
+          "governance_trigger": 2,
+          "intent_classification": "BILLING",
+          "intent_confidence": 0.85,
+          "intent_reasoning": "Caller routed to billing_queue",
+          "kernel": {
+            "agrees_with_legacy_scoring": true,
+            "estimated_fields": [
+              "emotion_frustration",
+              "route",
+              "wait_agent_a",
+              "wait_billing_queue",
+              "wait_intent_menu"
+            ],
+            "field_provenance": {
+              "duration": "verified",
+              "emotion_frustration": "estimated",
+              "resolved": "verified",
+              "route": "estimated",
+              "wait_agent_a": "estimated",
+              "wait_billing_queue": "estimated",
+              "wait_intent_menu": "estimated"
+            },
+            "judged": true,
+            "score": 0.34,
+            "source_events": [
+              "CAGOLD:route",
+              "CAGOLD:wait:agent_a",
+              "CAGOLD:wait:billing_queue",
+              "CAGOLD:wait:intent_menu",
+              "CAGOLD:emotion",
+              "CAGOLD:ended"
+            ],
+            "tier": "failed"
+          },
+          "quality_tier": "failed",
+          "wait_time": 350.0
+        },
+        "node": "billing_queue",
+        "output": {
+          "approved": false,
+          "confidence": 0.0,
+          "risk_level": null
+        },
+        "parameter_changed": false,
+        "reasoning": "Governor exception: simulated governor crash"
+      }
+    ],
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": false,
+      "emotion_frustration": 0.30000000000000004,
+      "friction_count": 3,
+      "governance_approved": false,
+      "governance_blocked": true,
+      "governance_required": true,
+      "governance_trigger": 2,
+      "governed": true,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "failed",
+      "resolved": true
+    }
+  },
+  "three_friction|gov=raises|ledger=write_fails": {
+    "governor_calls": [
+      {
+        "action": "heal_queue",
+        "details": {
+          "friction_count": 3,
+          "queue": "billing_queue",
+          "wait_time": 350.0
+        }
+      }
+    ],
+    "ledger_rows": [],
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": false,
+      "emotion_frustration": 0.30000000000000004,
+      "friction_count": 3,
+      "governance_approved": false,
+      "governance_blocked": true,
+      "governance_required": true,
+      "governance_trigger": 2,
+      "governed": true,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": true,
+      "metrics_recorded": true,
+      "quality": "failed",
+      "resolved": true
+    }
+  },
+  "three_friction|gov=refuse|ledger=None": {
+    "governor_calls": [
+      {
+        "action": "heal_queue",
+        "details": {
+          "friction_count": 3,
+          "queue": "billing_queue",
+          "wait_time": 350.0
+        }
+      }
+    ],
+    "ledger_rows": null,
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": false,
+      "emotion_frustration": 0.30000000000000004,
+      "friction_count": 3,
+      "governance_approved": false,
+      "governance_blocked": true,
+      "governance_required": true,
+      "governance_trigger": 2,
+      "governed": true,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "failed",
+      "resolved": true
+    }
+  },
+  "three_friction|gov=refuse|ledger=duplicate": {
+    "governor_calls": [],
+    "ledger_rows": [],
+    "result": {
+      "detail": "Call CAGOLD has already been processed",
+      "error": "duplicate_sid",
+      "sid": "CAGOLD"
+    }
+  },
+  "three_friction|gov=refuse|ledger=ok": {
+    "governor_calls": [
+      {
+        "action": "heal_queue",
+        "details": {
+          "friction_count": 3,
+          "queue": "billing_queue",
+          "wait_time": 350.0
+        }
+      }
+    ],
+    "ledger_rows": [
+      {
+        "action_type": "governance_decision",
+        "authorized_by": "harness:production",
+        "cassette_version": "ivr:standard-ivr:2.0.2",
+        "input_data": {
+          "call_sid": "CAGOLD",
+          "caller_id": "twilio_GOLD",
+          "friction_count": 3,
+          "governance_trigger": 2,
+          "intent_classification": "BILLING",
+          "intent_confidence": 0.85,
+          "intent_reasoning": "Caller routed to billing_queue",
+          "kernel": {
+            "agrees_with_legacy_scoring": true,
+            "estimated_fields": [
+              "emotion_frustration",
+              "route",
+              "wait_agent_a",
+              "wait_billing_queue",
+              "wait_intent_menu"
+            ],
+            "field_provenance": {
+              "duration": "verified",
+              "emotion_frustration": "estimated",
+              "resolved": "verified",
+              "route": "estimated",
+              "wait_agent_a": "estimated",
+              "wait_billing_queue": "estimated",
+              "wait_intent_menu": "estimated"
+            },
+            "judged": true,
+            "score": 0.34,
+            "source_events": [
+              "CAGOLD:route",
+              "CAGOLD:wait:agent_a",
+              "CAGOLD:wait:billing_queue",
+              "CAGOLD:wait:intent_menu",
+              "CAGOLD:emotion",
+              "CAGOLD:ended"
+            ],
+            "tier": "failed"
+          },
+          "quality_tier": "failed",
+          "wait_time": 350.0
+        },
+        "node": "billing_queue",
+        "output": {
+          "approved": false,
+          "confidence": 0.9,
+          "risk_level": "high"
+        },
+        "parameter_changed": false,
+        "reasoning": "stub refuse"
+      }
+    ],
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": false,
+      "emotion_frustration": 0.30000000000000004,
+      "friction_count": 3,
+      "governance_approved": false,
+      "governance_blocked": true,
+      "governance_required": true,
+      "governance_trigger": 2,
+      "governed": true,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "failed",
+      "resolved": true
+    }
+  },
+  "three_friction|gov=refuse|ledger=write_fails": {
+    "governor_calls": [
+      {
+        "action": "heal_queue",
+        "details": {
+          "friction_count": 3,
+          "queue": "billing_queue",
+          "wait_time": 350.0
+        }
+      }
+    ],
+    "ledger_rows": [],
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": false,
+      "emotion_frustration": 0.30000000000000004,
+      "friction_count": 3,
+      "governance_approved": false,
+      "governance_blocked": true,
+      "governance_required": true,
+      "governance_trigger": 2,
+      "governed": true,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": true,
+      "metrics_recorded": true,
+      "quality": "failed",
+      "resolved": true
+    }
+  },
+  "two_friction_at_trigger|gov=None|ledger=None": {
+    "governor_calls": null,
+    "ledger_rows": null,
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": false,
+      "emotion_frustration": 0.2,
+      "friction_count": 2,
+      "governance_approved": false,
+      "governance_blocked": true,
+      "governance_required": true,
+      "governance_trigger": 2,
+      "governed": true,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "poor",
+      "resolved": true
+    }
+  },
+  "two_friction_at_trigger|gov=approve|ledger=ok": {
+    "governor_calls": [
+      {
+        "action": "heal_queue",
+        "details": {
+          "friction_count": 2,
+          "queue": "billing_queue",
+          "wait_time": 120.0
+        }
+      }
+    ],
+    "ledger_rows": [
+      {
+        "action_type": "governance_decision",
+        "authorized_by": "harness:production",
+        "cassette_version": "ivr:standard-ivr:2.0.2",
+        "input_data": {
+          "call_sid": "CAGOLD",
+          "caller_id": "twilio_GOLD",
+          "friction_count": 2,
+          "governance_trigger": 2,
+          "intent_classification": "BILLING",
+          "intent_confidence": 0.85,
+          "intent_reasoning": "Caller routed to billing_queue",
+          "kernel": {
+            "agrees_with_legacy_scoring": true,
+            "estimated_fields": [
+              "emotion_frustration",
+              "route",
+              "wait_agent_a",
+              "wait_billing_queue",
+              "wait_intent_menu"
+            ],
+            "field_provenance": {
+              "duration": "verified",
+              "emotion_frustration": "estimated",
+              "resolved": "verified",
+              "route": "estimated",
+              "wait_agent_a": "estimated",
+              "wait_billing_queue": "estimated",
+              "wait_intent_menu": "estimated"
+            },
+            "judged": true,
+            "score": 0.46,
+            "source_events": [
+              "CAGOLD:route",
+              "CAGOLD:wait:agent_a",
+              "CAGOLD:wait:billing_queue",
+              "CAGOLD:wait:intent_menu",
+              "CAGOLD:emotion",
+              "CAGOLD:ended"
+            ],
+            "tier": "poor"
+          },
+          "quality_tier": "poor",
+          "wait_time": 120.0
+        },
+        "node": "billing_queue",
+        "output": {
+          "approved": true,
+          "confidence": 0.9,
+          "risk_level": "low"
+        },
+        "parameter_changed": false,
+        "reasoning": "stub approve"
+      }
+    ],
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": true,
+      "emotion_frustration": 0.2,
+      "friction_count": 2,
+      "governance_approved": true,
+      "governance_blocked": false,
+      "governance_required": true,
+      "governance_trigger": 2,
+      "governed": true,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "poor",
+      "resolved": true
+    }
+  },
+  "wait_exactly_on_line|gov=None|ledger=None": {
+    "governor_calls": null,
+    "ledger_rows": null,
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": null,
+      "emotion_frustration": 0.0,
+      "friction_count": 0,
+      "governance_approved": false,
+      "governance_blocked": false,
+      "governance_required": false,
+      "governance_trigger": 2,
+      "governed": false,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "good",
+      "resolved": true
+    }
+  },
+  "wait_exactly_on_line|gov=approve|ledger=ok": {
+    "governor_calls": [],
+    "ledger_rows": [],
+    "result": {
+      "caller_id": "twilio_GOLD",
+      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "claude_safe": null,
+      "emotion_frustration": 0.0,
+      "friction_count": 0,
+      "governance_approved": false,
+      "governance_blocked": false,
+      "governance_required": false,
+      "governance_trigger": 2,
+      "governed": false,
+      "intent": "billing_queue",
+      "intent_classification": "BILLING",
+      "ledger_write_failed": false,
+      "metrics_recorded": true,
+      "quality": "good",
+      "resolved": true
+    }
+  }
+}
