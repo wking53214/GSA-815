@@ -545,5 +545,9 @@ class GovernedPipeline:
                 "ledger_write_failed": ledger_write_failed,
                 "governed": governed,
                 "cassette_version": params.cassette_version,
+                # Provenance labels, so a caller can tell an estimated field
+                # from a measured one. The same values the ledger row carries.
+                "estimated_fields": kernel.get("estimated_fields"),
+                "field_provenance": kernel.get("field_provenance"),
             })
             return response

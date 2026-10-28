@@ -3,6 +3,17 @@
 Dated, human-readable summary of notable changes. Git history has the full
 detail; this is the skim version.
 
+## 2026-10-28
+
+- **The process_call response labels estimated fields.** `governed_pipeline.py`
+  now returns `estimated_fields` and `field_provenance` next to
+  `cassette_version`: the same values the ledger row already carried under
+  `kernel`, so a caller can tell an estimated field from a measured one. Both
+  are `None` when the kernel could not judge the call. `Tests/golden/process_call_golden.json`
+  regenerated (the diff is only the two new keys), the exact-dict assertion in
+  `Tests/test_toy_pack_end_to_end.py` extended, and
+  `test_the_response_labels_estimated_fields` added.
+
 ## 2026-10-09
 
 - **Loop guard is observe-only.** `production_harness.py` used to replace the
