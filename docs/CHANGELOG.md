@@ -5,6 +5,18 @@ detail; this is the skim version.
 
 ## 2026-10-28
 
+- **The kernel's judgment is mandatory for a governed call.** In
+  `governed_pipeline.py`, when the kernel could not judge a case that needs
+  sign-off (`EpisodeIntegrityError`, `EventIntegrityError` or `KeyError`), the
+  decision is now a refusal (`safe: False`, reasoning `Kernel judgment
+  unavailable: <error>: <detail>`) and the governor is not asked. The result
+  reports `governance_approved: False` and `governance_blocked: True`, and the
+  refused decision is still written to the ledger with the kernel error in its
+  input. Before, such a call could be approved on the pack's own scoring
+  ("legacy scoring stands"). An ungoverned call is unchanged. Any other
+  exception from the kernel step still propagates out of `process()` as
+  before. New `Tests/test_kernel_judgment_mandatory.py`.
+
 - **The process_call response labels estimated fields.** `governed_pipeline.py`
   now returns `estimated_fields` and `field_provenance` next to
   `cassette_version`: the same values the ledger row already carried under
