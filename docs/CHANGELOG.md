@@ -5,6 +5,14 @@ detail; this is the skim version.
 
 ## 2026-10-28
 
+- **A governance-blocked call no longer reports `success: true`.** `POST
+  /process` in `api_server_resilient.py` returned `{"success": true, "result":
+  ...}` for every returned dict, so a blocked call looked like a success. It
+  now sets `success` to `false` when `result.governance_blocked` is true. The
+  HTTP status stays 200 and the `result` body is unchanged. `POST /batch` and
+  the batch summary in `production_harness.py` are unchanged. New
+  `Tests/test_api_blocked_call_success.py`.
+
 - **The kernel's judgment is mandatory for a governed call.** In
   `governed_pipeline.py`, when the kernel could not judge a case that needs
   sign-off (`EpisodeIntegrityError`, `EventIntegrityError` or `KeyError`), the

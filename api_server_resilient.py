@@ -127,8 +127,11 @@ async def process_call(call: dict, api_key: dict = Depends(require_api_key)):
     try:
         logger.info(f"Processing call from {api_key['name']}: {call.get('sid')}")
         result = harness.process_call(call)
+        # A call the governance gate blocked is not a success. The status
+        # stays 200 and the result body is unchanged.
+        blocked = isinstance(result, dict) and bool(result.get("governance_blocked"))
         return {
-            "success": True,
+            "success": not blocked,
             "result": result,
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "authenticated_as": api_key['name']
