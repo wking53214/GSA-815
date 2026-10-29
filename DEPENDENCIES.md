@@ -31,9 +31,9 @@ commits that are on the kernel's `main`. The previous pin, `3cc0452`, was a bran
 merge left off `main`.
 
 This kernel enforces `authorized_by` attestation by default: a ledger refuses to start without
-`ICEBERG_LEDGER_ATTESTATION_KEY` (or `_KEY_FILE`). Production must supply one
-(`docker-compose-prod.yml` passes it through from the environment). The test suite generates a random
-key per session in `conftest.py` when none is configured.
+`ICEBERG_LEDGER_ATTESTATION_KEY` (or `_KEY_FILE`). Production must supply one:
+`docker-compose-prod.yml` refuses to start without it, and `k8s/` needs it in the secret or as a mounted
+file. The test suite generates a random key per session in `conftest.py` when none is configured.
 
 ## Corrections (2026-08-05)
 

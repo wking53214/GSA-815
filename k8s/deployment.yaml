@@ -99,11 +99,13 @@ spec:
               name: iceberg-secrets
               key: claude-api-key
         # Service signing key for the ledger's authorized_by attestation
-        # (governance/authorized_by_attestation.py). Optional: unset -> rows
-        # are written unattested (NULL signature), which is the default
-        # posture. Set ICEBERG_LEDGER_REQUIRE_ATTESTATION=1 below to make a
-        # present-but-unsigned authorized_by claim a hard failure -- with
-        # enforcement on and no key here, the ledger refuses to start.
+        # (governance/authorized_by_attestation.py). The kernel enforces
+        # attestation by default, so a signing key is REQUIRED: supply it here
+        # or through ICEBERG_LEDGER_ATTESTATION_KEY_FILE below. With neither,
+        # or with an empty value, the ledger refuses to start and the pod
+        # crash-loops. (`optional: true` only lets the pod be created; it
+        # does not make the key optional.) Never set
+        # ICEBERG_LEDGER_ATTESTATION_DEV_OVERRIDE in a production manifest.
         # Generate with `openssl rand -hex 32`; use a distinct key per
         # environment.
         - name: ICEBERG_LEDGER_ATTESTATION_KEY

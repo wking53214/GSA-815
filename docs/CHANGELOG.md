@@ -5,6 +5,16 @@ detail; this is the skim version.
 
 ## 2026-10-29
 
+- **Production now requires the ledger attestation key.** The kernel refuses
+  to start a ledger without one, but `docker-compose-prod.yml` defaulted it to
+  empty, so compose started a container that then died at boot. Compose now
+  stops up front with a message, the same way it does for
+  `POSTGRES_PASSWORD`. The comments in `docker-compose-prod.yml`,
+  `k8s/deployment.yaml` and `k8s/secret.yaml.example` said an unset key meant
+  unattested rows; that stopped being true with the kernel pin bump and is
+  corrected. The Kubernetes key stays optional in the manifest because a
+  mounted key file is the alternative.
+
 - **Kernel pin bumped to sentinel_os `51f0e09` (its `main`).** The ledger now
   verifies each governed decision against its episode (sentinel_os PR #85),
   which `governed_pipeline.py` already passes. On the old pin (`3cc0452`) that
