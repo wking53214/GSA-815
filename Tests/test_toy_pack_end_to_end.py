@@ -170,6 +170,11 @@ def test_a_flagged_expense_is_judged_signed_off_by_the_governor_and_recorded():
         "governance_approved": True, "governance_blocked": False,
         "ledger_write_failed": False, "governed": True,
         "cassette_version": "expense:expense-v1:1.0.0",
+        "estimated_fields": ["tax_portion"],
+        "field_provenance": {
+            "amount": "verified", "manager_approved": "verified",
+            "receipt_attached": "verified", "tax_portion": "estimated",
+        },
     }
 
     # What the governor was asked: the kernel's domain-blind wording, with the

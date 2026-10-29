@@ -114,6 +114,15 @@ def test_the_provenance_map_rides_into_the_episode_the_cassette_judges(harness):
     assert episode_provenance(assembly.episode) == assembly.provenance
 
 
+def test_the_response_labels_estimated_fields(harness):
+    """The caller, not only the ledger row, can tell estimated from measured."""
+    result = harness.process_call(dict(CALL))
+    assert "route" in result["estimated_fields"]
+    assert result["field_provenance"]["route"] == PROVENANCE_ESTIMATED
+    assert result["field_provenance"]["resolved"] == PROVENANCE_VERIFIED
+    assert result["field_provenance"]["duration"] == PROVENANCE_VERIFIED
+
+
 # ---------------------------------------------------------------------------
 # The kernel's own invariants still apply on the live path.
 # ---------------------------------------------------------------------------

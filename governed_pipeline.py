@@ -289,14 +289,15 @@ class GovernedPipeline:
 
             # 2. Kernel: judge the episode. THE governance path, live.
             #
-            # Additive on purpose. The pack keeps whatever scoring path it
-            # acts on, and the kernel's verdict is recorded ALONGSIDE it
-            # rather than replacing it -- swapping the live scoring path in
-            # the same change that introduces the episode would make any
-            # difference in behaviour impossible to attribute. The pack may
-            # cross-check the two (annotate_kernel), and a disagreement
-            # becomes an observable ledger fact rather than an assumption
-            # nobody tested.
+            # Mandatory for a governed case. The pack keeps whatever scoring
+            # path it acts on, and the kernel's verdict is recorded ALONGSIDE
+            # it rather than replacing it. The pack may cross-check the two
+            # (annotate_kernel), and a disagreement becomes an observable
+            # ledger fact rather than an assumption nobody tested. But a
+            # governed case the kernel could not judge is refused at the
+            # governance gate (step 4), never approved on the pack's scoring
+            # alone. An ungoverned case is unchanged: it proceeds on the
+            # pack's scoring and the failure is recorded.
             kernel = {"judged": False}
             with tracer.start_as_current_span("kernel_judgment") as kernel_span:
                 try:
@@ -320,15 +321,15 @@ class GovernedPipeline:
                 except (EpisodeIntegrityError, EventIntegrityError, KeyError) as e:
                     # A malformed episode is a real finding -- it means the
                     # ingest path produced something the kernel cannot accept.
-                    # It does not take the call down, because the pack has a
-                    # working scoring path that does not depend on it; but it
-                    # is recorded, never silently dropped.
+                    # It does not take the call down, and it is recorded,
+                    # never silently dropped. A governed call is refused at
+                    # the governance gate below; an ungoverned one carries on.
                     kernel = {"judged": False, "error": type(e).__name__,
                               "detail": str(e)[:400]}
                     kernel_span.set_attribute("kernel.judged", False)
                     mark_error(kernel_span, f"Kernel judgment unavailable: {e}")
                     logger.warning(
-                        "kernel could not judge this call; legacy scoring stands",
+                        "kernel could not judge this call",
                         extra={"extra_data": {"call_sid": record_id,
                                               "error": str(e)[:400]}})
 
@@ -348,7 +349,21 @@ class GovernedPipeline:
             for name, value in assessment.trace_attributes.items():
                 root_span.set_attribute(name, value)
 
-            if self.claude_decider and governed:
+            if governed and not kernel.get("judged"):
+                # The kernel could not judge a case that needs sign-off, so
+                # the governor is not asked and the case is not approved. The
+                # refusal is written to the ledger below like any other
+                # blocked decision, with the kernel error in its input.
+                claude_decision = {
+                    "safe": False,
+                    "governed": False,
+                    "parse_failed": False,
+                    "reasoning": "Kernel judgment unavailable: "
+                                 f"{kernel.get('error')}: {kernel.get('detail')}",
+                    "confidence": 0.0
+                }
+
+            elif self.claude_decider and governed:
                 with tracer.start_as_current_span("governance_decision") as gov_span:
                     try:
                         claude_decision = self.claude_breaker.call(
@@ -545,5 +560,9 @@ class GovernedPipeline:
                 "ledger_write_failed": ledger_write_failed,
                 "governed": governed,
                 "cassette_version": params.cassette_version,
+                # Provenance labels, so a caller can tell an estimated field
+                # from a measured one. The same values the ledger row carries.
+                "estimated_fields": kernel.get("estimated_fields"),
+                "field_provenance": kernel.get("field_provenance"),
             })
             return response

@@ -7,6 +7,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 3,
       "governance_approved": false,
       "governance_blocked": true,
@@ -93,6 +109,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": true,
       "emotion_frustration": 0.30000000000000004,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 3,
       "governance_approved": true,
       "governance_blocked": false,
@@ -115,6 +147,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": null,
       "emotion_frustration": 0.0,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 0,
       "governance_approved": false,
       "governance_blocked": false,
@@ -137,6 +185,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": null,
       "emotion_frustration": 0.0,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 0,
       "governance_approved": false,
       "governance_blocked": false,
@@ -159,6 +223,16 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": false,
       "emotion_frustration": 0.0,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated"
+      },
       "friction_count": 5,
       "governance_approved": false,
       "governance_blocked": true,
@@ -236,6 +310,16 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": true,
       "emotion_frustration": 0.0,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated"
+      },
       "friction_count": 5,
       "governance_approved": true,
       "governance_blocked": false,
@@ -258,6 +342,16 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": null,
       "emotion_frustration": 0.0,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated"
+      },
       "friction_count": 0,
       "governance_approved": false,
       "governance_blocked": false,
@@ -280,6 +374,16 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": null,
       "emotion_frustration": 0.0,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated"
+      },
       "friction_count": 0,
       "governance_approved": false,
       "governance_blocked": false,
@@ -302,6 +406,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": null,
       "emotion_frustration": 0.1,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 1,
       "governance_approved": false,
       "governance_blocked": false,
@@ -324,6 +444,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": null,
       "emotion_frustration": 0.1,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 1,
       "governance_approved": false,
       "governance_blocked": false,
@@ -346,6 +482,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 3,
       "governance_approved": false,
       "governance_blocked": true,
@@ -432,6 +584,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 3,
       "governance_approved": false,
       "governance_blocked": true,
@@ -454,6 +622,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 3,
       "governance_approved": false,
       "governance_blocked": true,
@@ -485,6 +669,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": true,
       "emotion_frustration": 0.30000000000000004,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 3,
       "governance_approved": true,
       "governance_blocked": false,
@@ -580,6 +780,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": true,
       "emotion_frustration": 0.30000000000000004,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 3,
       "governance_approved": true,
       "governance_blocked": false,
@@ -611,6 +827,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": true,
       "emotion_frustration": 0.30000000000000004,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 3,
       "governance_approved": false,
       "governance_blocked": true,
@@ -642,6 +874,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 3,
       "governance_approved": false,
       "governance_blocked": true,
@@ -737,6 +985,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 3,
       "governance_approved": false,
       "governance_blocked": true,
@@ -768,6 +1032,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 3,
       "governance_approved": false,
       "governance_blocked": true,
@@ -799,6 +1079,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 3,
       "governance_approved": false,
       "governance_blocked": true,
@@ -894,6 +1190,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 3,
       "governance_approved": false,
       "governance_blocked": true,
@@ -925,6 +1237,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 3,
       "governance_approved": false,
       "governance_blocked": true,
@@ -956,6 +1284,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 3,
       "governance_approved": false,
       "governance_blocked": true,
@@ -1051,6 +1395,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 3,
       "governance_approved": false,
       "governance_blocked": true,
@@ -1082,6 +1442,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 3,
       "governance_approved": false,
       "governance_blocked": true,
@@ -1104,6 +1480,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": false,
       "emotion_frustration": 0.2,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 2,
       "governance_approved": false,
       "governance_blocked": true,
@@ -1190,6 +1582,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": true,
       "emotion_frustration": 0.2,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 2,
       "governance_approved": true,
       "governance_blocked": false,
@@ -1212,6 +1620,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": null,
       "emotion_frustration": 0.0,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 0,
       "governance_approved": false,
       "governance_blocked": false,
@@ -1234,6 +1658,22 @@
       "cassette_version": "ivr:standard-ivr:2.0.2",
       "claude_safe": null,
       "emotion_frustration": 0.0,
+      "estimated_fields": [
+        "emotion_frustration",
+        "route",
+        "wait_agent_a",
+        "wait_billing_queue",
+        "wait_intent_menu"
+      ],
+      "field_provenance": {
+        "duration": "verified",
+        "emotion_frustration": "estimated",
+        "resolved": "verified",
+        "route": "estimated",
+        "wait_agent_a": "estimated",
+        "wait_billing_queue": "estimated",
+        "wait_intent_menu": "estimated"
+      },
       "friction_count": 0,
       "governance_approved": false,
       "governance_blocked": false,
