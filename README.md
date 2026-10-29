@@ -64,7 +64,7 @@ No guarantee the public GitHub clone is runnable (private CNS + undeclared local
 
 ## 6. Inputs, Outputs & Type Contracts
 
-IVR events via `twilio_log_ingestion` / `observe_perceive_core.CallPercept` (from CNS). Decisions written through kernel `governance_harness` → conservation boundary → Postgres ledger. Telemetry: wait, abandonment, frustration (`CallMetric`).
+IVR events via `twilio_log_ingestion` / `observe_perceive_core.CallPercept` (from CNS). Decisions are written by `governed_pipeline.py` straight to the kernel's Postgres ledger, handing it the episode it judged. The ledger (`governance/ledger_postgres.py`) runs the conservation boundary on that episode before it writes a row, and refuses a decision that arrives without one. The kernel's `governance_harness` is not on this path; earlier revisions of this line said it was, and the pipeline wrote to the ledger with no boundary check at all until this change. Telemetry: wait, abandonment, frustration (`CallMetric`).
 
 ## 7. Stack Integration Topology
 

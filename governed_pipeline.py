@@ -299,9 +299,15 @@ class GovernedPipeline:
             # alone. An ungoverned case is unchanged: it proceeds on the
             # pack's scoring and the failure is recorded.
             kernel = {"judged": False}
+            # The episode the ledger needs in order to verify the decision at
+            # the conservation boundary. None until the pack builds one: a
+            # call whose episode could not be built has nothing to verify,
+            # and the ledger refuses to record it (see step 5).
+            episode = None
             with tracer.start_as_current_span("kernel_judgment") as kernel_span:
                 try:
                     assembly = self.pack.build_episode(assessment)
+                    episode = assembly.episode
                     kernel_result = judge_episode(self.cassette, assembly.episode)
                     annotation = self.pack.annotate_kernel(assessment, kernel_result)
                     kernel = {
@@ -497,6 +503,7 @@ class GovernedPipeline:
                                 ai_cost=claude_decision.get("cost"),
                             ),
                             governance_params=params,
+                            episode=episode,
                         )
                     except Exception as e:
                         # CircuitOpenError (breaker OPEN) lands here too --

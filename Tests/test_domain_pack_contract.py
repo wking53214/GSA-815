@@ -44,7 +44,7 @@ class _FakeLedger:
     def sid_exists(self, sid):
         return False
 
-    def append_decision(self, record, governance_params=None):
+    def append_decision(self, record, governance_params=None, episode=None):
         self.written.append(record)
 
 
