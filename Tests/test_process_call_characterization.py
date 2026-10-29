@@ -54,7 +54,7 @@ class _FakeLedger:
     def sid_exists(self, sid):
         return self.duplicate
 
-    def append_decision(self, record, governance_params=None):
+    def append_decision(self, record, governance_params=None, episode=None):
         if self.fail_on_write:
             raise RuntimeError("simulated ledger outage")
         self.written.append(record)
