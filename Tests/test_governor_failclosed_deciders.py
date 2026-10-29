@@ -156,19 +156,60 @@ def test_valid_responses_still_pass_through():
     assert order["proposed_order"] == ["support", "billing"] and order["parse_failed"] is False
 
 
-# ---- known gap (tracked, not fixed here) --------------------------------------
-# Valid JSON that is not an object (null, [1], 42) escapes the try/except in
-# decide_staffing_adjustment and decide_queue_reordering: the dict assignments
-# after the try raise TypeError instead of returning a blocked result.
-# decide_healing_bounds is unaffected (its checks run inside the try).
-# strict=True: when the production code is fixed, these start passing and the
-# suite fails until the xfail markers are removed, so the gap cannot be forgotten.
+# ---- non-object JSON ------------------------------------------------------------
+# Valid JSON that is not an object (null, [1], 42) used to escape the try/except
+# in decide_staffing_adjustment and decide_queue_reordering: the dict assignments
+# after the try raised TypeError instead of returning a blocked result. Fixed:
+# the response is checked to be an object inside the try.
 
-@pytest.mark.xfail(strict=True, raises=TypeError,
-                   reason="non-object JSON raises instead of failing closed")
 @pytest.mark.parametrize("name", ["staffing", "reordering"])
 @pytest.mark.parametrize("payload", ["null", "[1]", "42"])
 def test_non_object_json_should_fail_closed(name, payload):
     call, _ = METHODS[name]
     decision = call(_decider_with(_returns(payload)))
     _assert_blocked(name, decision)
+
+
+# ---- more non-object shapes, and proof the guard does not over-block ------------
+
+_NON_OBJECT_PAYLOADS = [
+    "true", "false", "0", "-0", "3.14", "1e999", "NaN", "[]", "[[1, 2], [3]]",
+    '"a plain string"',
+    # A JSON string that merely contains an object must not be accepted as one.
+    json.dumps(json.dumps({"recommended_agents": 5, "proposed_order": ["a"], "should_heal": True})),
+    # A list holding an object that looks like a valid answer.
+    json.dumps([{"recommended_agents": 5, "proposed_order": ["a"], "should_heal": True}]),
+    "9" * 5000,
+]
+
+
+@pytest.mark.parametrize("name", METHODS)
+@pytest.mark.parametrize("payload", _NON_OBJECT_PAYLOADS)
+def test_every_non_object_shape_fails_closed_on_all_three_methods(name, payload):
+    call, _ = METHODS[name]
+    d = _decider_with(_returns(payload))
+    decision = call(d)
+    _assert_blocked(name, decision)
+    assert decision["parse_failed"] is True
+    assert d.decisions == [], "a rejected response must not be recorded as a decision"
+
+
+@pytest.mark.parametrize("name", ["staffing", "reordering"])
+def test_a_non_object_response_names_why_it_was_refused(name):
+    call, _ = METHODS[name]
+    decision = call(_decider_with(_returns("[1]")))
+    assert "not a JSON object" in decision["reasoning"]
+
+
+def test_valid_objects_keep_every_field_the_model_gave():
+    staff_in = {"recommended_agents": 7, "reasoning": "ok", "expected_wait": 50,
+                "confidence": 0.7, "extra": {"nested": [1, 2]}}
+    staff = _call_staffing(_decider_with(_returns(json.dumps(staff_in))))
+    assert {k: staff[k] for k in staff_in} == staff_in
+    assert staff["parse_failed"] is False and staff["queue"] == "billing_queue"
+
+    order_in = {"proposed_order": ["support", "billing"], "reasoning": "ok",
+                "expected_impact": 0.1, "confidence": 0.6, "extra": [None]}
+    order = _call_reordering(_decider_with(_returns(json.dumps(order_in))))
+    assert {k: order[k] for k in order_in} == order_in
+    assert order["parse_failed"] is False

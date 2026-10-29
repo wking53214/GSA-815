@@ -188,6 +188,8 @@ class ClaudeGovernanceDecider(GovernanceDecider):
                 raise ValueError("Empty response")
             response_text = message.content[0].text
             decision = json.loads(response_text)
+            if not isinstance(decision, dict):
+                raise ValueError("Governor response is not a JSON object")
         except json.JSONDecodeError:
             return {
                 "recommended_agents": None,
@@ -277,6 +279,8 @@ class ClaudeGovernanceDecider(GovernanceDecider):
                 raise ValueError("Empty response")
             response_text = message.content[0].text
             decision = json.loads(response_text)
+            if not isinstance(decision, dict):
+                raise ValueError("Governor response is not a JSON object")
         except json.JSONDecodeError:
             return {
                 "proposed_order": None,
