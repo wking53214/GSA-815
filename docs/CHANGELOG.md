@@ -3,6 +3,16 @@
 Dated, human-readable summary of notable changes. Git history has the full
 detail; this is the skim version.
 
+## 2026-10-29
+
+- **Kernel pin bumped to sentinel_os `51f0e09` (its `main`).** The ledger now
+  verifies each governed decision against its episode (sentinel_os PR #85),
+  which `governed_pipeline.py` already passes. On the old pin (`3cc0452`) that
+  argument was rejected and every governed write failed closed. The new
+  kernel also requires an attestation signing key: production must set
+  `ICEBERG_LEDGER_ATTESTATION_KEY`, and `conftest.py` generates a random one
+  per test session when none is configured.
+
 ## 2026-10-28
 
 - **A governance-blocked call no longer reports `success: true`.** `POST

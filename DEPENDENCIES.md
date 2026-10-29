@@ -26,6 +26,15 @@ Minimum kernel: the pinned `vendor/sentinel_os` commit must include the ledger's
 (`append_decision(..., episode=)`, sentinel_os PR #85). `governed_pipeline.py` passes `episode=`; an older
 kernel rejects that argument, so every write would fail closed until the submodule pin is bumped.
 
+Pinned (2026-10-29): sentinel_os `51f0e09`, the head of its `main`, which includes PR #85. Pin only
+commits that are on the kernel's `main`. The previous pin, `3cc0452`, was a branch commit that a squash
+merge left off `main`.
+
+This kernel enforces `authorized_by` attestation by default: a ledger refuses to start without
+`ICEBERG_LEDGER_ATTESTATION_KEY` (or `_KEY_FILE`). Production must supply one
+(`docker-compose-prod.yml` passes it through from the environment). The test suite generates a random
+key per session in `conftest.py` when none is configured.
+
 ## Corrections (2026-08-05)
 
 `ai_cost_tracking` was listed as this repo's own file and a copy was
