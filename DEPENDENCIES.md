@@ -22,6 +22,10 @@ The kernel is pinned as a **git submodule** at `vendor/sentinel_os` (2026-09-03)
 `conftest.py` appends `vendor/sentinel_os/sentinel_os` to `sys.path`, so
 `pytest` needs no `PYTHONPATH`. See "Running it" below.
 
+Minimum kernel: the pinned `vendor/sentinel_os` commit must include the ledger's conservation boundary
+(`append_decision(..., episode=)`, sentinel_os PR #85). `governed_pipeline.py` passes `episode=`; an older
+kernel rejects that argument, so every write would fail closed until the submodule pin is bumped.
+
 ## Corrections (2026-08-05)
 
 `ai_cost_tracking` was listed as this repo's own file and a copy was
