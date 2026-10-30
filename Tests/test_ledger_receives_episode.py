@@ -24,13 +24,15 @@ class _RecordingLedger:
     def __init__(self):
         self.written = []
         self.episodes = []
+        self.observed = []
 
     def sid_exists(self, sid):
         return False
 
-    def append_decision(self, record, governance_params=None, episode=None):
+    def append_decision(self, record, governance_params=None, episode=None, observed_events=None):
         self.written.append(record)
         self.episodes.append(episode)
+        self.observed.append(observed_events)
 
 
 class _Approves:
@@ -87,3 +89,53 @@ def test_a_call_whose_episode_cannot_be_built_reaches_the_ledger_with_no_episode
     h.process_call(RECORD)
 
     assert ledger.episodes == [None]
+
+
+def test_the_ledger_is_handed_the_events_the_episode_was_built_from():
+    """With the events the kernel can refuse an episode they do not support (sentinel_os #88)."""
+    h, ledger = _wired_harness()
+    built = []
+    original = h.pack.build_episode
+
+    def _spy(assessment):
+        assembly = original(assessment)
+        built.append(assembly)
+        return assembly
+
+    h.pack.build_episode = _spy
+    result = h.process_call(RECORD)
+
+    assert "error" not in result
+    events = ledger.observed[0]
+    assert events, "the IVR pack builds events, so the ledger must receive them"
+    assert tuple(e.event_id for e in sorted(events, key=lambda e: e.event_id)) == tuple(sorted(built[0].source_events))
+    assert {e.episode_id for e in events} == {ledger.episodes[0].episode_id}
+
+
+def test_the_ivr_packs_events_reproduce_its_episode_under_the_kernels_own_guard():
+    """The risk in passing events is a good call refused as ROOT_NOT_ATTESTED. Run the kernel's real guard."""
+    from conservation.episode_guard import EpisodeRootGuard  # noqa: E402  (kernel is on sys.path via conftest)
+
+    h, ledger = _wired_harness()
+    h.process_call(RECORD)
+
+    EpisodeRootGuard().attest(ledger.episodes[0], ledger.observed[0])  # raises EpisodeNotAttested if not
+
+
+def test_a_pack_whose_assembly_carries_no_events_passes_none():
+    """The pack contract is unchanged: events are optional, and without them the ledger is called as before."""
+    from episode import Episode  # noqa: F401,E402
+    from event_v1 import EpisodeAssembly  # noqa: E402
+
+    h, ledger = _wired_harness()
+    original = h.pack.build_episode
+
+    def _plain(assessment):
+        full = original(assessment)
+        return EpisodeAssembly(episode=full.episode, provenance=full.provenance,
+                               estimated_fields=full.estimated_fields, source_events=full.source_events)
+
+    h.pack.build_episode = _plain
+    h.process_call(RECORD)
+
+    assert ledger.observed == [None]

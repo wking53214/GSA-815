@@ -24,7 +24,7 @@ from observe_perceive_core import FrictionEvent
 from governance.friction_core import compute_friction
 from tracing import tracer
 from event_v1 import (PROVENANCE_ESTIMATED, PROVENANCE_VERIFIED,
-                      assemble_episode, make_event)
+                      EpisodeAssembly, assemble_episode, make_event)
 from cassette_capabilities import (
     CAPABILITY_ROUTING_TOPOLOGY,
     CAPABILITY_SELF_HEALING,
@@ -51,6 +51,19 @@ class _IvrCall:
     twilio_record: Dict[str, Any]
     quality_score: Any
     intent_signal: Any
+
+
+@dataclass(frozen=True)
+class IvrEpisodeAssembly(EpisodeAssembly):
+    """An `EpisodeAssembly` that also keeps the events the episode was folded from.
+
+    The plain assembly keeps only their ids. The ledger needs the events themselves: with them the kernel
+    registers the episode's root only if they reproduce it (sentinel_os #88), and the stream is written
+    beside the decision. `events` is optional on purpose: a pack whose assembly has none is called as before.
+    The events are built here from the same Twilio record as the episode, so this catches an episode that
+    says more than its events support; it does not show the events are true."""
+
+    events: Tuple[Any, ...] = ()
 
 
 class IvrPack(DomainPack):
@@ -176,7 +189,7 @@ class IvrPack(DomainPack):
             reasons = (f"call ended unresolved (twilio status="
                        f"{twilio_record.get('status')!r}, friction_count="
                        f"{friction_count})",)
-        return assemble_episode(
+        assembly = assemble_episode(
             episode_id=base, domain="ivr",
             requested={"resolved": True},
             events=events,
@@ -188,6 +201,10 @@ class IvrPack(DomainPack):
                 "journey": list(journey.journey),
                 "friction_events": list(friction_events or []),
             })
+        return IvrEpisodeAssembly(
+            episode=assembly.episode, provenance=assembly.provenance,
+            estimated_fields=assembly.estimated_fields, source_events=assembly.source_events,
+            reducer_version=assembly.reducer_version, events=tuple(events))
 
     def assess(self, twilio_record: Dict[str, Any], params: Any):
         """Read one Twilio call record and describe the call."""
