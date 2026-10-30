@@ -304,10 +304,14 @@ class GovernedPipeline:
             # call whose episode could not be built has nothing to verify,
             # and the ledger refuses to record it (see step 5).
             episode = None
+            # The events the episode was built from, when the pack keeps them. With them the ledger's
+            # conservation boundary registers the source root only if they reproduce the episode.
+            observed_events = None
             with tracer.start_as_current_span("kernel_judgment") as kernel_span:
                 try:
                     assembly = self.pack.build_episode(assessment)
                     episode = assembly.episode
+                    observed_events = getattr(assembly, "events", None) or None
                     kernel_result = judge_episode(self.cassette, assembly.episode)
                     annotation = self.pack.annotate_kernel(assessment, kernel_result)
                     kernel = {
@@ -504,6 +508,9 @@ class GovernedPipeline:
                             ),
                             governance_params=params,
                             episode=episode,
+                            # Only when the pack kept them, so a ledger that does not take the
+                            # argument is called exactly as before.
+                            **({"observed_events": observed_events} if observed_events else {}),
                         )
                     except Exception as e:
                         # CircuitOpenError (breaker OPEN) lands here too --

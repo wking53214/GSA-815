@@ -26,7 +26,8 @@ Minimum kernel: the pinned `vendor/sentinel_os` commit must include the ledger's
 (`append_decision(..., episode=)`, sentinel_os PR #85). `governed_pipeline.py` passes `episode=`; an older
 kernel rejects that argument, so every write would fail closed until the submodule pin is bumped.
 
-Pinned (2026-10-29): sentinel_os `51f0e09`, the head of its `main`, which includes PR #85. Pin only
+Pinned (2026-10-29): sentinel_os `5e9a8a3`, the head of its `main`, which includes PR #85 and PR #88 (a source root
+registers only when the observed events reproduce the Episode). Pin only
 commits that are on the kernel's `main`. The previous pin, `3cc0452`, was a branch commit that a squash
 merge left off `main`.
 

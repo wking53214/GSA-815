@@ -5,6 +5,18 @@ detail; this is the skim version.
 
 ## 2026-10-29
 
+- **The ledger now attests an IVR episode against its events.** The IVR pack already
+  built the events an episode is folded from but kept only their ids. It now keeps the
+  events too, and the pipeline hands them to the ledger with the episode. The kernel
+  (sentinel_os #88, pinned in Step 1) then registers the episode's root only if those
+  events reproduce it, so an episode that says more than its events support is
+  refused as `ROOT_NOT_ATTESTED`, and the event stream is written beside the
+  decision. This is a limit as well as a gain: the events are built here from the same
+  Twilio record as the episode, so they do not show the call really happened that
+  way. A pack whose assembly carries no events is called exactly as before. Two
+  stand-in ledgers in `test_domain_pack_contract.py` and
+  `test_process_call_characterization.py` gained the `observed_events` argument
+  (signature only).
 - **Production now requires the ledger attestation key.** The kernel refuses
   to start a ledger without one, but `docker-compose-prod.yml` defaulted it to
   empty, so compose started a container that then died at boot. Compose now
