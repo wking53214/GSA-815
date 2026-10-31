@@ -22,4 +22,4 @@ httpx<0.28
 # Private; pinned to the release tag v1.9.0. Keep this equal to the cns pin in
 # the vendored sentinel_os requirements: two different cns pins in one install
 # is a pip conflict.
-cns @ git+https://github.com/wking53214/CNS.git@v1.9.0
+cns @ git+https://github.com/wking53214/CNS.git@v2.3.0
