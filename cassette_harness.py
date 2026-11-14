@@ -7,7 +7,7 @@ Routes all domain logic through loaded cassette
 from typing import Dict
 from cassette_loader import CassetteLoader
 from cassette_schema import validate_cassette
-from governance.friction_core import compute_friction
+from ivr_friction import compute_friction
 from resilient_harness import ResilientHarness
 from operational_resilience import setup_logging
 

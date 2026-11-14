@@ -12,7 +12,7 @@ from observe_perceive_core import ObserveCore, FrictionEvent
 from governance.drift_core_v1 import DriftPolicy, detect_drift
 from governance.self_heal_v1 import heal, HealBand, InMemoryParameterStore
 from governance.log_rotation_v1 import LogRotationManager, LocalDiskAdapter
-from governance.friction_core import compute_friction
+from ivr_friction import compute_friction
 from cassette_loader import CassetteLoader
 from cassette_schema import validate_cassette
 
