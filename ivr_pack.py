@@ -21,7 +21,7 @@ from twilio_log_ingestion import (
     FALLBACK_ROUTE_METHOD, FALLBACK_WAIT_METHOD, NODE_ROLE_QUEUE,
 )
 from observe_perceive_core import FrictionEvent
-from governance.friction_core import compute_friction
+from ivr_friction import compute_friction
 from tracing import tracer
 from event_v1 import (PROVENANCE_ESTIMATED, PROVENANCE_VERIFIED,
                       EpisodeAssembly, assemble_episode, make_event)

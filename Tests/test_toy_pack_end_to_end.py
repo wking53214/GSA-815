@@ -317,7 +317,7 @@ _IVR_MODULES = [
     "ivr_pack", "production_harness", "claude_governance_api",
     "twilio_log_ingestion", "observe_perceive_core", "sentinel_core",
     "metrics_prometheus", "queue_staffing_bayes_integration",
-    "governance.friction_core",
+    "governance.friction_core", "ivr_friction",
 ]
 
 _CHILD = """

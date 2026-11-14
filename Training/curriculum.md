@@ -92,7 +92,7 @@ Orient in the repository and name the moving parts.
   and tier; the core translates a tier via a fixed map and fails loudly on an
   unknown tier).
 - `api_server_resilient.py` — the persistent HTTP service.
-- `governance/` — `friction_core.py`, `ledger_postgres.py`, `drift_core_v1.py`,
+- `governance/` — `ledger_postgres.py`, `drift_core_v1.py`,
   `self_heal_v1.py`, `recommend_v1.py`.
 - `DEPLOYMENT.md` — the operational reference for environment and deploy paths.
 
@@ -174,14 +174,14 @@ domain's cassette; the engine reads it.)
 Trace one call from friction measurement through the governance gate.
 
 ### The flow
-1. Per-node waits are turned into a friction count. `friction_core.compute_friction(duration, long_wait_threshold)` returns 1 when a node's wait exceeds the cassette's long-wait threshold, else 0; the harness sums these across the call's journey nodes.
+1. Per-node waits are turned into a friction count. `ivr_friction.compute_friction(duration, long_wait_threshold)` returns 1 when a node's wait exceeds the cassette's long-wait threshold, else 0; the harness sums these across the call's journey nodes.
 2. If the friction count meets the cassette's `governance_trigger` (inclusive), the call is routed to the governor. The trigger comes from the cassette, not from a literal in the harness.
 3. The governor (`ClaudeGovernanceDecider`, backed by `claude_governance_api.py`) is asked to approve or reject. It is **fail-closed**: a parse failure, a non-boolean safety verdict, or a transport error all resolve to `safe: false` and halt. The governor's `reasoning` is captured and flows into the ledger.
 4. Every decision — approval, rejection, or error — is logged. There is no path where an action is applied without a corresponding ledger entry.
 
 ### Key modules
 - `production_harness.py` (`IcebergProductionHarness`) — the orchestration.
-- `governance/friction_core.py` (`compute_friction`) — the single friction
+- `ivr_friction.py` (`compute_friction`) — the single friction
   computation used on the governance path.
 - `claude_governance_api.py` — the governor and its fail-closed gate.
 
@@ -189,7 +189,7 @@ Trace one call from friction measurement through the governance gate.
 Confirm the friction primitive's behavior:
 ```
 python3 -c "
-from governance.friction_core import compute_friction
+from ivr_friction import compute_friction
 print(compute_friction(30, 45), compute_friction(60, 45), compute_friction(120, 45))
 "
 ```
