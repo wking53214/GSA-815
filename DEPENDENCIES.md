@@ -159,3 +159,7 @@ is unchanged. The copies removed were byte-identical to what was extracted
 also carries classes that now live in `cns.governance`, but it is not on
 the live path and is left alone under the freeze.
 
+
+## Telephony pieces now owned here (2026-11-13)
+
+Three telephony pieces that used to be imported from the kernel are now this repo's own files: `ivr_friction.py` (the friction rule), `telephony_capability.py` (the `telephony_ingest` contract, which registers itself with the kernel's validator on import) and `recommendation_impact.py` (queue-reordering shadow runs, with its tests). Nothing here needs them from the kernel any more. The kernel still ships its copies at the current pin, so this change works with both the old and the new kernel; a companion sentinel_os change removes them, after which the submodule pin can move forward.
