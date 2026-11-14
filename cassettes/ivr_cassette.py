@@ -15,9 +15,9 @@ from cassette_capabilities import (
     ReinforcementLearning,
     RoutingTopology,
     SelfHealing,
-    TelephonyIngest,
 )
 from episode import Episode
+from telephony_capability import TelephonyIngest
 from typing import Any, Dict, List
 
 class IvrCassette(Cassette, TelephonyIngest, RoutingTopology,
