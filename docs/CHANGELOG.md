@@ -13,6 +13,12 @@ detail; this is the skim version.
   cassette's code hash, so the cassette version moves from 2.0.2 to 2.0.4 in the
   same commit (2.0.3 is the kernel's own IVR cassette). The characterization
   golden changed only in those version strings.
+- **No default ledger password.** `governed_pipeline.py` fell back to the
+  password `iceberg` when a config named `postgres_host` but no
+  `postgres_password`. It now refuses at construction with a message naming
+  the missing setting, whether or not cassette binding is required. The
+  entrypoints already required `POSTGRES_PASSWORD`; this was the last fallback
+  in non-test code. Test fixtures keep their throwaway credential.
 
 ## 2026-10-29
 
