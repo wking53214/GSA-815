@@ -26,10 +26,17 @@ Minimum kernel: the pinned `vendor/sentinel_os` commit must include the ledger's
 (`append_decision(..., episode=)`, sentinel_os PR #85). `governed_pipeline.py` passes `episode=`; an older
 kernel rejects that argument, so every write would fail closed until the submodule pin is bumped.
 
-Pinned (2026-10-29): sentinel_os `5e9a8a3`, the head of its `main`, which includes PR #85 and PR #88 (a source root
-registers only when the observed events reproduce the Episode). Pin only
-commits that are on the kernel's `main`. The previous pin, `3cc0452`, was a branch commit that a squash
-merge left off `main`.
+Pinned (2026-11-16): sentinel_os `cf4bbc1`, the head of its `main`. Its `requirements.txt` pins CNS v4.0.0, the
+same pin as this repo's `requirements.txt`, and Conservation_Kernel `cc42d3f`. It includes PR #85, PR #88 (a source
+root registers only when the observed events reproduce the Episode) and the 2026-11-14 ledger boot lock. Pin only
+commits that are on the kernel's `main`. The previous pin, `e97683c`, broke that rule: it was the pre-rewrite merge
+commit of sentinel_os PR #96 and is on no branch (GitHub still served it by SHA), and it pinned CNS v2.3.0, so
+`pip install -r requirements.txt` failed on two different `cns` pins. Earlier pins: `5e9a8a3` (2026-10-29) and
+`3cc0452`, a branch commit that a squash merge left off `main`.
+
+Moving the pin can move the IVR cassette's code hash (the kernel's `cassette_capabilities.py` and other shared
+governance modules are hashed with it), and a ledger refuses a known cassette version with a new code hash. Bump
+`cassettes/ivr_cassette.py`'s version in the same commit as the pin when that happens.
 
 This kernel enforces `authorized_by` attestation by default: a ledger refuses to start without
 `ICEBERG_LEDGER_ATTESTATION_KEY` (or `_KEY_FILE`). Production must supply one:
@@ -162,4 +169,4 @@ the live path and is left alone under the freeze.
 
 ## Telephony pieces now owned here (2026-11-13)
 
-Three telephony pieces that used to be imported from the kernel are now this repo's own files: `ivr_friction.py` (the friction rule), `telephony_capability.py` (the `telephony_ingest` contract, which registers itself with the kernel's validator on import) and `recommendation_impact.py` (queue-reordering shadow runs, with its tests). Nothing here needs them from the kernel any more. The kernel still ships its copies at the current pin, so this change works with both the old and the new kernel; a companion sentinel_os change removes them, after which the submodule pin can move forward.
+Three telephony pieces that used to be imported from the kernel are now this repo's own files: `ivr_friction.py` (the friction rule), `telephony_capability.py` (the `telephony_ingest` contract, which registers itself with the kernel's validator on import) and `recommendation_impact.py` (queue-reordering shadow runs, with its tests). Nothing here needs them from the kernel any more. The kernel still ships its copies at the current pin, so this change works with both the old and the new kernel; a companion sentinel_os change removes them, after which the submodule pin can move forward. (2026-11-16: it has. sentinel_os PR #136 removed the kernel's copies, and the pin now sits past it.)

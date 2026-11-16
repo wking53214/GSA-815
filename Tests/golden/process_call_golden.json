@@ -4,7 +4,7 @@
     "ledger_rows": null,
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
       "estimated_fields": [
@@ -52,7 +52,7 @@
       {
         "action_type": "governance_decision",
         "authorized_by": "harness:production",
-        "cassette_version": "ivr:standard-ivr:2.0.2",
+        "cassette_version": "ivr:standard-ivr:2.0.4",
         "input_data": {
           "call_sid": "CAGOLD",
           "caller_id": "twilio_GOLD",
@@ -106,7 +106,7 @@
     ],
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": true,
       "emotion_frustration": 0.30000000000000004,
       "estimated_fields": [
@@ -144,7 +144,7 @@
     "ledger_rows": null,
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": null,
       "emotion_frustration": 0.0,
       "estimated_fields": [
@@ -182,7 +182,7 @@
     "ledger_rows": [],
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": null,
       "emotion_frustration": 0.0,
       "estimated_fields": [
@@ -220,7 +220,7 @@
     "ledger_rows": null,
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": false,
       "emotion_frustration": 0.0,
       "estimated_fields": [
@@ -262,7 +262,7 @@
       {
         "action_type": "governance_decision",
         "authorized_by": "harness:production",
-        "cassette_version": "ivr:standard-ivr:2.0.2",
+        "cassette_version": "ivr:standard-ivr:2.0.4",
         "input_data": {
           "call_sid": "CAGOLD",
           "caller_id": "twilio_GOLD",
@@ -307,7 +307,7 @@
     ],
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": true,
       "emotion_frustration": 0.0,
       "estimated_fields": [
@@ -339,7 +339,7 @@
     "ledger_rows": null,
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": null,
       "emotion_frustration": 0.0,
       "estimated_fields": [
@@ -371,7 +371,7 @@
     "ledger_rows": [],
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": null,
       "emotion_frustration": 0.0,
       "estimated_fields": [
@@ -403,7 +403,7 @@
     "ledger_rows": null,
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": null,
       "emotion_frustration": 0.1,
       "estimated_fields": [
@@ -441,7 +441,7 @@
     "ledger_rows": [],
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": null,
       "emotion_frustration": 0.1,
       "estimated_fields": [
@@ -479,7 +479,7 @@
     "ledger_rows": null,
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
       "estimated_fields": [
@@ -527,7 +527,7 @@
       {
         "action_type": "governance_decision",
         "authorized_by": "harness:production",
-        "cassette_version": "ivr:standard-ivr:2.0.2",
+        "cassette_version": "ivr:standard-ivr:2.0.4",
         "input_data": {
           "call_sid": "CAGOLD",
           "caller_id": "twilio_GOLD",
@@ -581,7 +581,7 @@
     ],
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
       "estimated_fields": [
@@ -619,7 +619,7 @@
     "ledger_rows": [],
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
       "estimated_fields": [
@@ -666,7 +666,7 @@
     "ledger_rows": null,
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": true,
       "emotion_frustration": 0.30000000000000004,
       "estimated_fields": [
@@ -723,7 +723,7 @@
       {
         "action_type": "governance_decision",
         "authorized_by": "harness:production",
-        "cassette_version": "ivr:standard-ivr:2.0.2",
+        "cassette_version": "ivr:standard-ivr:2.0.4",
         "input_data": {
           "call_sid": "CAGOLD",
           "caller_id": "twilio_GOLD",
@@ -777,7 +777,7 @@
     ],
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": true,
       "emotion_frustration": 0.30000000000000004,
       "estimated_fields": [
@@ -824,7 +824,7 @@
     "ledger_rows": [],
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": true,
       "emotion_frustration": 0.30000000000000004,
       "estimated_fields": [
@@ -871,7 +871,7 @@
     "ledger_rows": null,
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
       "estimated_fields": [
@@ -928,7 +928,7 @@
       {
         "action_type": "governance_decision",
         "authorized_by": "harness:production",
-        "cassette_version": "ivr:standard-ivr:2.0.2",
+        "cassette_version": "ivr:standard-ivr:2.0.4",
         "input_data": {
           "call_sid": "CAGOLD",
           "caller_id": "twilio_GOLD",
@@ -982,7 +982,7 @@
     ],
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
       "estimated_fields": [
@@ -1029,7 +1029,7 @@
     "ledger_rows": [],
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
       "estimated_fields": [
@@ -1076,7 +1076,7 @@
     "ledger_rows": null,
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
       "estimated_fields": [
@@ -1133,7 +1133,7 @@
       {
         "action_type": "governance_decision",
         "authorized_by": "harness:production",
-        "cassette_version": "ivr:standard-ivr:2.0.2",
+        "cassette_version": "ivr:standard-ivr:2.0.4",
         "input_data": {
           "call_sid": "CAGOLD",
           "caller_id": "twilio_GOLD",
@@ -1187,7 +1187,7 @@
     ],
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
       "estimated_fields": [
@@ -1234,7 +1234,7 @@
     "ledger_rows": [],
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
       "estimated_fields": [
@@ -1281,7 +1281,7 @@
     "ledger_rows": null,
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
       "estimated_fields": [
@@ -1338,7 +1338,7 @@
       {
         "action_type": "governance_decision",
         "authorized_by": "harness:production",
-        "cassette_version": "ivr:standard-ivr:2.0.2",
+        "cassette_version": "ivr:standard-ivr:2.0.4",
         "input_data": {
           "call_sid": "CAGOLD",
           "caller_id": "twilio_GOLD",
@@ -1392,7 +1392,7 @@
     ],
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
       "estimated_fields": [
@@ -1439,7 +1439,7 @@
     "ledger_rows": [],
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": false,
       "emotion_frustration": 0.30000000000000004,
       "estimated_fields": [
@@ -1477,7 +1477,7 @@
     "ledger_rows": null,
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": false,
       "emotion_frustration": 0.2,
       "estimated_fields": [
@@ -1525,7 +1525,7 @@
       {
         "action_type": "governance_decision",
         "authorized_by": "harness:production",
-        "cassette_version": "ivr:standard-ivr:2.0.2",
+        "cassette_version": "ivr:standard-ivr:2.0.4",
         "input_data": {
           "call_sid": "CAGOLD",
           "caller_id": "twilio_GOLD",
@@ -1579,7 +1579,7 @@
     ],
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": true,
       "emotion_frustration": 0.2,
       "estimated_fields": [
@@ -1617,7 +1617,7 @@
     "ledger_rows": null,
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": null,
       "emotion_frustration": 0.0,
       "estimated_fields": [
@@ -1655,7 +1655,7 @@
     "ledger_rows": [],
     "result": {
       "caller_id": "twilio_GOLD",
-      "cassette_version": "ivr:standard-ivr:2.0.2",
+      "cassette_version": "ivr:standard-ivr:2.0.4",
       "claude_safe": null,
       "emotion_frustration": 0.0,
       "estimated_fields": [
