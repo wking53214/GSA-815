@@ -51,6 +51,18 @@ jobs:
             exit 1
           fi
           git config --global url."https://x-access-token:${LIBRARY_READ_TOKEN}@github.com/".insteadOf "https://github.com/"
+      - name: Require the kernel pin to be on sentinel_os main
+        # A missing submodule commit already fails checkout above, but GitHub
+        # serves a commit by SHA even when no branch holds it, until it is
+        # garbage collected. The old pin e97683c was such a commit. Fail while
+        # the pin can still be moved, not after every clone breaks.
+        run: |
+          cd vendor/sentinel_os
+          git fetch --quiet origin main
+          if ! git merge-base --is-ancestor HEAD FETCH_HEAD; then
+            echo "::error::vendor/sentinel_os is pinned to $(git rev-parse --short HEAD), which is not on sentinel_os main"
+            exit 1
+          fi
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
