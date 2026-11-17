@@ -160,13 +160,25 @@ class GovernedPipeline:
 
         # PostgreSQL ledger
         if self.config.get("postgres_host"):
+            # No default password: a well-known fallback would let a
+            # misconfigured deployment connect with a guessable
+            # credential. Refused here, outside the try below, so it is
+            # never softened into "PostgreSQL not available".
+            postgres_password = self.config.get("postgres_password")
+            if not postgres_password:
+                raise RuntimeError(
+                    "postgres_host is configured but postgres_password is "
+                    "not set: refusing to connect the ledger without a "
+                    "password. Set postgres_password (the entrypoints read "
+                    "POSTGRES_PASSWORD), or leave postgres_host unset."
+                )
             try:
                 self.ledger = PostgreSQLLedger(
                     host=self.config.get("postgres_host", "localhost"),
                     port=self.config.get("postgres_port", 5432),
                     dbname=self.config.get("postgres_db", "iceberg"),
                     user=self.config.get("postgres_user", "iceberg"),
-                    password=self.config.get("postgres_password", "iceberg")
+                    password=postgres_password
                 )
                 print("✓ PostgreSQL ledger connected")
             except Exception as e:

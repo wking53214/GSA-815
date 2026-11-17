@@ -71,7 +71,7 @@ IVR events via `twilio_log_ingestion` / `observe_perceive_core.CallPercept` (fro
 ```text
 GSA-815 production_harness
     → vendor/sentinel_os (submodule)  episode / ledger_postgres / cassette_loader
-    → Conservation_Kernel (transitive pin 25145aa)
+    → Conservation_Kernel (transitive pin cc42d3f, via the kernel's requirements)
     → DIT (kernel epistemic gate, git pin)
     → private CNS
     ✗ observe-perceive does not import this repo

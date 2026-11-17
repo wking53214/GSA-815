@@ -3,6 +3,23 @@
 Dated, human-readable summary of notable changes. Git history has the full
 detail; this is the skim version.
 
+## 2026-11-16
+
+- **Kernel pin moved to sentinel_os `cf4bbc1` (its `main`).** The old pin,
+  `e97683c`, was on no sentinel_os branch and pinned CNS v2.3.0 while this repo
+  pins v4.0.0, so `pip install -r requirements.txt` failed on the conflict. The
+  new kernel pins CNS v4.0.0 and Conservation_Kernel `cc42d3f`, and brings the
+  ledger boot lock. Its `cassette_capabilities.py` differs, which moves the IVR
+  cassette's code hash, so the cassette version moves from 2.0.2 to 2.0.4 in the
+  same commit (2.0.3 is the kernel's own IVR cassette). The characterization
+  golden changed only in those version strings.
+- **No default ledger password.** `governed_pipeline.py` fell back to the
+  password `iceberg` when a config named `postgres_host` but no
+  `postgres_password`. It now refuses at construction with a message naming
+  the missing setting, whether or not cassette binding is required. The
+  entrypoints already required `POSTGRES_PASSWORD`; this was the last fallback
+  in non-test code. Test fixtures keep their throwaway credential.
+
 ## 2026-10-29
 
 - **The ledger now attests an IVR episode against its events.** The IVR pack already
