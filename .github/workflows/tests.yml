@@ -31,7 +31,11 @@ jobs:
         # the pin can still be moved, not after every clone breaks.
         run: |
           cd vendor/sentinel_os
-          git fetch --quiet origin main
+          # checkout clones the submodule at depth 1, so fetch main's full
+          # commit history (no file contents) or the ancestry walk below
+          # cannot reach the pin once main has moved past it.
+          git fetch --quiet --unshallow --filter=blob:none origin main 2>/dev/null \
+            || git fetch --quiet --filter=blob:none origin main
           if ! git merge-base --is-ancestor HEAD FETCH_HEAD; then
             echo "::error::vendor/sentinel_os is pinned to $(git rev-parse --short HEAD), which is not on sentinel_os main"
             exit 1
