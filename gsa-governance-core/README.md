@@ -1,5 +1,8 @@
 # GSA Governance Operating Core (Enterprise)
 
+> **Status: a self-contained reference runtime. Nothing in GSA-815 imports it, and it is not the production governance path. The table of layers below describes this file's own code, not the platform. See "Status" further down.**
+
+
 **Version:** 5.0.0  
 **Architecture Family:** GSA / Citadel / AEGIS Unified Governance Runtime  
 **Classification:** Enterprise Deterministic Governance Control Plane
