@@ -34,11 +34,48 @@ def _require_env(name: str) -> str:
     return value
 
 
+# One explicit local-development switch. With it on, the server may run with no
+# real API key and over plain HTTP. With it off (the default), it refuses both.
+DEV_SWITCH = "ICEBERG_ALLOW_INSECURE_DEV"
+
+
+def insecure_dev_allowed(environ=None) -> bool:
+    environ = os.environ if environ is None else environ
+    return str(environ.get(DEV_SWITCH, "")).strip().lower() in ("1", "true", "yes")
+
+
+def require_real_api_keys(environ=None) -> None:
+    """Refuse to start without an operator-supplied API key.
+
+    The key manager makes up a throwaway development key when
+    ICEBERG_API_KEYS is empty; that key must never guard a real server.
+    """
+    environ = os.environ if environ is None else environ
+    if insecure_dev_allowed(environ):
+        return
+    configured = [pair for pair in str(environ.get("ICEBERG_API_KEYS", "")).split(",")
+                  if ":" in pair and pair.split(":", 1)[0].strip()]
+    if not configured:
+        raise RuntimeError(
+            "ICEBERG_API_KEYS is not set (or holds no key:name pair), so the server would run on a "
+            f"made-up development key. Set ICEBERG_API_KEYS=key:name, or set {DEV_SWITCH}=1 for local development only.")
+
+
+def require_tls(use_tls: bool, environ=None) -> None:
+    """Refuse to serve plain HTTP unless the local-development switch is on."""
+    if not use_tls and not insecure_dev_allowed(environ):
+        raise RuntimeError(
+            "No TLS certificate and key were found, and this server will not serve plain HTTP. "
+            f"Provide CERT_FILE and KEY_FILE, or set {DEV_SWITCH}=1 for local development only.")
+
+
 harness = None
 
 @app.on_event("startup")
 async def startup():
     global harness
+
+    require_real_api_keys()
     
     config = {
         "postgres_host": os.getenv("POSTGRES_HOST", "localhost"),
@@ -196,13 +233,20 @@ if __name__ == "__main__":
     # Check if certs exist
     if not os.path.exists(cert_file) or not os.path.exists(key_file):
         print(f"⚠️  TLS certificates not found at {cert_file} and {key_file}")
-        print("Running without TLS. To enable TLS, generate certs with:")
+        print("To enable TLS, generate certs with:")
         print('  mkdir -p certs && openssl req -x509 -newkey rsa:4096 -nodes -out certs/cert.pem -keyout certs/key.pem -days 365 -subj "/C=US/ST=State/L=City/O=Iceberg/CN=localhost"')
         use_tls = False
     else:
         use_tls = True
         print(f"✓ Using TLS certificates: {cert_file}, {key_file}")
     
+    try:
+        require_tls(use_tls)
+        require_real_api_keys()
+    except RuntimeError as exc:
+        raise SystemExit(f"refusing to start: {exc}")
+    if not use_tls:
+        print(f"⚠️  {DEV_SWITCH} is on: serving plain HTTP (local development only)")
     print(f"✓ API key authentication enabled ({len(api_key_manager.keys)} keys loaded)")
     
     # Run server
