@@ -78,6 +78,10 @@ jobs:
           done
 
       - name: Run test suite
+        env:
+          # CI is the one place that may reach api.anthropic.com: three tests send a deliberately invalid key there.
+          # `sudo -E` below keeps this variable.
+          GSA_REAL_CONNECTION_TESTS: "1"
         run: |
           # No PYTHONPATH -- the root conftest.py puts
           # vendor/sentinel_os/sentinel_os on sys.path (appended, so this
