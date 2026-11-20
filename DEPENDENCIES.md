@@ -26,7 +26,7 @@ Minimum kernel: the pinned `vendor/sentinel_os` commit must include the ledger's
 (`append_decision(..., episode=)`, sentinel_os PR #85). `governed_pipeline.py` passes `episode=`; an older
 kernel rejects that argument, so every write would fail closed until the submodule pin is bumped.
 
-Pinned (2026-11-16): sentinel_os `cf4bbc1`, the head of its `main`. Its `requirements.txt` pins CNS v4.1.0, the
+Pinned (2026-11-16): sentinel_os `130d8d2`, the head of its `main` (2026-11-20). Its `requirements.txt` pins CNS v4.1.0, the
 same pin as this repo's `requirements.txt`, and Conservation_Kernel `cc42d3f`. It includes PR #85, PR #88 (a source
 root registers only when the observed events reproduce the Episode) and the 2026-11-14 ledger boot lock. Pin only
 commits that are on the kernel's `main`. The previous pin, `e97683c`, broke that rule: it was the pre-rewrite merge
