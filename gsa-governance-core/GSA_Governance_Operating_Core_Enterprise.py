@@ -87,7 +87,7 @@ from typing import (
 )
 
 # The fourteen governance contracts that used to be defined here are shared
-# with the library and live in the private CNS package (cns.governance). The
+# with the library and live in the public CNS package (cns.governance). The
 # copies carried here until 2026-09-11 were byte-identical to the ones
 # extracted -- verified by structural hash with docstrings stripped -- so no
 # shape changes in this commit. They are re-exported so existing imports keep

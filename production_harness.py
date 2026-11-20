@@ -1,7 +1,7 @@
 """
 Production Harness - Ties all systems together
 
-Real Twilio → Real Prometheus → Real PostgreSQL → Real Claude → Real Governance
+Twilio (stub adapter) → Prometheus → PostgreSQL → Claude → Governance
 
 The generic governance pipeline lives in governed_pipeline.py and everything
 specific to phone calls lives in ivr_pack.py (the first domain pack, see
