@@ -10,7 +10,7 @@ from typing import Dict, List, Optional
 from twilio_log_ingestion import NODE_ROLE_AGENT, NODE_ROLE_ESCALATION
 
 # The four perception rows are contracts this repo shares with the library
-# and live in the private CNS package (cns.perception). The copy carried
+# and live in the public CNS package (cns.perception). The copy carried
 # here until 2026-09-11 was byte-identical to the one extracted, so nothing
 # about the rows changed; they are re-exported so existing imports from this
 # module keep working. The engines below are this repo's own.
