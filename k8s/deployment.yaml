@@ -63,6 +63,13 @@ spec:
             secretKeyRef:
               name: iceberg-secrets
               key: postgres-host
+        # Required: the API server refuses to start on a made-up key.
+        # It also refuses plain HTTP: mount CERT_FILE and KEY_FILE.
+        - name: ICEBERG_API_KEYS
+          valueFrom:
+            secretKeyRef:
+              name: iceberg-secrets
+              key: api-keys
         - name: POSTGRES_PORT
           value: "5432"
         - name: POSTGRES_DB

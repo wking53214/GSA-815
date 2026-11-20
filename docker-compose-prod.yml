@@ -48,6 +48,8 @@ services:
       # vendor/sentinel_os/sentinel_os/DEPLOYMENT.md.
       ICEBERG_LEDGER_ATTESTATION_KEY: ${ICEBERG_LEDGER_ATTESTATION_KEY:?set ICEBERG_LEDGER_ATTESTATION_KEY before starting (openssl rand -hex 32)}
       ICEBERG_LEDGER_ATTESTATION_KEYS_PREVIOUS: ${ICEBERG_LEDGER_ATTESTATION_KEYS_PREVIOUS:-}
+      # Required: the API server refuses to start on a made-up key. Format key:name[,key:name].
+      ICEBERG_API_KEYS: ${ICEBERG_API_KEYS:?set ICEBERG_API_KEYS before starting (key:name)}
       PORT: 9090
     ports:
       - "9090:9090"
