@@ -142,9 +142,8 @@ CI (`.github/workflows/tests.yml`) does exactly this on every push/PR, plus a
 
 `Tests/test_production_harness_breakers.py::test_real_*` exercise real
 infrastructure with no mocks -- a real (failing) anthropic call with a bad
-key, and a real restricted-role Postgres INSERT denial. They pass wherever
-that Postgres and outbound HTTPS exist; they are environment-gated, not
-code-blocked.
+key, and a real restricted-role Postgres INSERT denial. The anthropic-call tests run only with `GSA_REAL_CONNECTION_TESTS=1`
+(skipped otherwise); the Postgres tests pass wherever that Postgres exists.
 
 To bump the kernel: `cd vendor/sentinel_os && git fetch && git checkout <sha>
 && cd ../.. && git add vendor/sentinel_os`, then re-run the suite -- the
