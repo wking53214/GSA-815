@@ -152,7 +152,7 @@ transport/enum coupling the kernel repo warns about applies here too.
 ## `cns` (2026-09-11)
 
 The rows this repo shares with the rest of the library now come from the
-private `CNS` package instead of copies carried here:
+`CNS` package (public since October 2026) instead of copies carried here:
 
 - `observe_perceive_core.py`: `CallOutcome`, `FrictionEvent`, `EmotionalState`,
   `CallPercept` from `cns.perception`. The engines (`ObserveCore`,
