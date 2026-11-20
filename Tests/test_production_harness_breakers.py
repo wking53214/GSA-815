@@ -28,6 +28,13 @@ os.environ.setdefault("ICEBERG_LEDGER_RUNTIME_USER", "")
 from circuit_breaker import CircuitState
 from production_harness import IcebergProductionHarness
 
+# The three tests that use BAD_CLAUDE_KEY open a real connection to api.anthropic.com. They run
+# only when GSA_REAL_CONNECTION_TESTS=1, so an ordinary test run never leaves the machine.
+real_connection = pytest.mark.skipif(
+    os.environ.get("GSA_REAL_CONNECTION_TESTS") != "1",
+    reason="opens a real connection to api.anthropic.com; set GSA_REAL_CONNECTION_TESTS=1 to run",
+)
+
 PG_DSN = dict(host="localhost", port=5432, dbname="iceberg",
               user="iceberg", password="iceberg")
 
@@ -67,6 +74,7 @@ def harness_with_bad_claude_key():
 
 
 # ---------------------------------------------------------- claude path --
+@real_connection
 def test_real_bad_api_key_produces_a_real_transport_failure(harness_with_bad_claude_key):
     """Sanity check before trusting the breaker test below: confirm the
     live API really does reject this key with the transport_error shape
@@ -81,6 +89,7 @@ def test_real_bad_api_key_produces_a_real_transport_failure(harness_with_bad_cla
     )
 
 
+@real_connection
 def test_claude_breaker_trips_after_real_repeated_auth_failures(harness_with_bad_claude_key):
     h = harness_with_bad_claude_key
     assert h.claude_breaker.state is CircuitState.CLOSED
@@ -103,6 +112,7 @@ def test_claude_breaker_trips_after_real_repeated_auth_failures(harness_with_bad
     assert h.ledger.sid_exists("CBK-open"), "ledger write must still succeed while claude breaker is open"
 
 
+@real_connection
 def test_claude_breaker_open_does_not_affect_ledger_breaker(harness_with_bad_claude_key):
     """THE F-A property, proven with real failures instead of synthetic
     ones: driving the Claude breaker OPEN via real auth failures must
