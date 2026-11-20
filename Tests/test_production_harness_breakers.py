@@ -51,10 +51,17 @@ def governed_record(sid, duration=320):
             "duration": duration, "start_time": 0}
 
 
+#: The three tests that use `harness_with_bad_claude_key` open a real HTTPS connection to api.anthropic.com. They run
+#: only when this variable is "1", so an ordinary test run (or one on a machine that must not reach out) never does.
+REAL_CONNECTION_SWITCH = "GSA815_REAL_CONNECTIONS"
+
+
 @pytest.fixture()
 def harness_with_bad_claude_key():
     """Real ledger (working), real Claude client pointed at the real API
-    with a key that will really be rejected."""
+    with a key that will really be rejected. Skipped unless the switch is on."""
+    if os.environ.get(REAL_CONNECTION_SWITCH) != "1":
+        pytest.skip(f"opens a real connection to api.anthropic.com; set {REAL_CONNECTION_SWITCH}=1 to run it")
     h = IcebergProductionHarness({
         "postgres_host": PG_DSN["host"], "postgres_port": PG_DSN["port"],
         "postgres_db": PG_DSN["dbname"], "postgres_user": PG_DSN["user"],

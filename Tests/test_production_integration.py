@@ -95,7 +95,7 @@ def test_full_production_integration():
     metrics = PrometheusMetrics()
     parser = TwilioLogParser(cassette=IvrCassette())
     
-    # Simulate batch of real Twilio calls
+    # Simulate a batch of calls through the stub Twilio adapter
     twilio_records = [
         {"sid": "CA001", "status": "completed", "duration": 120, "from": "+1111"},
         {"sid": "CA002", "status": "completed", "duration": 150, "from": "+2222"},
