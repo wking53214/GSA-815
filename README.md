@@ -58,7 +58,7 @@ Kernel modules **deliberately not copied** (see `DEPENDENCIES.md`): `episode`, `
 | Collector crash | `pytest` from repo root hits `gsa-governance-core/test_harness.py` `SystemExit`. **CI runs `pytest Tests/`.** So should you. |
 | Missing submodule | Without vendor: 29 of the 32 test files do not collect (EXECUTED 2026-11-18; this row said 17). |
 | Infra | Needs local Postgres (`iceberg/iceberg` superuser) and Redis as the kernel does. Anthropic for live decider tests (failing-key tests exist). |
-| `CNS` visibility | `cns @ git+https://github.com/wking53214/CNS.git@v4.0.0`. CNS is public. It was installed from this pin on 2026-11-18 in a session with no access to the library's private repositories (EXECUTED), and this repository's CI dropped its read token on 2026-11-17 because every repository it reads is public. This row used to say CNS is private; that is no longer true. |
+| `CNS` visibility | `cns @ git+https://github.com/wking53214/CNS.git@v4.1.0`. CNS is public. It was installed from this pin on 2026-11-18 in a session with no access to the library's private repositories (EXECUTED), and this repository's CI dropped its read token on 2026-11-17 because every repository it reads is public. This row used to say CNS is private; that is no longer true. |
 | `httpx<0.28` | anthropic 0.116.0 breaks on `proxies` with httpx≥0.28. |
 | Removed `governance/perceive_gate.py` | Was an orphaned, already-broken stub; deleted (see `docs/CHANGELOG.md`, `PROVENANCE.md`). Nothing to fix. |
 | Dual copies | Kernel historically still carried `sentinel_core` / metrics / grafana; this repo now owns the IVR-shaped copies. Drift risk if kernel copies remain. |
@@ -91,7 +91,7 @@ GSA-815 production_harness
     → vendor/sentinel_os (submodule)  episode / ledger_postgres / cassette_loader
     → Conservation_Kernel (transitive pin cc42d3f, via the kernel's requirements)
     → DIT (kernel epistemic gate, git pin)
-    → CNS (public; git pin v4.0.0)
+    → CNS (public; git pin v4.1.0)
     ✗ observe-perceive does not import this repo
 ICEBERG / ICEBURG = lineage predecessors, not runtime deps
 ```
